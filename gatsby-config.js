@@ -99,7 +99,7 @@ quality and scalability.
       {
         name: 'AWS Certified Solutions Architect - Associate',
         position: 'Amazon Web Services (AWS)',
-        description: 'June 2025',
+        description: 'May 2025',
         link: 'https://aws.amazon.com/es/certification/certified-solutions-architect-associate/',
       },
       {

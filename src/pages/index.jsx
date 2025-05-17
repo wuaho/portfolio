@@ -37,14 +37,14 @@ const Index = ({ data }) => {
       )}
       {projects && projects.length && <SectionProjects projects={projects} />}
       {skills && skills.length && <SectionSkills skills={skills} />}
+      {certifications && certifications.length && (
+        <SectionCertifications certifications={certifications} />
+      )}
       {languages && languages.length && (
         <SectionLanguages languages={languages} />
       )}
       {volunteering && volunteering.length && (
         <SectionVolunteering volunteering={volunteering} />
-      )}
-      {certifications && certifications.length && (
-        <SectionCertifications certifications={certifications} />
       )}
     </Layout>
   );
