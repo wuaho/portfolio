@@ -4,15 +4,33 @@ import React from 'react';
 const classes = {
   wrapper: 'mb-6',
   name: 'font-semibold text-gray-900 pb-1',
-  description: 'text-md text-gray-600 font-light',
+  description: 'text-md text-gray-600 font-regular',
+  skills: 'text-md text-gray-600 font-regular',
 };
 
-const SummaryItem = ({ name, description, link = false, internal = false }) => {
+const SummaryItem = ({
+  name,
+  description,
+  link = false,
+  position,
+  strongSkills,
+  familiarSkills,
+  internal = false,
+}) => {
   let linkContent;
   if (internal) {
     linkContent = <Link to={link}>{name}</Link>;
   } else {
-    linkContent = <a href={link}>{name}</a>;
+    linkContent = (
+      <a
+        href={link}
+        target="_blank"
+        title={`Go to ${name}`}
+        aria-label={`${name}`}
+      >
+        {name}
+      </a>
+    );
   }
 
   return (
@@ -24,7 +42,16 @@ const SummaryItem = ({ name, description, link = false, internal = false }) => {
       >
         {link ? linkContent : name}
       </h3>
-      <p className={classes.description}>{description}</p>
+      {position && <p className={classes.description}>{position}</p>}
+      {description && <p className={classes.description}>{description}</p>}
+      {strongSkills && familiarSkills && (
+        <p className={classes.skills}>
+          <b>Strong: </b>
+          {strongSkills}
+          <b> Familiar: </b>
+          {familiarSkills}
+        </p>
+      )}
     </div>
   );
 };

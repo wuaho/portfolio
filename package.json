@@ -1,26 +1,27 @@
 {
-  "name": "devfolio",
+  "name": "portfolio",
   "private": true,
-  "description": "A modern and production-ready personal portfolio + blog template built with GatsbyJs and TailwindCSS",
+  "description": "A simple portfolio made with GatsbyJs and TailwindCSS",
   "version": "0.1.0",
-  "author": "Ryan Fitzgerald",
+  "author": "Juanjo Requena",
   "dependencies": {
     "gatsby": "^5.12.12",
     "gatsby-image": "^3.11.0",
-    "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-feed": "^5.12.3",
     "gatsby-plugin-google-analytics": "^5.12.0",
+    "gatsby-plugin-image": "^3.12.3",
     "gatsby-plugin-manifest": "^5.12.3",
     "gatsby-plugin-offline": "^6.12.3",
     "gatsby-plugin-postcss": "^6.12.0",
     "gatsby-plugin-react-helmet": "^6.12.0",
+    "gatsby-plugin-react-svg": "^3.3.0",
     "gatsby-plugin-sharp": "^5.12.3",
     "gatsby-remark-copy-linked-files": "^6.12.0",
     "gatsby-remark-images": "^7.12.3",
     "gatsby-remark-prismjs": "^7.12.0",
     "gatsby-remark-responsive-iframe": "^6.12.0",
     "gatsby-remark-smartypants": "^6.12.0",
-    "gatsby-source-filesystem": "^5.12.1",
+    "gatsby-source-filesystem": "^5.12.1",  
     "gatsby-transformer-remark": "^6.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
     "lodash": "^4.17.21",
@@ -39,7 +40,7 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -47,12 +48,5 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RyanFitzgerald/devfolio"
-  },
-  "bugs": {
-    "url": "https://github.com/RyanFitzgerald/devfolio/issues"
   }
 }
