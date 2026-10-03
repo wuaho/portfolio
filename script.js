@@ -107,19 +107,25 @@
     if (event.target.closest("button, a")) return;
 
     var bounds = panel.getBoundingClientRect();
+    var handle = event.currentTarget;
+
     panel.style.left = bounds.left + "px";
     panel.style.top = bounds.top + "px";
     panel.style.right = "auto";
     panel.style.bottom = "auto";
     panel.style.inset = "auto";
     panel.style.transform = "none";
+    panel.style.transition = "none";
     panel.classList.add("is-dragging");
-    panel.setPointerCapture(event.pointerId);
+    handle.setPointerCapture(event.pointerId);
     dragState = {
       pointerId: event.pointerId,
       panel: panel,
-      offsetX: event.clientX - bounds.left,
-      offsetY: event.clientY - bounds.top,
+      handle: handle,
+      startX: event.clientX,
+      startY: event.clientY,
+      startLeft: bounds.left,
+      startTop: bounds.top,
     };
     event.preventDefault();
   }
@@ -130,15 +136,20 @@
     var panel = dragState.panel;
     var maxLeft = Math.max(0, window.innerWidth - panel.offsetWidth);
     var maxTop = Math.max(0, window.innerHeight - panel.offsetHeight);
-    var nextLeft = event.clientX - dragState.offsetX;
-    var nextTop = event.clientY - dragState.offsetY;
+    var nextLeft = dragState.startLeft + event.clientX - dragState.startX;
+    var nextTop = dragState.startTop + event.clientY - dragState.startY;
 
     panel.style.left = Math.min(Math.max(0, nextLeft), maxLeft) + "px";
     panel.style.top = Math.min(Math.max(0, nextTop), maxTop) + "px";
+    event.preventDefault();
   }
 
   function stopDragging(event) {
     if (!dragState || event.pointerId !== dragState.pointerId) return;
+    if (dragState.handle.hasPointerCapture(event.pointerId)) {
+      dragState.handle.releasePointerCapture(event.pointerId);
+    }
+    dragState.panel.style.transition = "";
     dragState.panel.classList.remove("is-dragging");
     dragState = null;
   }
