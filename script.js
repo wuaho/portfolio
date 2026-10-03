@@ -6,6 +6,8 @@
   var activePanel = null;
   var previousFocus = null;
   var closeTimer = null;
+  var desktopQuery = window.matchMedia("(min-width: 52rem)");
+  var dragState = null;
   var focusableSelector =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -66,6 +68,7 @@
 
     var panel = activePanel;
     activePanel = null;
+    resetPanelPosition(panel);
     panel.classList.remove("is-open");
     backdrop.classList.remove("is-visible");
     body.classList.remove("window-open");
@@ -88,6 +91,56 @@
       previousFocus.focus();
     }
     previousFocus = null;
+  }
+
+  function resetPanelPosition(panel) {
+    panel.style.left = "";
+    panel.style.top = "";
+    panel.style.right = "";
+    panel.style.bottom = "";
+    panel.style.inset = "";
+    panel.style.transform = "";
+  }
+
+  function startDragging(event, panel) {
+    if (!desktopQuery.matches || event.button !== 0) return;
+    if (event.target.closest("button, a")) return;
+
+    var bounds = panel.getBoundingClientRect();
+    panel.style.left = bounds.left + "px";
+    panel.style.top = bounds.top + "px";
+    panel.style.right = "auto";
+    panel.style.bottom = "auto";
+    panel.style.inset = "auto";
+    panel.style.transform = "none";
+    panel.classList.add("is-dragging");
+    panel.setPointerCapture(event.pointerId);
+    dragState = {
+      pointerId: event.pointerId,
+      panel: panel,
+      offsetX: event.clientX - bounds.left,
+      offsetY: event.clientY - bounds.top,
+    };
+    event.preventDefault();
+  }
+
+  function dragPanel(event) {
+    if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+    var panel = dragState.panel;
+    var maxLeft = Math.max(0, window.innerWidth - panel.offsetWidth);
+    var maxTop = Math.max(0, window.innerHeight - panel.offsetHeight);
+    var nextLeft = event.clientX - dragState.offsetX;
+    var nextTop = event.clientY - dragState.offsetY;
+
+    panel.style.left = Math.min(Math.max(0, nextLeft), maxLeft) + "px";
+    panel.style.top = Math.min(Math.max(0, nextTop), maxTop) + "px";
+  }
+
+  function stopDragging(event) {
+    if (!dragState || event.pointerId !== dragState.pointerId) return;
+    dragState.panel.classList.remove("is-dragging");
+    dragState = null;
   }
 
   function trapFocus(event) {
@@ -119,10 +172,19 @@
   });
 
   panels.forEach(function (panel) {
+    panel
+      .querySelector(".window-chrome")
+      .addEventListener("pointerdown", function (event) {
+        startDragging(event, panel);
+      });
     panel.querySelector(".window-close").addEventListener("click", function () {
       closeWindow(true);
     });
   });
+
+  document.addEventListener("pointermove", dragPanel);
+  document.addEventListener("pointerup", stopDragging);
+  document.addEventListener("pointercancel", stopDragging);
 
   backdrop.addEventListener("click", function () {
     closeWindow(true);

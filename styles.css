@@ -838,6 +838,20 @@ body.window-open {
   }
 
   .window-chrome {
+    cursor: grab;
+    user-select: none;
+  }
+
+  .window-chrome:active,
+  .window-panel.is-dragging .window-chrome {
+    cursor: grabbing;
+  }
+
+  .window-close {
+    cursor: pointer;
+  }
+
+  .window-chrome {
     min-height: 3.5rem;
     padding-inline: 1rem;
   }
