@@ -1,0 +1,19 @@
+AGENTS.md
+  s_6ffc69e2eb3ee8::t_6accc9a93346de 47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "edd5583a145b69af15fde94c7e60bcf47d02f7a0",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
