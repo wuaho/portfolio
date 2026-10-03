@@ -1,0 +1,22 @@
+script.js
+  s_6ffc69e2eb3ee8::t_77338598e9009e 133
+  s_6ffc69e2eb3ee8::t_573eea75928de5 10,122,130-132,134-148,151-152
+tests/window-drag.spec.js
+  s_6ffc69e2eb3ee8::t_573eea75928de5 66-97
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "df14b92c2de939a0f757ef6bdb41bfdd8ba1df8f",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
