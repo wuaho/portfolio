@@ -11,10 +11,8 @@
   var dragState = null;
   var soundToggle = document.querySelector("[data-sound-toggle]");
   var soundLabel = document.querySelector("[data-sound-label]");
-  var kirbyCompanion = document.querySelector("[data-kirby]");
   var soundEnabled = true;
   var audioContext = null;
-  var kirbyDanceTimer = null;
   var focusableSelector =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -42,21 +40,14 @@
     return audioContext;
   }
 
-  function playTone(
-    context,
-    frequency,
-    start,
-    duration,
-    oscillatorType,
-    volume,
-  ) {
+  function playTone(context, frequency, start, duration) {
     var oscillator = context.createOscillator();
     var gain = context.createGain();
 
-    oscillator.type = oscillatorType || "sine";
+    oscillator.type = "sine";
     oscillator.frequency.setValueAtTime(frequency, start);
     gain.gain.setValueAtTime(0.0001, start);
-    gain.gain.exponentialRampToValueAtTime(volume || 0.035, start + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.035, start + 0.012);
     gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
     oscillator.connect(gain);
     gain.connect(context.destination);
@@ -76,20 +67,6 @@
     var start = context.currentTime + 0.01;
     notes.forEach(function (frequency, index) {
       playTone(context, frequency, start + index * 0.055, 0.12);
-    });
-  }
-
-  function playKirbyJingle() {
-    if (!soundEnabled) return;
-
-    var context = getAudioContext();
-    if (!context) return;
-    if (context.state === "suspended") context.resume();
-
-    var notes = [659.25, 783.99, 880, 783.99, 1046.5, 880, 783.99, 659.25];
-    var start = context.currentTime + 0.01;
-    notes.forEach(function (frequency, index) {
-      playTone(context, frequency, start + index * 0.09, 0.13, "square", 0.018);
     });
   }
 
@@ -249,19 +226,6 @@
     dragState = null;
   }
 
-  function makeKirbyDance() {
-    if (!kirbyCompanion) return;
-
-    window.clearTimeout(kirbyDanceTimer);
-    kirbyCompanion.classList.remove("is-dancing");
-    void kirbyCompanion.offsetWidth;
-    kirbyCompanion.classList.add("is-dancing");
-    playKirbyJingle();
-    kirbyDanceTimer = window.setTimeout(function () {
-      kirbyCompanion.classList.remove("is-dancing");
-    }, 700);
-  }
-
   function trapFocus(event) {
     if (!activePanel || event.key !== "Tab") return;
 
@@ -327,10 +291,6 @@
       }
       updateSoundToggle();
     });
-  }
-
-  if (kirbyCompanion) {
-    kirbyCompanion.addEventListener("click", makeKirbyDance);
   }
 
   updateSoundToggle();
