@@ -952,9 +952,10 @@ body.window-open {
   }
 
   .section-nav {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    margin-right: -1rem;
-    margin-left: -1rem;
+    width: min(100%, 720px);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .section-grid.three-up {
