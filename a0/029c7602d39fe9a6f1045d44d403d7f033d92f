@@ -1,0 +1,31 @@
+AGENTS.md
+  s_6ffc69e2eb3ee8::t_cea77ab6d2137a 11,54
+script.js
+  s_6ffc69e2eb3ee8::t_09ff58c9820dd7 92
+  s_6ffc69e2eb3ee8::t_cea77ab6d2137a 14,17,45-52,56,59,82-91,93-95,252-264,332-334
+  s_6ffc69e2eb3ee8::t_f1bcc248e793d9 335
+styles.css
+  s_6ffc69e2eb3ee8::t_3f38e2390c7c5e 807-819,823-833,837-902,906-959,1008-1014,1109-1114
+  s_6ffc69e2eb3ee8::t_09ff58c9820dd7 820-822,834-836,903-905
+tests/kirby-companion.spec.js
+  s_6ffc69e2eb3ee8::t_cea77ab6d2137a 1-26
+index.html
+  s_6ffc69e2eb3ee8::t_cea77ab6d2137a 563-581,589-590,605-607
+  s_6ffc69e2eb3ee8::t_09ff58c9820dd7 582-588,591-604
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a0029c7602d39fe9a6f1045d44d403d7f033d92f",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
