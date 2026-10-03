@@ -9,8 +9,66 @@
   var desktopQuery = window.matchMedia("(min-width: 52rem)");
   var dragThreshold = 4;
   var dragState = null;
+  var soundToggle = document.querySelector("[data-sound-toggle]");
+  var soundLabel = document.querySelector("[data-sound-label]");
+  var soundEnabled = true;
+  var audioContext = null;
   var focusableSelector =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  try {
+    soundEnabled = window.localStorage.getItem("juanjo-sound") !== "off";
+  } catch (error) {
+    soundEnabled = true;
+  }
+
+  function updateSoundToggle() {
+    if (!soundToggle || !soundLabel) return;
+    soundToggle.setAttribute("aria-pressed", String(soundEnabled));
+    soundToggle.setAttribute(
+      "aria-label",
+      soundEnabled ? "Mute interface sounds" : "Enable interface sounds",
+    );
+    soundLabel.textContent = soundEnabled ? "sound on" : "sound off";
+  }
+
+  function getAudioContext() {
+    var AudioContextConstructor =
+      window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextConstructor) return null;
+    if (!audioContext) audioContext = new AudioContextConstructor();
+    return audioContext;
+  }
+
+  function playTone(context, frequency, start, duration) {
+    var oscillator = context.createOscillator();
+    var gain = context.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(frequency, start);
+    gain.gain.setValueAtTime(0.0001, start);
+    gain.gain.exponentialRampToValueAtTime(0.035, start + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+    oscillator.connect(gain);
+    gain.connect(context.destination);
+    oscillator.start(start);
+    oscillator.stop(start + duration + 0.02);
+  }
+
+  function playWindowSound(type) {
+    if (!soundEnabled) return;
+
+    var context = getAudioContext();
+    if (!context) return;
+    if (context.state === "suspended") context.resume();
+
+    var notes =
+      type === "open" ? [523.25, 659.25, 783.99] : [783.99, 659.25, 523.25];
+    var start = context.currentTime + 0.01;
+    notes.forEach(function (frequency, index) {
+      playTone(context, frequency, start + index * 0.055, 0.12);
+    });
+  }
 
   function getPanel(id) {
     return document.querySelector('[data-window="' + id + '"]');
@@ -39,7 +97,7 @@
     });
   }
 
-  function openWindow(id, updateUrl) {
+  function openWindow(id, updateUrl, playSound) {
     var panel = getPanel(id);
     if (!panel) return;
 
@@ -54,6 +112,7 @@
     activePanel = panel;
     setActiveLink(id);
     showPanel(panel);
+    if (playSound) playWindowSound("open");
 
     if (updateUrl && window.location.hash !== "#" + id) {
       window.history.pushState({}, "", "#" + id);
@@ -64,7 +123,7 @@
     }, 20);
   }
 
-  function closeWindow(updateUrl) {
+  function closeWindow(updateUrl, playSound) {
     if (!activePanel) return;
 
     var panel = activePanel;
@@ -73,6 +132,7 @@
     backdrop.classList.remove("is-visible");
     body.classList.remove("window-open");
     setActiveLink("");
+    if (playSound) playWindowSound("close");
 
     closeTimer = window.setTimeout(function () {
       panel.hidden = true;
@@ -190,7 +250,7 @@
     link.setAttribute("aria-expanded", "false");
     link.addEventListener("click", function (event) {
       event.preventDefault();
-      openWindow(link.getAttribute("data-window-target"), true);
+      openWindow(link.getAttribute("data-window-target"), true, true);
     });
   });
 
@@ -201,7 +261,7 @@
         startDragging(event, panel);
       });
     panel.querySelector(".window-close").addEventListener("click", function () {
-      closeWindow(true);
+      closeWindow(true, true);
     });
   });
 
@@ -210,20 +270,37 @@
   document.addEventListener("pointercancel", stopDragging);
 
   backdrop.addEventListener("click", function () {
-    closeWindow(true);
+    closeWindow(true, true);
   });
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && activePanel) closeWindow(true);
+    if (event.key === "Escape" && activePanel) closeWindow(true, true);
     trapFocus(event);
   });
+
+  if (soundToggle) {
+    soundToggle.addEventListener("click", function () {
+      soundEnabled = !soundEnabled;
+      try {
+        window.localStorage.setItem(
+          "juanjo-sound",
+          soundEnabled ? "on" : "off",
+        );
+      } catch (error) {
+        // Sound preference remains session-only when storage is unavailable.
+      }
+      updateSoundToggle();
+    });
+  }
+
+  updateSoundToggle();
 
   function syncWindowWithUrl() {
     var id = window.location.hash.slice(1);
     if (getPanel(id)) {
-      openWindow(id, false);
+      openWindow(id, false, false);
     } else if (activePanel) {
-      closeWindow(false);
+      closeWindow(false, false);
     }
   }
 
@@ -231,5 +308,5 @@
   window.addEventListener("popstate", syncWindowWithUrl);
 
   var initialId = window.location.hash.slice(1);
-  if (getPanel(initialId)) openWindow(initialId, false);
+  if (getPanel(initialId)) openWindow(initialId, false, false);
 })();

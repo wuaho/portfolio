@@ -8,7 +8,7 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 
 - `index.html`: All visible portfolio content, section markup, external links, SVG decorations, and window dialog markup.
 - `styles.css`: All layout, colors, typography, responsive behavior, modal/window styling, and animations.
-- `script.js`: Window opening/closing, URL hash synchronization, focus trapping, Escape/backdrop handling, and desktop window dragging.
+- `script.js`: Window opening/closing, URL hash synchronization, focus trapping, Escape/backdrop handling, desktop window dragging, and synthesized interface sounds.
 - `tests/`: Playwright end-to-end tests for user-visible interactions.
 - `playwright.config.js`: Playwright configuration and the local static server command.
 - `package.json`: Test commands and the Playwright development dependency.
@@ -50,6 +50,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 - Mobile windows are full-screen modals. They must not be draggable.
 - `Escape`, the backdrop, the close button, and browser history close or change the active window.
 - URL hashes such as `#experience` are part of the navigation contract.
+- Opening and closing windows play short Web Audio cues after direct user actions. The sound toggle persists its preference in local storage.
 - Keep the stable attributes and class names used by the E2E tests unless the tests are updated in the same change.
 
 ## Editing Guidelines
