@@ -69,7 +69,6 @@
 
     var panel = activePanel;
     activePanel = null;
-    resetPanelPosition(panel);
     panel.classList.remove("is-open");
     backdrop.classList.remove("is-visible");
     body.classList.remove("window-open");
@@ -78,6 +77,7 @@
     closeTimer = window.setTimeout(function () {
       panel.hidden = true;
       backdrop.hidden = true;
+      resetPanelPosition(panel);
     }, 220);
 
     if (updateUrl && window.location.hash) {

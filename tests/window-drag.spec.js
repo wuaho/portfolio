@@ -95,6 +95,57 @@ test("clicking the desktop title bar does not reposition the window", async ({
   expect(finalPosition.y).toBeCloseTo(initialPosition.y, 0);
 });
 
+test("closing a dragged desktop window animates from its current position", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/");
+  await page.locator('[data-window-target="experience"]').click();
+
+  const windowPanel = page.locator('[data-window="experience"]');
+  const titleBar = windowPanel.locator(".window-chrome");
+  const initialPosition = await getStableBoundingBox(windowPanel);
+  const titleBarPosition = await titleBar.boundingBox();
+
+  expect(initialPosition).not.toBeNull();
+  expect(titleBarPosition).not.toBeNull();
+
+  if (!initialPosition || !titleBarPosition) return;
+
+  const startX = titleBarPosition.x + titleBarPosition.width / 2;
+  const startY = titleBarPosition.y + titleBarPosition.height / 2;
+
+  await page.mouse.move(startX, startY);
+  await page.mouse.down();
+  await page.mouse.move(startX + 180, startY + 110, { steps: 8 });
+  await page.mouse.up();
+
+  const draggedPosition = await getStableBoundingBox(windowPanel);
+  expect(draggedPosition).not.toBeNull();
+  if (!draggedPosition) return;
+
+  await windowPanel.locator(".window-close").click();
+  await page.waitForTimeout(100);
+
+  const closingPosition = await windowPanel.boundingBox();
+  expect(closingPosition).not.toBeNull();
+  if (!closingPosition) return;
+
+  expect(closingPosition.x).toBeCloseTo(draggedPosition.x, 0);
+  expect(closingPosition.y).toBeCloseTo(draggedPosition.y, 0);
+
+  await expect(windowPanel).toBeHidden();
+
+  await page.locator('[data-window-target="experience"]').click();
+  const reopenedPosition = await getStableBoundingBox(windowPanel);
+
+  expect(reopenedPosition).not.toBeNull();
+  if (!reopenedPosition) return;
+
+  expect(reopenedPosition.x).toBeCloseTo(initialPosition.x, 0);
+  expect(reopenedPosition.y).toBeCloseTo(initialPosition.y, 0);
+});
+
 test("mobile experience window stays full-screen and does not drag", async ({
   page,
 }) => {
