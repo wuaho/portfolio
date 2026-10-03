@@ -1,0 +1,19 @@
+styles.css
+  s_6ffc69e2eb3ee8::t_d7af720c8af876 955-958
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c66dfbd46f444afd0369285eb1e643212a1ecc7c",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
