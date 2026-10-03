@@ -803,10 +803,6 @@ body.window-open {
   background: #ffe3ba;
 }
 
-.skills-card {
-  background: var(--paper-deep);
-}
-
 .tag-list {
   display: flex;
   flex-wrap: wrap;
