@@ -7,6 +7,7 @@
   var previousFocus = null;
   var closeTimer = null;
   var desktopQuery = window.matchMedia("(min-width: 52rem)");
+  var dragThreshold = 4;
   var dragState = null;
   var focusableSelector =
     'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
@@ -109,14 +110,6 @@
     var bounds = panel.getBoundingClientRect();
     var handle = event.currentTarget;
 
-    panel.style.left = bounds.left + "px";
-    panel.style.top = bounds.top + "px";
-    panel.style.right = "auto";
-    panel.style.bottom = "auto";
-    panel.style.inset = "auto";
-    panel.style.transform = "none";
-    panel.style.transition = "none";
-    panel.classList.add("is-dragging");
     handle.setPointerCapture(event.pointerId);
     dragState = {
       pointerId: event.pointerId,
@@ -126,18 +119,37 @@
       startY: event.clientY,
       startLeft: bounds.left,
       startTop: bounds.top,
+      isDragging: false,
     };
-    event.preventDefault();
   }
 
   function dragPanel(event) {
     if (!dragState || event.pointerId !== dragState.pointerId) return;
 
     var panel = dragState.panel;
+    var deltaX = event.clientX - dragState.startX;
+    var deltaY = event.clientY - dragState.startY;
+
+    if (!dragState.isDragging && Math.hypot(deltaX, deltaY) <= dragThreshold) {
+      return;
+    }
+
+    if (!dragState.isDragging) {
+      panel.style.left = dragState.startLeft + "px";
+      panel.style.top = dragState.startTop + "px";
+      panel.style.right = "auto";
+      panel.style.bottom = "auto";
+      panel.style.inset = "auto";
+      panel.style.transform = "none";
+      panel.style.transition = "none";
+      panel.classList.add("is-dragging");
+      dragState.isDragging = true;
+    }
+
     var maxLeft = Math.max(0, window.innerWidth - panel.offsetWidth);
     var maxTop = Math.max(0, window.innerHeight - panel.offsetHeight);
-    var nextLeft = dragState.startLeft + event.clientX - dragState.startX;
-    var nextTop = dragState.startTop + event.clientY - dragState.startY;
+    var nextLeft = dragState.startLeft + deltaX;
+    var nextTop = dragState.startTop + deltaY;
 
     panel.style.left = Math.min(Math.max(0, nextLeft), maxLeft) + "px";
     panel.style.top = Math.min(Math.max(0, nextTop), maxTop) + "px";

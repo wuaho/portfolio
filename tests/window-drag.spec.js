@@ -63,6 +63,38 @@ test("desktop experience window can be dragged from its title bar", async ({
   expect(finalPosition.y + finalPosition.height).toBeLessThanOrEqual(900);
 });
 
+test("clicking the desktop title bar does not reposition the window", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await page.goto("/");
+  await page.locator('[data-window-target="experience"]').click();
+
+  const windowPanel = page.locator('[data-window="experience"]');
+  const titleBar = windowPanel.locator(".window-chrome");
+  const initialPosition = await getStableBoundingBox(windowPanel);
+  const titleBarPosition = await titleBar.boundingBox();
+
+  expect(initialPosition).not.toBeNull();
+  expect(titleBarPosition).not.toBeNull();
+
+  if (!initialPosition || !titleBarPosition) return;
+
+  await page.mouse.click(
+    titleBarPosition.x + titleBarPosition.width / 2,
+    titleBarPosition.y + titleBarPosition.height / 2,
+  );
+
+  await expect(windowPanel).toBeVisible();
+  const finalPosition = await getStableBoundingBox(windowPanel);
+
+  expect(finalPosition).not.toBeNull();
+  if (!finalPosition) return;
+
+  expect(finalPosition.x).toBeCloseTo(initialPosition.x, 0);
+  expect(finalPosition.y).toBeCloseTo(initialPosition.y, 0);
+});
+
 test("mobile experience window stays full-screen and does not drag", async ({
   page,
 }) => {
