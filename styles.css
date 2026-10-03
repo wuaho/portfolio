@@ -799,10 +799,6 @@ body.window-open {
   background: var(--mint);
 }
 
-.education-card:nth-child(2) {
-  background: #ffe3ba;
-}
-
 .tag-list {
   display: flex;
   flex-wrap: wrap;
