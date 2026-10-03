@@ -1,0 +1,21 @@
+tests/window-drag.spec.js
+  s_6ffc69e2eb3ee8::t_3dcab54679eebf 98-148
+script.js
+  s_6ffc69e2eb3ee8::t_3dcab54679eebf 80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "770e3b92bd0370fec15896d4f9ec895b398bd616",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
