@@ -1,0 +1,27 @@
+script.js
+  s_6ffc69e2eb3ee8::t_3091de90b552a9 110-111,118,120,124-128,139-140,144,149-152
+styles.css
+  s_6ffc69e2eb3ee8::t_3091de90b552a9 842
+tests/window-drag.spec.js
+  s_6ffc69e2eb3ee8::t_601b131af50262 3-26,38,55,75,91-94,96-97
+  s_6ffc69e2eb3ee8::t_3091de90b552a9 62-74,76-90,95
+  s_6ffc69e2eb3ee8::t_4bc748660508e0 98-101
+AGENTS.md
+  s_6ffc69e2eb3ee8::t_3091de90b552a9 1-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8988ce5360c2576dbe6943b43805abc49e4ac342",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
