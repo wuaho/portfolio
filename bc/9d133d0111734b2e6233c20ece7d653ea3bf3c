@@ -1,0 +1,21 @@
+tests/interface-sounds.spec.js
+  s_6ffc69e2eb3ee8::t_ee3438499cc5d0 85-89
+index.html
+  s_6ffc69e2eb3ee8::t_ee3438499cc5d0 88-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bc9d133d0111734b2e6233c20ece7d653ea3bf3c",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
