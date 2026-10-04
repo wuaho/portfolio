@@ -166,8 +166,8 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
 
   await about.hover();
 
-  await expect(about).toHaveCSS("background-color", "rgb(242, 199, 92)");
-  await expect(about).toHaveCSS("color", "rgb(41, 39, 35)");
+  await expect(about).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
+  await expect(about).toHaveCSS("color", "rgb(116, 109, 98)");
   await expect
     .poll(() =>
       about.evaluate((element) => getComputedStyle(element).transform),
