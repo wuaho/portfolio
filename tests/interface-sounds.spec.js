@@ -93,6 +93,36 @@ test("landing content is wrapped in the home operating system window", async ({
   expect(homeWindowBox.y).toBeGreaterThanOrEqual(100);
 });
 
+test("section navigation uses clickable icon tiles that scale on hover", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  const nav = page.locator(".section-nav");
+  const items = nav.locator("[data-window-target]");
+
+  await expect(items).toHaveCount(5);
+  await expect(nav.locator(".section-nav-icon svg")).toHaveCount(5);
+  await expect(nav.getByText("about", { exact: true })).toBeVisible();
+  await expect(nav.getByText("experience", { exact: true })).toBeVisible();
+  await expect(nav.getByText("projects", { exact: true })).toBeVisible();
+  await expect(nav.getByText("more", { exact: true })).toBeVisible();
+  await expect(nav.getByText("contact", { exact: true })).toBeVisible();
+
+  const about = nav.locator('[data-window-target="about"]');
+  const initialTransform = await about.evaluate(
+    (element) => getComputedStyle(element).transform,
+  );
+
+  await about.hover();
+
+  await expect
+    .poll(() =>
+      about.evaluate((element) => getComputedStyle(element).transform),
+    )
+    .not.toBe(initialTransform);
+});
+
 test("penguin switches from idle to spin animation on hover", async ({
   page,
 }) => {
