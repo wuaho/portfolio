@@ -47,6 +47,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 ## Interaction Model
 
 - The navigation links use `data-window-target` and open the matching section identified by `data-window`. The current windows are `about`, `experience`, `projects`, `more`, and `contact`.
+- The landing hero and section navigation live inside the `.home-window` OS-style card. The sound toggle stays outside it as a fixed viewport control.
 - Every section window is a dialog with a `.window-chrome` title bar and `.window-close` button.
 - Desktop windows use the `52rem` breakpoint. Their title bar is draggable, and the window is clamped inside the viewport.
 - Mobile windows are full-screen modals. They must not be draggable.

@@ -99,9 +99,72 @@ svg {
 }
 
 .topbar {
+  position: fixed;
+  z-index: 25;
+  top: 1rem;
+  right: 1rem;
   display: flex;
   justify-content: flex-end;
-  padding-top: 1rem;
+}
+
+.home-window {
+  position: relative;
+  width: min(100%, 860px);
+  margin: clamp(2.5rem, 8vw, 5rem) auto 0;
+  border: 1px solid rgba(41, 39, 35, 0.7);
+  border-radius: 1.2rem;
+  background: var(--paper-white);
+  box-shadow:
+    0 1rem 0 rgba(41, 39, 35, 0.08),
+    0 1.5rem 3rem rgba(41, 39, 35, 0.1);
+  overflow: hidden;
+}
+
+.home-window-titlebar {
+  display: flex;
+  min-height: 2.7rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.85rem;
+  background: #373532;
+  color: #f8f3e9;
+}
+
+.home-window-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.home-window-controls {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.home-window-controls i {
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid rgba(248, 243, 233, 0.55);
+  border-radius: 50%;
+}
+
+.home-window-controls i:first-child {
+  background: var(--coral);
+}
+
+.home-window-controls i:nth-child(2) {
+  background: var(--yellow);
+}
+
+.home-window-controls i:last-child {
+  background: var(--mint);
+}
+
+.home-window-body {
+  padding: 0 1rem 1.25rem;
 }
 
 .topbar-tools {
@@ -161,7 +224,7 @@ svg {
 
 .hero {
   position: relative;
-  padding: 5.5rem 0 4.75rem;
+  padding: 4rem 0 3.5rem;
   text-align: center;
 }
 
@@ -851,6 +914,10 @@ body.window-open {
   .window-body {
     padding: 2rem 2rem 3.5rem;
   }
+
+  .home-window-body {
+    padding: 0 2rem 2rem;
+  }
 }
 
 @media (min-width: 52rem) {
@@ -861,6 +928,10 @@ body.window-open {
   .hero {
     padding-top: 7.5rem;
     padding-bottom: 6.5rem;
+  }
+
+  .home-window {
+    margin-top: 4rem;
   }
 
   .hero-art {

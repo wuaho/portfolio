@@ -56,6 +56,22 @@ test("top and bottom chrome only keep the sound control", async ({ page }) => {
   await expect(page.locator("footer")).toHaveCount(0);
 });
 
+test("landing content is wrapped in the home operating system window", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  const homeWindow = page.locator(".home-window");
+
+  await expect(homeWindow.locator(".home-window-title")).toHaveText("home");
+  await expect(homeWindow.locator("#hero-title")).toHaveText("hi, i'm Juanjo");
+  await expect(homeWindow.locator(".hero-subline")).toHaveText(
+    "software engineer, good bread lover & kirby fan in Barcelona",
+  );
+  await expect(homeWindow.locator(".section-nav")).toBeVisible();
+  await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
+});
+
 test("re-enabling sound plays the window-open chime", async ({ page }) => {
   await page.addInitScript(() => {
     window.__soundFrequencies = [];
