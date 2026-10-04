@@ -91,6 +91,18 @@ test("landing content is wrapped in the home operating system window", async ({
     Math.abs(homeWindowBox.x + homeWindowBox.width / 2 - 640),
   ).toBeLessThanOrEqual(2);
   expect(homeWindowBox.y).toBeGreaterThanOrEqual(100);
+
+  const heroTitleBox = await homeWindow.locator("#hero-title").boundingBox();
+  const topStarBox = await homeWindow
+    .locator(".hero-art:not(.left)")
+    .boundingBox();
+  expect(heroTitleBox).not.toBeNull();
+  expect(topStarBox).not.toBeNull();
+  if (!heroTitleBox || !topStarBox) return;
+
+  expect(topStarBox.y + topStarBox.height).toBeLessThanOrEqual(
+    heroTitleBox.y + 4,
+  );
 });
 
 test("section navigation uses clickable icon tiles that scale on hover", async ({
