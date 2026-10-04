@@ -105,6 +105,13 @@ test("penguin switches from idle to spin animation on hover", async ({
   await expect(idleSprite).toBeVisible();
   await expect(spinSprite).toBeHidden();
 
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const penguinBox = await penguin.boundingBox();
+  expect(penguinBox).not.toBeNull();
+  if (!penguinBox) return;
+  expect(penguinBox.width).toBeGreaterThanOrEqual(176);
+  expect(penguinBox.height).toBeGreaterThanOrEqual(176);
+
   await penguin.hover();
 
   await expect(idleSprite).toBeHidden();
