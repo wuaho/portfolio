@@ -109,7 +109,7 @@ svg {
 
 .home-window {
   position: relative;
-  width: min(100%, 860px);
+  width: min(100%, 820px);
   margin: clamp(2.5rem, 8vw, 5rem) auto 0;
   border: 1px solid rgba(41, 39, 35, 0.7);
   border-radius: 1.2rem;
@@ -179,12 +179,13 @@ svg {
   height: 2.25rem;
   place-items: center;
   align-items: center;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink);
   border-radius: 999px;
   padding: 0.35rem;
-  background: transparent;
-  color: var(--muted);
+  background: var(--ink);
+  color: var(--paper);
   cursor: pointer;
+  box-shadow: 0 0.25rem 0 rgba(41, 39, 35, 0.18);
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -200,7 +201,9 @@ svg {
 }
 
 .sound-toggle[aria-pressed="false"] {
-  color: var(--coral);
+  border-color: var(--coral);
+  background: var(--coral);
+  color: var(--paper-white);
 }
 
 .sound-icon {
@@ -926,12 +929,12 @@ body.window-open {
   }
 
   .hero {
-    padding-top: 7.5rem;
-    padding-bottom: 6.5rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
   }
 
   .home-window {
-    margin-top: 4rem;
+    margin-top: 10vh;
   }
 
   .hero-art {

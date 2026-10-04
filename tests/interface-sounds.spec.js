@@ -70,6 +70,16 @@ test("landing content is wrapped in the home operating system window", async ({
   );
   await expect(homeWindow.locator(".section-nav")).toBeVisible();
   await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
+
+  await page.setViewportSize({ width: 1280, height: 900 });
+  const homeWindowBox = await homeWindow.boundingBox();
+  expect(homeWindowBox).not.toBeNull();
+  if (!homeWindowBox) return;
+
+  expect(homeWindowBox.width).toBeLessThanOrEqual(820);
+  expect(
+    Math.abs(homeWindowBox.x + homeWindowBox.width / 2 - 640),
+  ).toBeLessThanOrEqual(2);
 });
 
 test("re-enabling sound plays the window-open chime", async ({ page }) => {
