@@ -76,7 +76,7 @@ test("landing content is wrapped in the home operating system window", async ({
   await expect(homeWindow.locator("#hero-title")).toHaveText("hi, i'm Juanjo");
   await expect(homeWindow.locator(".hero-kicker")).toHaveCount(0);
   await expect(homeWindow.locator(".hero-subline")).toHaveText(
-    "software engineer, good bread lover & kirby fan in Barcelona",
+    "software engineer, good bread lover & kirby fan",
   );
   await expect(homeWindow.locator(".section-nav")).toBeVisible();
   await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
@@ -90,6 +90,25 @@ test("landing content is wrapped in the home operating system window", async ({
   expect(
     Math.abs(homeWindowBox.x + homeWindowBox.width / 2 - 640),
   ).toBeLessThanOrEqual(2);
+});
+
+test("penguin switches from idle to spin animation on hover", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  const penguin = page.locator("[data-penguin]");
+  const idleSprite = penguin.locator("[data-penguin-idle]");
+  const spinSprite = penguin.locator("[data-penguin-spin]");
+
+  await expect(penguin).toBeVisible();
+  await expect(idleSprite).toBeVisible();
+  await expect(spinSprite).toBeHidden();
+
+  await penguin.hover();
+
+  await expect(idleSprite).toBeHidden();
+  await expect(spinSprite).toBeVisible();
 });
 
 test("re-enabling sound plays the window-open chime", async ({ page }) => {

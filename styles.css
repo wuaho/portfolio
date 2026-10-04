@@ -115,8 +115,8 @@ svg {
   border-radius: 1.2rem;
   background: var(--paper-white);
   box-shadow:
-    0 1rem 0 rgba(41, 39, 35, 0.08),
-    0 1.5rem 3rem rgba(41, 39, 35, 0.1);
+    0 0.5rem 0 rgba(41, 39, 35, 0.08),
+    0 0.75rem 1.5rem rgba(41, 39, 35, 0.1);
   overflow: hidden;
 }
 
@@ -227,13 +227,13 @@ svg {
 
 .hero {
   position: relative;
-  padding: 4rem 0 3.5rem;
+  padding: 5.5rem 0 3.5rem;
   text-align: center;
 }
 
 .hero-art {
   position: absolute;
-  top: 1.4rem;
+  top: 0.2rem;
   right: -2.5rem;
   width: 5rem;
   height: 5rem;
@@ -249,6 +249,56 @@ svg {
   width: 4.5rem;
   color: var(--blue);
   transform: rotate(-11deg);
+}
+
+.penguin-companion {
+  position: fixed;
+  z-index: 25;
+  right: 1rem;
+  bottom: 1rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  filter: drop-shadow(0 0.35rem 0 rgba(41, 39, 35, 0.16));
+  outline: none;
+  touch-action: manipulation;
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.penguin-companion:hover,
+.penguin-companion:focus-visible {
+  filter: drop-shadow(0 0.5rem 0 rgba(41, 39, 35, 0.16));
+  transform: translateY(-0.25rem) rotate(-3deg);
+}
+
+.penguin-companion:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--paper),
+    0 0 0 5px var(--blue);
+}
+
+.penguin-sprite {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.penguin-spin {
+  display: none;
+}
+
+.penguin-companion:hover .penguin-idle,
+.penguin-companion:focus .penguin-idle {
+  display: none;
+}
+
+.penguin-companion:hover .penguin-spin,
+.penguin-companion:focus .penguin-spin {
+  display: block;
 }
 
 .section-label,
@@ -926,6 +976,13 @@ body.window-open {
     bottom: 2.5rem;
     left: 1rem;
     width: 5.5rem;
+  }
+
+  .penguin-companion {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 5.75rem;
+    height: 5.75rem;
   }
 
   .section-nav {
