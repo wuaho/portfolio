@@ -598,7 +598,6 @@ h1 .hero-title-name {
 .section-nav a:hover .section-nav-icon img,
 .section-nav a:focus-visible .section-nav-icon img,
 .section-nav a.is-active .section-nav-icon img {
-  filter: drop-shadow(2px 3px 0 rgba(99, 120, 221, 0.35));
   transform: scale(1.08);
 }
 
