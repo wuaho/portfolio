@@ -178,7 +178,9 @@ test("re-enabling sound plays the window-open chime", async ({ page }) => {
           connect() {},
           gain: {
             setValueAtTime() {},
-            exponentialRampToValueAtTime() {},
+            exponentialRampToValueAtTime(value) {
+              if (value > 0.001) window.__soundPeak = value;
+            },
           },
         };
       }
@@ -215,4 +217,5 @@ test("re-enabling sound plays the window-open chime", async ({ page }) => {
   expect(await page.evaluate(() => window.__soundFrequencies)).toEqual([
     523.25, 659.25, 783.99,
   ]);
+  expect(await page.evaluate(() => window.__soundPeak)).toBeCloseTo(0.042);
 });
