@@ -381,7 +381,7 @@ h1 .hero-title-name {
 }
 
 .hero-subline {
-  margin: 1rem auto 0;
+  margin: 1.35rem auto 0;
   color: var(--blue-dark);
   font-family: var(--mono);
   font-size: 0.76rem;
@@ -536,7 +536,6 @@ h1 .hero-title-name {
   text-decoration: none;
   transition:
     background 180ms ease,
-    border-color 180ms ease,
     color 180ms ease,
     transform 180ms ease;
 }
@@ -586,8 +585,8 @@ h1 .hero-title-name {
 .section-nav a:hover,
 .section-nav a:focus-visible,
 .section-nav a.is-active {
-  background: var(--yellow);
-  color: var(--ink);
+  background: rgba(216, 207, 245, 0.42);
+  color: var(--blue-dark);
   outline: none;
   transform: translateY(-0.25rem) scale(1.06);
 }
@@ -601,8 +600,8 @@ h1 .hero-title-name {
 .section-nav a:hover .section-nav-icon img,
 .section-nav a:focus-visible .section-nav-icon img,
 .section-nav a.is-active .section-nav-icon img {
-  filter: invert(42%) sepia(75%) saturate(1000%) hue-rotate(319deg)
-    brightness(97%);
+  filter: invert(35%) sepia(20%) saturate(700%) hue-rotate(190deg)
+    brightness(86%);
   transform: scale(1.08);
 }
 

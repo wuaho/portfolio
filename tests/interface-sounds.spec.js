@@ -91,6 +91,14 @@ test("landing content is wrapped in the home operating system window", async ({
   await expect(homeWindow.locator(".hero-subline")).toHaveText(
     "software engineer, I like pastry and Kirby",
   );
+  const titleBox = await homeWindow.locator("#hero-title").boundingBox();
+  const subtitleBox = await homeWindow.locator(".hero-subline").boundingBox();
+  expect(titleBox).not.toBeNull();
+  expect(subtitleBox).not.toBeNull();
+  if (!titleBox || !subtitleBox) return;
+  expect(subtitleBox.y).toBeGreaterThanOrEqual(
+    titleBox.y + titleBox.height + 16,
+  );
   await expect(homeWindow.locator(".section-nav")).toBeVisible();
   await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
 
