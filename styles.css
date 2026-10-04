@@ -596,8 +596,6 @@ h1 .hero-title-name {
 .section-nav a:hover .section-nav-icon img,
 .section-nav a:focus-visible .section-nav-icon img,
 .section-nav a.is-active .section-nav-icon img {
-  filter: invert(35%) sepia(20%) saturate(700%) hue-rotate(190deg)
-    brightness(86%);
   transform: scale(1.08);
 }
 
