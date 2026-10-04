@@ -145,6 +145,20 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
   await expect(nav.getByText("more", { exact: true })).toBeVisible();
   await expect(nav.getByText("contact", { exact: true })).toBeVisible();
 
+  for (const label of ["work", "more"]) {
+    await expect(nav.getByText(label, { exact: true })).toHaveCSS(
+      "color",
+      "rgb(116, 109, 98)",
+    );
+  }
+
+  const workIconBox = await nav
+    .locator('img[src="icons/work.svg"]')
+    .boundingBox();
+  expect(workIconBox).not.toBeNull();
+  if (!workIconBox) return;
+  expect(workIconBox.width).toBeGreaterThanOrEqual(80);
+
   const about = nav.locator('[data-window-target="about"]');
   const initialTransform = await about.evaluate(
     (element) => getComputedStyle(element).transform,

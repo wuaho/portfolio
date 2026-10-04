@@ -540,14 +540,10 @@ h1 .hero-title-name {
     transform 180ms ease;
 }
 
-.section-nav a:nth-child(2n) {
-  color: var(--blue-dark);
-}
-
 .section-nav-icon {
   display: grid;
-  width: 3rem;
-  height: 3rem;
+  width: 5.4rem;
+  height: 5.4rem;
   place-items: center;
   transition: transform 180ms ease;
 }
@@ -563,8 +559,8 @@ h1 .hero-title-name {
 }
 
 .section-nav-icon img {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 5.2rem;
+  height: 5.2rem;
   object-fit: contain;
   filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
     brightness(91%);
