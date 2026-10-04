@@ -76,15 +76,15 @@ test("landing content is wrapped in the home operating system window", async ({
   await expect(homeWindow.locator("#hero-title")).toHaveText("hi! i'm Juanjo");
   await expect(homeWindow.locator(".hero-title-greeting")).toHaveCSS(
     "font-weight",
-    "300",
+    "400",
   );
   await expect(homeWindow.locator(".hero-title-name")).toHaveCSS(
     "font-weight",
-    "600",
+    "400",
   );
   await expect(homeWindow.locator(".hero-kicker")).toHaveCount(0);
   await expect(homeWindow.locator(".hero-subline")).toHaveText(
-    "software engineer, good bread lover & kirby fan",
+    "software engineer, I like pastry and Kirby",
   );
   await expect(homeWindow.locator(".section-nav")).toBeVisible();
   await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
