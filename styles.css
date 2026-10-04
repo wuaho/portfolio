@@ -102,9 +102,9 @@ svg {
   position: fixed;
   z-index: 25;
   top: 1rem;
-  right: 1rem;
+  left: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .home-window {
@@ -175,8 +175,8 @@ svg {
 
 .sound-toggle {
   display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.7rem;
+  height: 2.7rem;
   place-items: center;
   align-items: center;
   border: 1px solid var(--ink);
@@ -207,8 +207,8 @@ svg {
 }
 
 .sound-icon {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.35rem;
+  height: 1.35rem;
   fill: none;
   stroke: currentColor;
   stroke-linecap: round;
@@ -251,7 +251,6 @@ svg {
   transform: rotate(-11deg);
 }
 
-.hero-kicker,
 .section-label,
 .card-label {
   font-family: var(--mono);
@@ -259,27 +258,6 @@ svg {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 1.25rem;
-  color: var(--blue-dark);
-}
-
-.hero-kicker::before,
-.hero-kicker::after {
-  width: 1.6rem;
-  height: 1px;
-  background: currentColor;
-  content: "";
-  transform: rotate(-5deg);
-}
-
-.hero-kicker::after {
-  transform: rotate(5deg);
 }
 
 h1,
