@@ -27,10 +27,24 @@
           aria-pressed="true"
           aria-label="Mute interface sounds"
         >
-          <span class="sound-icon" aria-hidden="true"
-            ><i></i><i></i><i></i
-          ></span>
-          <span data-sound-label>sound on</span>
+          <svg
+            class="sound-icon sound-icon-on"
+            data-sound-icon="on"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M3 9v6h4l5 4V5L7 9H3Z" />
+            <path d="M16 8.5a5.5 5.5 0 0 1 0 7M18.5 5.5a10 10 0 0 1 0 13" />
+          </svg>
+          <svg
+            class="sound-icon sound-icon-off"
+            data-sound-icon="off"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M3 9v6h4l5 4V5L7 9H3Z" />
+            <path d="m16 9 5 6m0-6-5 6" />
+          </svg>
         </button>
         <span>01 / 2026</span>
       </div>

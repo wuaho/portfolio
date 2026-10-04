@@ -10,7 +10,8 @@
   var dragThreshold = 4;
   var dragState = null;
   var soundToggle = document.querySelector("[data-sound-toggle]");
-  var soundLabel = document.querySelector("[data-sound-label]");
+  var soundIconOn = document.querySelector('[data-sound-icon="on"]');
+  var soundIconOff = document.querySelector('[data-sound-icon="off"]');
   var soundEnabled = true;
   var audioContext = null;
   var focusableSelector =
@@ -23,13 +24,14 @@
   }
 
   function updateSoundToggle() {
-    if (!soundToggle || !soundLabel) return;
+    if (!soundToggle || !soundIconOn || !soundIconOff) return;
     soundToggle.setAttribute("aria-pressed", String(soundEnabled));
     soundToggle.setAttribute(
       "aria-label",
       soundEnabled ? "Mute interface sounds" : "Enable interface sounds",
     );
-    soundLabel.textContent = soundEnabled ? "sound on" : "sound off";
+    soundIconOn.hidden = !soundEnabled;
+    soundIconOff.hidden = soundEnabled;
   }
 
   function getAudioContext() {

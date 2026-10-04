@@ -141,20 +141,17 @@ svg {
 }
 
 .sound-toggle {
-  display: inline-flex;
-  min-height: 2rem;
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
   align-items: center;
-  gap: 0.45rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.25rem 0.55rem;
+  padding: 0.35rem;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   transition:
     background 180ms ease,
     border-color 180ms ease,
@@ -174,26 +171,22 @@ svg {
 }
 
 .sound-icon {
-  display: inline-flex;
-  height: 0.85rem;
-  align-items: center;
-  gap: 0.12rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
-.sound-icon i {
-  display: block;
-  width: 0.12rem;
-  height: 0.35rem;
-  border-radius: 999px;
-  background: currentColor;
+.sound-icon[hidden] {
+  display: none;
 }
 
-.sound-icon i:nth-child(2) {
-  height: 0.7rem;
-}
-
-.sound-icon i:nth-child(3) {
-  height: 0.5rem;
+.sound-toggle[aria-pressed="true"] .sound-icon-off,
+.sound-toggle[aria-pressed="false"] .sound-icon-on {
+  display: none;
 }
 
 .hero {
