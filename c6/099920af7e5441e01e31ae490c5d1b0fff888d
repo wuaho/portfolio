@@ -1,0 +1,38 @@
+tests/interface-sounds.spec.js
+  s_6ffc69e2eb3ee8::t_cf335ce7455db9 128,135
+  s_6ffc69e2eb3ee8::t_43e9c0595f1eb1 129-133
+icons/contact.svg
+  s_6ffc69e2eb3ee8::t_57ba3806a82f20 1-66
+icons/extra.svg
+  s_6ffc69e2eb3ee8::t_57ba3806a82f20 1-41
+icons/projects.svg
+  s_6ffc69e2eb3ee8::t_57ba3806a82f20 1-31
+AGENTS.md
+  s_6ffc69e2eb3ee8::t_43e9c0595f1eb1 13
+icons/about.svg
+  s_6ffc69e2eb3ee8::t_57ba3806a82f20 1-22
+icons/work.svg
+  s_6ffc69e2eb3ee8::t_57ba3806a82f20 1-44
+index.html
+  s_6ffc69e2eb3ee8::t_28a77910478e43 99,109,111,119,125,135
+styles.css
+  s_6ffc69e2eb3ee8::t_cf335ce7455db9 566-569,575-576,601-603,606-607
+  s_6ffc69e2eb3ee8::t_20ed8018881556 570-574,604-605
+  s_6ffc69e2eb3ee8::t_b647763ac17010 608
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c6099920af7e5441e01e31ae490c5d1b0fff888d",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
