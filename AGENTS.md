@@ -9,6 +9,8 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `index.html`: All visible portfolio content, section markup, external links, SVG decorations, and window dialog markup.
 - `styles.css`: All layout, colors, typography, responsive behavior, modal/window styling, and animations.
 - `script.js`: Window opening/closing, URL hash synchronization, focus trapping, Escape/backdrop handling, desktop window dragging, and synthesized interface sounds.
+- `GIFs/`: User-provided GIF animation assets reserved for the About section.
+- `Spritesheets/`: User-provided spritesheet assets reserved for the About section.
 - `tests/`: Playwright end-to-end tests for user-visible interactions.
 - `playwright.config.js`: Playwright configuration and the local static server command.
 - `package.json`: Test commands and the Playwright development dependency.
