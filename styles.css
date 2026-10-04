@@ -545,7 +545,8 @@ h1 .hero-title-name {
   width: 5.4rem;
   height: 5.4rem;
   place-items: center;
-  transition: transform 180ms ease;
+  transform-origin: bottom center;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .section-nav-icon svg {
@@ -564,9 +565,11 @@ h1 .hero-title-name {
   object-fit: contain;
   filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
     brightness(91%);
-  transition:
-    transform 180ms ease,
-    filter 180ms ease;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.section-nav a[data-window-target="projects"] .section-nav-icon img {
+  transform: scale(1.12);
 }
 
 .section-nav-label {
@@ -584,13 +587,12 @@ h1 .hero-title-name {
   background: transparent;
   color: var(--muted);
   outline: none;
-  transform: translateY(-0.25rem) scale(1.06);
 }
 
 .section-nav a:hover .section-nav-icon,
 .section-nav a:focus-visible .section-nav-icon,
 .section-nav a.is-active .section-nav-icon {
-  transform: scale(1.12) rotate(-3deg);
+  transform: scale(1.15) rotate(-3deg);
 }
 
 .section-nav a:hover .section-nav-icon img,

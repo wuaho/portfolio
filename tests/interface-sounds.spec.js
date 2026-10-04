@@ -159,8 +159,37 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
   if (!workIconBox) return;
   expect(workIconBox.width).toBeGreaterThanOrEqual(80);
 
+  const projectsIcon = nav.locator(
+    '[data-window-target="projects"] .section-nav-icon',
+  );
+  const projectsIconGeometry = await projectsIcon.evaluate((element) => {
+    const bounds = element.getBoundingClientRect();
+    const origin = getComputedStyle(element).transformOrigin.split(" ");
+    return {
+      originX: parseFloat(origin[0]),
+      originY: parseFloat(origin[1]),
+      width: bounds.width,
+      height: bounds.height,
+    };
+  });
+  expect(projectsIconGeometry.originX).toBeCloseTo(
+    projectsIconGeometry.width / 2,
+    0,
+  );
+  expect(projectsIconGeometry.originY).toBeCloseTo(
+    projectsIconGeometry.height,
+    0,
+  );
+  await expect(
+    nav.locator('[data-window-target="projects"] .section-nav-icon'),
+  ).toHaveCSS(
+    "transition-timing-function",
+    "cubic-bezier(0.34, 1.56, 0.64, 1)",
+  );
+
   const about = nav.locator('[data-window-target="about"]');
-  const initialTransform = await about.evaluate(
+  const aboutIcon = about.locator(".section-nav-icon");
+  const initialTransform = await aboutIcon.evaluate(
     (element) => getComputedStyle(element).transform,
   );
 
@@ -170,7 +199,7 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
   await expect(about).toHaveCSS("color", "rgb(116, 109, 98)");
   await expect
     .poll(() =>
-      about.evaluate((element) => getComputedStyle(element).transform),
+      aboutIcon.evaluate((element) => getComputedStyle(element).transform),
     )
     .not.toBe(initialTransform);
 });
