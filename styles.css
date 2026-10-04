@@ -598,6 +598,8 @@ h1 .hero-title-name {
 .section-nav a:hover .section-nav-icon img,
 .section-nav a:focus-visible .section-nav-icon img,
 .section-nav a.is-active .section-nav-icon img {
+  filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
+    brightness(91%) drop-shadow(0.3rem 0.3rem 0 var(--coral));
   transform: scale(1.08);
 }
 
