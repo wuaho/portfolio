@@ -197,10 +197,12 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
 
   await expect(about).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
   await expect(about).toHaveCSS("color", "rgb(116, 109, 98)");
-  await expect(about.locator(".section-nav-icon img")).not.toHaveCSS(
-    "filter",
-    /drop-shadow/,
-  );
+  const iconFilter = await about
+    .locator(".section-nav-icon img")
+    .evaluate((element) => getComputedStyle(element).filter);
+  expect(iconFilter).toContain("drop-shadow");
+  expect(iconFilter).toContain("2px 3px 0px");
+  expect(iconFilter).toContain("rgba(99, 120, 221, 0.35)");
   await expect
     .poll(() =>
       aboutIcon.evaluate((element) => getComputedStyle(element).transform),
