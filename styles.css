@@ -581,8 +581,8 @@ h1 .hero-title-name {
 .section-nav a:hover,
 .section-nav a:focus-visible,
 .section-nav a.is-active {
-  background: rgba(216, 207, 245, 0.42);
-  color: var(--blue-dark);
+  background: var(--yellow);
+  color: var(--ink);
   outline: none;
   transform: translateY(-0.25rem) scale(1.06);
 }
