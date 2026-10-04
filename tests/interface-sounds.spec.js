@@ -125,9 +125,14 @@ test("section navigation uses clickable icon tiles that scale on hover", async (
   const items = nav.locator("[data-window-target]");
 
   await expect(items).toHaveCount(5);
-  await expect(nav.locator(".section-nav-icon svg")).toHaveCount(5);
+  await expect(nav.locator(".section-nav-icon img")).toHaveCount(5);
+  await expect(nav.locator('img[src="icons/about.svg"]')).toHaveCount(1);
+  await expect(nav.locator('img[src="icons/work.svg"]')).toHaveCount(1);
+  await expect(nav.locator('img[src="icons/projects.svg"]')).toHaveCount(1);
+  await expect(nav.locator('img[src="icons/extra.svg"]')).toHaveCount(1);
+  await expect(nav.locator('img[src="icons/contact.svg"]')).toHaveCount(1);
   await expect(nav.getByText("about", { exact: true })).toBeVisible();
-  await expect(nav.getByText("experience", { exact: true })).toBeVisible();
+  await expect(nav.getByText("work", { exact: true })).toBeVisible();
   await expect(nav.getByText("projects", { exact: true })).toBeVisible();
   await expect(nav.getByText("more", { exact: true })).toBeVisible();
   await expect(nav.getByText("contact", { exact: true })).toBeVisible();

@@ -563,6 +563,17 @@ h1 .hero-title-name {
   stroke-width: 1.7;
 }
 
+.section-nav-icon img {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+  filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
+    brightness(91%);
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
 .section-nav-label {
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -585,6 +596,14 @@ h1 .hero-title-name {
 .section-nav a:focus-visible .section-nav-icon,
 .section-nav a.is-active .section-nav-icon {
   transform: scale(1.12) rotate(-3deg);
+}
+
+.section-nav a:hover .section-nav-icon img,
+.section-nav a:focus-visible .section-nav-icon img,
+.section-nav a.is-active .section-nav-icon img {
+  filter: invert(42%) sepia(75%) saturate(1000%) hue-rotate(319deg)
+    brightness(97%);
+  transform: scale(1.08);
 }
 
 body.window-open {
