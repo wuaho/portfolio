@@ -1,0 +1,29 @@
+tests/interface-sounds.spec.js
+  s_6ffc69e2eb3ee8::t_df970c209e32bb 59-74
+styles.css
+  s_6ffc69e2eb3ee8::t_2a4b1dd29af94a 117-119
+  s_6ffc69e2eb3ee8::t_4f70934844355d 917-920,933-935
+  s_6ffc69e2eb3ee8::t_beb57a972a39eb 102-105,108-116,120-167,227
+  s_6ffc69e2eb3ee8::t_febce630c7a035 936
+index.html
+  s_6ffc69e2eb3ee8::t_2a4b1dd29af94a 98-101,107-110
+  s_6ffc69e2eb3ee8::t_f60cda28c58ecf 17,49-86,88-97,102-106,111-115
+AGENTS.md
+  s_6ffc69e2eb3ee8::t_395b029b6abdb9 50
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "ba9a3f3891f81b06533ac904d26fffa2c589985d",
+  "prompts": {},
+  "sessions": {
+    "s_6ffc69e2eb3ee8": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_efce7a1d5ffeaNMbDopxPHvwj6",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
