@@ -282,6 +282,7 @@
 
   if (soundToggle) {
     soundToggle.addEventListener("click", function () {
+      var wasEnabled = soundEnabled;
       soundEnabled = !soundEnabled;
       try {
         window.localStorage.setItem(
@@ -292,6 +293,7 @@
         // Sound preference remains session-only when storage is unavailable.
       }
       updateSoundToggle();
+      if (!wasEnabled && soundEnabled) playWindowSound("open");
     });
   }
 
