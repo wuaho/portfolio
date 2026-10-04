@@ -233,7 +233,7 @@ svg {
 
 .hero-art {
   position: absolute;
-  top: -1.5rem;
+  top: 0.75rem;
   right: -4.5rem;
   width: 4.25rem;
   height: 4.25rem;
@@ -1000,7 +1000,7 @@ body.window-open {
   }
 
   .hero {
-    padding-top: 4.5rem;
+    padding-top: 7.25rem;
     padding-bottom: 4.5rem;
   }
 
@@ -1009,7 +1009,7 @@ body.window-open {
   }
 
   .hero-art {
-    top: -2rem;
+    top: -0.25rem;
     right: -2.5rem;
     width: 6rem;
     height: 6rem;

@@ -100,9 +100,7 @@ test("landing content is wrapped in the home operating system window", async ({
   expect(topStarBox).not.toBeNull();
   if (!heroTitleBox || !topStarBox) return;
 
-  expect(topStarBox.y + topStarBox.height).toBeLessThanOrEqual(
-    heroTitleBox.y + 4,
-  );
+  expect(topStarBox.y + topStarBox.height).toBeLessThanOrEqual(heroTitleBox.y);
 });
 
 test("section navigation uses clickable icon tiles that scale on hover", async ({
