@@ -90,6 +90,7 @@ test("landing content is wrapped in the home operating system window", async ({
   expect(
     Math.abs(homeWindowBox.x + homeWindowBox.width / 2 - 640),
   ).toBeLessThanOrEqual(2);
+  expect(homeWindowBox.y).toBeGreaterThanOrEqual(100);
 });
 
 test("penguin switches from idle to spin animation on hover", async ({
@@ -109,10 +110,13 @@ test("penguin switches from idle to spin animation on hover", async ({
   const penguinBox = await penguin.boundingBox();
   expect(penguinBox).not.toBeNull();
   if (!penguinBox) return;
-  expect(penguinBox.width).toBeGreaterThanOrEqual(176);
-  expect(penguinBox.height).toBeGreaterThanOrEqual(176);
+  expect(penguinBox.width).toBeGreaterThanOrEqual(352);
+  expect(penguinBox.height).toBeGreaterThanOrEqual(352);
 
-  await penguin.hover();
+  await page.mouse.move(
+    penguinBox.x + penguinBox.width / 2,
+    penguinBox.y + penguinBox.height / 2,
+  );
 
   await expect(idleSprite).toBeHidden();
   await expect(spinSprite).toBeVisible();

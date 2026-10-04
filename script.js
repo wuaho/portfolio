@@ -12,6 +12,7 @@
   var soundToggle = document.querySelector("[data-sound-toggle]");
   var soundIconOn = document.querySelector('[data-sound-icon="on"]');
   var soundIconOff = document.querySelector('[data-sound-icon="off"]');
+  var penguin = document.querySelector("[data-penguin]");
   var soundEnabled = true;
   var audioContext = null;
   var focusableSelector =
@@ -298,6 +299,23 @@
   }
 
   updateSoundToggle();
+
+  if (penguin) {
+    function updatePenguinHover(event) {
+      var bounds = penguin.getBoundingClientRect();
+      var isOver =
+        event.clientX >= bounds.left &&
+        event.clientX <= bounds.right &&
+        event.clientY >= bounds.top &&
+        event.clientY <= bounds.bottom;
+      penguin.classList.toggle("is-hovered", isOver);
+    }
+
+    document.addEventListener("mousemove", updatePenguinHover);
+    window.addEventListener("blur", function () {
+      penguin.classList.remove("is-hovered");
+    });
+  }
 
   function syncWindowWithUrl() {
     var id = window.location.hash.slice(1);
