@@ -76,7 +76,7 @@ test("landing content is wrapped in the home operating system window", async ({
   await expect(homeWindow.locator("#hero-title")).toHaveText("hi! i'm Juanjo");
   await expect(homeWindow.locator(".hero-title-greeting")).toHaveCSS(
     "font-weight",
-    "400",
+    "300",
   );
   await expect(homeWindow.locator(".hero-title-name")).toHaveCSS(
     "font-weight",
