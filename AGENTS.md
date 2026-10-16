@@ -2,28 +2,32 @@
 
 ## Project Overview
 
-This is Juanjo Requena's personal portfolio. It is a dependency-light static website with no framework or build step. The page is designed to be opened from a static web server and is intentionally easy to edit directly.
+This is Juanjo Requena's personal portfolio. It is a dependency-light static website with no framework or build step: plain HTML, CSS split into small files, and native ES modules. The page must be served from a static web server (ES modules do not load from `file://`).
 
 ## Project Structure
 
 - `index.html`: All visible portfolio content, section markup, external links, SVG decorations, and window dialog markup.
-- `styles.css`: All layout, colors, typography, responsive behavior, modal/window styling, and animations.
-- `script.js`: Window opening/closing, URL hash synchronization, focus trapping, Escape/backdrop handling, desktop window dragging, and synthesized interface sounds.
-- `GIFs/`: User-provided GIF animation assets reserved for the About section.
-- `icons/`: Local SVG navigation icons copied from the selected option set.
-- `Spritesheets/`: User-provided spritesheet assets reserved for the About section.
-- `tests/`: Playwright end-to-end tests for user-visible interactions.
-- `playwright.config.js`: Playwright configuration and the local static server command.
-- `package.json`: Test commands and the Playwright development dependency.
+- `src/styles/main.css`: Stylesheet entry point. Imports the other files in cascade order and documents the breakpoints.
+- `src/styles/tokens.css`: Design tokens (colors, fonts, durations, z-index scale). Add new colors and timings here instead of hardcoding them.
+- `src/styles/base.css`, `layout.css`, `motion.css`: Element defaults, page layout, reveal animation, and reduced-motion overrides.
+- `src/styles/components/`: One file per UI component, each with its own mobile-first media queries.
+- `src/scripts/main.js`: Script entry point. Initializes features and connects them.
+- `src/scripts/config.js`: Shared constants (desktop breakpoint, timings, storage keys).
+- `src/scripts/features/`: `windows.js` (open/close, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues and the mute toggle), `penguin.js` (hover tracking).
+- `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`).
+- `assets/icons/`: Local SVG navigation icons.
+- `assets/penguin/gifs/`, `assets/penguin/spritesheets/`: User-provided penguin animation assets, kebab-case file names.
+- `tests/e2e/`: Playwright end-to-end specs, one file per feature.
+- `tests/support/helpers.js`: Shared test helpers (viewports, stable bounding boxes, drag, fake Web Audio).
+- `playwright.config.js`, `eslint.config.js`, `.prettierignore`, `.editorconfig`: Tooling configuration.
+- `.github/workflows/ci.yml`: CI that runs lint, format check, and E2E tests.
 
-The previous Gatsby/React implementation was intentionally removed. Do not reintroduce Gatsby, React, Tailwind, or a frontend framework unless explicitly requested.
+The previous Gatsby/React implementation was intentionally removed. Do not reintroduce Gatsby, React, Tailwind, a bundler, or a frontend framework unless explicitly requested.
 
 ## Running The Site
 
-Use a static server from the repository root:
-
 ```bash
-python3 -m http.server 4173
+npm start
 ```
 
 Open `http://127.0.0.1:4173` in a browser.
@@ -49,21 +53,24 @@ The Playwright config starts the static server automatically. Run the relevant E
 
 - The navigation links use `data-window-target` and open the matching section identified by `data-window`. The current windows are `about`, `experience`, `projects`, `more`, and `contact`.
 - The landing hero and section navigation live inside the `.home-window` OS-style card. The sound toggle stays outside it as a fixed viewport control.
-- The bottom-right penguin companion uses the first frame of `Spritesheets/Idle.png` by default and swaps to `GIFs/Spin Attack.gif` on hover/focus.
+- The bottom-right penguin companion uses the first frame of `assets/penguin/spritesheets/idle.png` by default and swaps to `assets/penguin/gifs/spin-attack.gif` on hover/focus.
 - Every section window is a dialog with a `.window-chrome` title bar and `.window-close` button.
-- Desktop windows use the `52rem` breakpoint. Their title bar is draggable, and the window is clamped inside the viewport.
+- Desktop windows use the `52rem` breakpoint (`DESKTOP_QUERY` in `config.js`). Their title bar is draggable, and the window is clamped inside the viewport.
 - Mobile windows are full-screen modals. They must not be draggable.
 - `Escape`, the backdrop, the close button, and browser history close or change the active window.
 - URL hashes such as `#experience` are part of the navigation contract.
-- Opening and closing windows play short Web Audio cues after direct user actions. The sound toggle persists its preference in local storage.
+- Opening and closing windows play short Web Audio cues after direct user actions only (not deep links or history navigation). The sound toggle persists its preference in local storage under `juanjo-sound`.
 - Keep the stable attributes and class names used by the E2E tests unless the tests are updated in the same change.
 
 ## Editing Guidelines
 
-- Edit content in `index.html`, visual rules in `styles.css`, and behavior in `script.js`.
-- Keep the CSS mobile-first. Add desktop behavior inside the existing media queries.
+- Edit content in `index.html`, visual rules in `src/styles/`, and behavior in `src/scripts/`.
+- Keep the CSS mobile-first. Put desktop behavior in `@media (min-width: ...)` blocks inside the component file it belongs to.
+- New component styles go in a new file under `src/styles/components/`, imported from `main.css`.
+- Use `data-*` attributes as JavaScript hooks; do not select elements in JavaScript by styling classes unless the class is part of the documented window contract.
+- Keep feature modules independent. Cross-feature wiring belongs in `main.js`.
 - Preserve the full portfolio content unless the user explicitly asks to remove it.
-- Keep external links using `target="_blank"` and `rel="noopener noreferrer"`.
+- Keep external links using `target="_blank"` and `rel="noopener noreferrer"` (enforced by `tests/e2e/contact.spec.js`).
 - Prefer semantic HTML, visible keyboard focus, accessible names, and reduced-motion support.
 - Do not add image dependencies for the profile; the current design intentionally has no profile image.
 - Use ASCII for new code and comments unless content requires another character.
@@ -72,11 +79,10 @@ The Playwright config starts the static server automatically. Run the relevant E
 
 Before completing a feature:
 
-1. Run `npm run test:e2e`.
-2. Run `npx prettier --check index.html styles.css script.js package.json playwright.config.js tests/*.js README.md`.
-3. Run `node --check script.js` and `git diff --check`.
-4. Inspect `git diff` and `git status --short`.
-5. Commit the completed changes. The working tree should be clean after the commit.
+1. Run `npm run check` (ESLint, Prettier check, and the E2E suite).
+2. Run `git diff --check`.
+3. Inspect `git diff` and `git status --short`.
+4. Commit the completed changes. The working tree should be clean after the commit.
 
 Use concise imperative commit messages, for example:
 

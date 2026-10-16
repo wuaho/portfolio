@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/styles/main.css" />
     <title>Juanjo Requena - Backend Software Engineer</title>
   </head>
   <body>
@@ -84,7 +84,7 @@
                 fill="currentColor"
               />
             </svg>
-            <h1 id="hero-title">
+            <h1 id="hero-title" class="hero-title">
               <span class="hero-title-greeting">hi! </span
               ><span class="hero-title-name">i'm juanjo</span>
             </h1>
@@ -96,7 +96,7 @@
           <nav class="section-nav" aria-label="Portfolio sections">
             <a href="#about" data-window-target="about" aria-haspopup="dialog">
               <span class="section-nav-icon" aria-hidden="true">
-                <img src="icons/about.svg" alt="" />
+                <img src="assets/icons/about.svg" alt="" />
               </span>
               <span class="section-nav-label">about</span>
             </a>
@@ -106,7 +106,7 @@
               aria-haspopup="dialog"
             >
               <span class="section-nav-icon" aria-hidden="true">
-                <img src="icons/work.svg" alt="" />
+                <img src="assets/icons/work.svg" alt="" />
               </span>
               <span class="section-nav-label">work</span>
             </a>
@@ -116,13 +116,13 @@
               aria-haspopup="dialog"
             >
               <span class="section-nav-icon" aria-hidden="true">
-                <img src="icons/projects.svg" alt="" />
+                <img src="assets/icons/projects.svg" alt="" />
               </span>
               <span class="section-nav-label">projects</span>
             </a>
             <a href="#more" data-window-target="more" aria-haspopup="dialog">
               <span class="section-nav-icon" aria-hidden="true">
-                <img src="icons/extra.svg" alt="" />
+                <img src="assets/icons/extra.svg" alt="" />
               </span>
               <span class="section-nav-label">more</span>
             </a>
@@ -132,7 +132,7 @@
               aria-haspopup="dialog"
             >
               <span class="section-nav-icon" aria-hidden="true">
-                <img src="icons/contact.svg" alt="" />
+                <img src="assets/icons/contact.svg" alt="" />
               </span>
               <span class="section-nav-label">contact</span>
             </a>
@@ -144,7 +144,7 @@
 
       <section
         id="about"
-        class="section window-panel"
+        class="window-panel"
         aria-labelledby="about-title"
         data-window="about"
         role="dialog"
@@ -186,7 +186,7 @@
 
       <section
         id="experience"
-        class="section window-panel"
+        class="window-panel"
         aria-labelledby="experience-title"
         data-window="experience"
         role="dialog"
@@ -222,7 +222,7 @@
                   >Coverwallet, an Aon company</a
                 >
               </h3>
-              <p class="meta">Software Engineer · Sep 2021 - Aug 2024</p>
+              <p class="card-meta">Software Engineer · Sep 2021 - Aug 2024</p>
               <p>
                 Developed internal tools and backend services for insurance
                 agents to streamline their operations.
@@ -241,7 +241,7 @@
 
       <section
         id="projects"
-        class="section window-panel"
+        class="window-panel"
         aria-labelledby="projects-title"
         data-window="projects"
         role="dialog"
@@ -296,7 +296,7 @@
 
       <section
         id="more"
-        class="section window-panel"
+        class="window-panel"
         aria-labelledby="more-title"
         data-window="more"
         role="dialog"
@@ -407,7 +407,7 @@
 
       <section
         id="contact"
-        class="section window-panel"
+        class="window-panel"
         aria-labelledby="contact-title"
         data-window="contact"
         role="dialog"
@@ -491,16 +491,16 @@
         data-penguin-idle
         aria-hidden="true"
       >
-        <img src="Spritesheets/Idle.png" alt="" />
+        <img src="assets/penguin/spritesheets/idle.png" alt="" />
       </span>
       <img
         class="penguin-sprite penguin-spin"
         data-penguin-spin
-        src="GIFs/Spin Attack.gif"
+        src="assets/penguin/gifs/spin-attack.gif"
         alt=""
       />
     </div>
 
-    <script src="script.js" defer></script>
+    <script type="module" src="src/scripts/main.js"></script>
   </body>
 </html>

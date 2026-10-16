@@ -1,0 +1,76 @@
+.hero {
+  position: relative;
+  padding: 5.5rem 0 3.5rem;
+  text-align: center;
+}
+
+.hero-art {
+  position: absolute;
+  top: 1.5rem;
+  right: -4.5rem;
+  width: 4.25rem;
+  height: 4.25rem;
+  color: var(--coral);
+  transform: rotate(12deg);
+}
+
+.hero-art.left {
+  top: auto;
+  right: auto;
+  bottom: 1.8rem;
+  left: -2.7rem;
+  width: 4.5rem;
+  color: var(--blue);
+  transform: rotate(-11deg);
+}
+
+.hero-title {
+  max-width: 13ch;
+  margin: 0 auto 1.25rem;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 12vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.08em;
+}
+
+.hero-title-greeting {
+  font-weight: 300;
+}
+
+.hero-title-name {
+  color: var(--coral);
+  font-weight: 500;
+}
+
+.hero-subline {
+  margin: 1.35rem auto 0;
+  color: var(--blue-dark);
+  font-family: var(--mono);
+  font-size: 0.76rem;
+}
+
+.hero-subline::before {
+  color: var(--coral);
+  content: "// ";
+}
+
+@media (min-width: 52rem) {
+  .hero {
+    padding-top: 7.25rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .hero-art {
+    top: 0.25rem;
+    right: -2.5rem;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .hero-art.left {
+    bottom: 2.5rem;
+    left: 1rem;
+    width: 5.5rem;
+  }
+}

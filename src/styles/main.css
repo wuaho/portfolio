@@ -1,0 +1,22 @@
+/*
+ * Stylesheet entry point. Order matters: tokens first, then global base
+ * rules, layout, components, and finally motion overrides.
+ *
+ * Breakpoints (media queries cannot read custom properties):
+ *   - 35rem: tablet; wider navigation and grids.
+ *   - 52rem: desktop; floating, draggable windows. Mirrored in
+ *     src/scripts/config.js as DESKTOP_QUERY.
+ */
+@import url("tokens.css");
+@import url("base.css");
+@import url("layout.css");
+@import url("components/sound-toggle.css");
+@import url("components/home-window.css");
+@import url("components/hero.css");
+@import url("components/section-nav.css");
+@import url("components/window.css");
+@import url("components/section-heading.css");
+@import url("components/cards.css");
+@import url("components/contact-links.css");
+@import url("components/penguin.css");
+@import url("motion.css");

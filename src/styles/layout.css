@@ -1,0 +1,36 @@
+.site-wrap {
+  width: min(100% - 2rem, 1060px);
+  margin-inline: auto;
+}
+
+.topbar {
+  position: fixed;
+  z-index: var(--z-chrome);
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.topbar-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Lock page scroll while a section window is open. */
+body.window-open {
+  overflow: hidden;
+}
+
+@media (min-width: 35rem) {
+  .site-wrap {
+    width: min(100% - 3rem, 1060px);
+  }
+}
+
+@media (min-width: 52rem) {
+  .site-wrap {
+    width: min(100% - 5rem, 1060px);
+  }
+}

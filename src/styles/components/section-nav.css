@@ -1,0 +1,95 @@
+.section-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+
+.section-nav a {
+  display: flex;
+  min-height: 6.4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--duration-fast) ease,
+    color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.section-nav a:hover,
+.section-nav a:focus-visible,
+.section-nav a.is-active {
+  background: transparent;
+  color: var(--muted);
+  outline: none;
+}
+
+.section-nav-icon {
+  display: grid;
+  width: 5.4rem;
+  height: 5.4rem;
+  place-items: center;
+  transform-origin: bottom center;
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.section-nav-icon img {
+  width: 5.2rem;
+  height: 5.2rem;
+  object-fit: contain;
+  /* Tints the black source SVGs to the ink color. */
+  filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
+    brightness(91%);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+/* The projects artwork has more padding than the others. */
+.section-nav a[data-window-target="projects"] .section-nav-icon img {
+  transform: scale(1.12);
+}
+
+.section-nav a:hover .section-nav-icon,
+.section-nav a:focus-visible .section-nav-icon,
+.section-nav a.is-active .section-nav-icon {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+.section-nav a:hover .section-nav-icon img,
+.section-nav a:focus-visible .section-nav-icon img,
+.section-nav a.is-active .section-nav-icon img {
+  transform: scale(1.08);
+}
+
+.section-nav-label {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: transform var(--duration-fast) ease;
+}
+
+@media (min-width: 35rem) {
+  .section-nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .section-nav a {
+    min-height: 2.85rem;
+  }
+}
+
+@media (min-width: 52rem) {
+  .section-nav {
+    width: min(100%, 720px);
+  }
+}

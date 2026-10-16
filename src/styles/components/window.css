@@ -1,0 +1,168 @@
+/*
+ * Section windows. Mobile: full-screen modal. Desktop (52rem+): floating,
+ * draggable window whose position is set inline by window-drag.js.
+ */
+.window-backdrop {
+  position: fixed;
+  z-index: var(--z-backdrop);
+  inset: 0;
+  background: rgba(41, 39, 35, 0.36);
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease;
+  backdrop-filter: blur(3px);
+}
+
+.window-backdrop.is-visible {
+  opacity: 1;
+}
+
+.window-panel {
+  position: fixed;
+  z-index: var(--z-window);
+  inset: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  margin: 0;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  box-shadow: 0 1rem 3rem rgba(41, 39, 35, 0.2);
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(1rem);
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-window) ease;
+}
+
+.window-panel[hidden],
+.window-backdrop[hidden] {
+  display: none;
+}
+
+.window-panel.is-open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.window-chrome {
+  display: grid;
+  grid-template-columns: 4.2rem minmax(0, 1fr) 2.2rem;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 0 0 auto;
+  border-bottom: 1px solid var(--ink);
+  padding: 0.55rem 0.75rem;
+  background: var(--paper-white);
+}
+
+.window-dots {
+  display: flex;
+  gap: 0.32rem;
+}
+
+.window-dots i {
+  display: block;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.window-dots i:nth-child(2) {
+  background: var(--yellow);
+}
+
+.window-dots i:nth-child(3) {
+  background: var(--mint);
+}
+
+.window-title {
+  overflow: hidden;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.window-close {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 0.45rem;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.window-close:hover,
+.window-close:focus-visible {
+  border-color: var(--ink);
+  background: var(--coral);
+  color: var(--ink);
+  outline: none;
+}
+
+.window-body {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* Center window content in a readable column. */
+.window-body > * {
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 35rem) {
+  .window-body {
+    padding: 2rem 2rem 3.5rem;
+  }
+}
+
+@media (min-width: 52rem) {
+  .window-panel {
+    inset: 8vh auto auto 50%;
+    width: min(calc(100% - 4rem), 860px);
+    height: min(78vh, 720px);
+    border-radius: 1.15rem;
+    transform: translate(-50%, 1rem) rotate(-0.2deg);
+  }
+
+  .window-panel.is-open {
+    transform: translate(-50%, 0) rotate(-0.2deg);
+  }
+
+  .window-chrome {
+    min-height: 3.5rem;
+    padding-inline: 1rem;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+  }
+
+  .window-chrome:active,
+  .window-panel.is-dragging .window-chrome {
+    cursor: grabbing;
+  }
+
+  .window-body {
+    padding: 2.5rem 3rem 4rem;
+  }
+}
