@@ -1,21 +1,20 @@
 .contact-links {
   display: grid;
   max-width: 42rem;
-  gap: 0.85rem;
+  gap: 0.6rem;
   margin: 0 auto;
 }
 
 .contact-link {
   display: grid;
   grid-template-columns: 2.75rem minmax(0, 1fr) auto;
-  min-height: 4.6rem;
+  min-height: 4.25rem;
   align-items: center;
   gap: 0.85rem;
-  border: 1px solid var(--ink);
-  border-radius: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
   padding: 0.75rem 1rem;
   background: var(--paper-white);
-  box-shadow: var(--shadow);
   text-decoration: none;
   transition:
     transform var(--duration-fast) ease,
@@ -29,18 +28,6 @@
   outline: none;
   transform: translateX(0.25rem) rotate(-0.4deg);
   box-shadow: 0.45rem 0.45rem 0 rgba(41, 39, 35, 0.1);
-}
-
-.contact-link-linkedin {
-  background: var(--lavender);
-}
-
-.contact-link-github {
-  background: var(--mint);
-}
-
-.contact-link-blog {
-  background: var(--peach);
 }
 
 .contact-link-icon {
@@ -63,9 +50,9 @@
 
 .contact-link strong {
   color: var(--ink);
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  font-weight: 400;
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 700;
 }
 
 .contact-link small {
@@ -78,4 +65,32 @@
 .contact-link-arrow {
   color: var(--coral);
   font-size: 1.3rem;
+}
+
+/* Desktop keeps the colorful raised cards. */
+@media (min-width: 52rem) {
+  .contact-link {
+    min-height: 4.6rem;
+    border-color: var(--ink);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-link strong {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+
+  .contact-link-linkedin {
+    background: var(--lavender);
+  }
+
+  .contact-link-github {
+    background: var(--mint);
+  }
+
+  .contact-link-blog {
+    background: var(--peach);
+  }
 }

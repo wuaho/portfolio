@@ -27,7 +27,7 @@
   margin: 0;
   border: 1px solid var(--ink);
   border-radius: 0;
-  background: var(--paper);
+  background: var(--paper-white);
   box-shadow: 0 1rem 3rem rgba(41, 39, 35, 0.2);
   opacity: 0;
   overflow: hidden;
@@ -49,18 +49,19 @@
 
 .window-chrome {
   display: grid;
-  grid-template-columns: 4.2rem minmax(0, 1fr) 2.2rem;
-  min-height: 3.25rem;
+  grid-template-columns: minmax(0, 1fr) 2.5rem;
+  min-height: 3.75rem;
   align-items: center;
   gap: 0.75rem;
   flex: 0 0 auto;
-  border-bottom: 1px solid var(--ink);
-  padding: 0.55rem 0.75rem;
-  background: var(--paper-white);
+  padding: 0.55rem 0.75rem 0.55rem 1.25rem;
+  background: var(--ink-soft);
+  color: var(--paper);
 }
 
+/* The traffic-light dots only appear on the desktop window. */
 .window-dots {
-  display: flex;
+  display: none;
   gap: 0.32rem;
 }
 
@@ -83,36 +84,57 @@
 
 .window-title {
   overflow: hidden;
-  color: var(--muted);
+  color: inherit;
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-align: center;
+  letter-spacing: 0.04em;
   text-overflow: ellipsis;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 
+/*
+ * Mobile close control: a double chevron drawn in CSS. The "x" glyph in the
+ * markup is hidden here and restored on desktop.
+ */
 .window-close {
+  position: relative;
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   place-items: center;
   border: 1px solid transparent;
   border-radius: 0.45rem;
   background: transparent;
-  color: var(--muted);
+  color: var(--paper);
   cursor: pointer;
-  font-size: 1.45rem;
+  font-size: 0;
   line-height: 1;
+}
+
+.window-close::before,
+.window-close::after {
+  position: absolute;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.window-close::before {
+  top: 0.8rem;
+}
+
+.window-close::after {
+  top: 1.25rem;
 }
 
 .window-close:hover,
 .window-close:focus-visible {
-  border-color: var(--ink);
-  background: var(--coral);
-  color: var(--ink);
+  border-color: var(--paper);
   outline: none;
 }
 
@@ -138,6 +160,7 @@
 
 @media (min-width: 52rem) {
   .window-panel {
+    background: var(--paper);
     inset: 8vh auto auto 50%;
     width: min(calc(100% - 4rem), 860px);
     height: min(78vh, 720px);
@@ -150,8 +173,12 @@
   }
 
   .window-chrome {
+    grid-template-columns: 4.2rem minmax(0, 1fr) 2.2rem;
     min-height: 3.5rem;
+    border-bottom: 1px solid var(--ink);
     padding-inline: 1rem;
+    background: var(--paper-white);
+    color: var(--muted);
     cursor: grab;
     touch-action: none;
     user-select: none;
@@ -160,6 +187,36 @@
   .window-chrome:active,
   .window-panel.is-dragging .window-chrome {
     cursor: grabbing;
+  }
+
+  .window-dots {
+    display: flex;
+  }
+
+  .window-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .window-close {
+    width: 2rem;
+    height: 2rem;
+    color: var(--muted);
+    font-size: 1.45rem;
+  }
+
+  .window-close::before,
+  .window-close::after {
+    display: none;
+  }
+
+  .window-close:hover,
+  .window-close:focus-visible {
+    border-color: var(--ink);
+    background: var(--coral);
+    color: var(--ink);
   }
 
   .window-body {
