@@ -39,6 +39,8 @@
 
 .section-nav-icon {
   display: grid;
+  border-radius: 1rem;
+  background: var(--tile);
   width: 5.4rem;
   height: 5.4rem;
   place-items: center;
@@ -91,6 +93,10 @@
 
   .section-nav a {
     min-height: 2.85rem;
+  }
+
+  .section-nav-icon {
+    background: transparent;
   }
 }
 

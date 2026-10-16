@@ -2,18 +2,12 @@
 .home-window {
   position: relative;
   width: min(100%, 820px);
-  margin: clamp(2.5rem, 8vw, 5rem) auto 0;
-  border: 1px solid rgba(41, 39, 35, 0.7);
-  border-radius: 1.2rem;
-  background: var(--paper-white);
-  box-shadow:
-    0 0.5rem 0 rgba(41, 39, 35, 0.08),
-    0 0.75rem 1.5rem rgba(41, 39, 35, 0.1);
-  overflow: hidden;
+  margin: clamp(3.5rem, 12vw, 5rem) auto 0;
 }
 
+/* The OS-style card chrome only appears from the tablet breakpoint up. */
 .home-window-titlebar {
-  display: flex;
+  display: none;
   min-height: 2.7rem;
   align-items: center;
   justify-content: space-between;
@@ -60,6 +54,20 @@
 }
 
 @media (min-width: 35rem) {
+  .home-window {
+    border: 1px solid rgba(41, 39, 35, 0.7);
+    border-radius: 1.2rem;
+    background: var(--paper-white);
+    box-shadow:
+      0 0.5rem 0 rgba(41, 39, 35, 0.08),
+      0 0.75rem 1.5rem rgba(41, 39, 35, 0.1);
+    overflow: hidden;
+  }
+
+  .home-window-titlebar {
+    display: flex;
+  }
+
   .home-window-body {
     padding: 0 2rem 2rem;
   }

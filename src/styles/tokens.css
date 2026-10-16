@@ -15,6 +15,9 @@
   --lavender: #d8cff5;
   --peach: #ffe3ba;
   --line: rgba(41, 39, 35, 0.16);
+  --tile: #fff6e0;
+  --water: #9fd0ff;
+  --water-light: #cfe6ff;
 
   /* Elevation */
   --shadow: 0 8px 0 rgba(41, 39, 35, 0.09);
