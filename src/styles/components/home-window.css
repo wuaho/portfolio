@@ -75,8 +75,8 @@
 
 @media (min-width: 52rem) {
   .home-window {
-    width: min(100%, 39rem);
-    /* The window floats about a quarter of the way down the viewport. */
-    margin-top: clamp(5rem, 24dvh, 14rem);
+    width: min(100%, 51rem);
+    /* Vertically centered by .site-wrap; the water band meets its midline. */
+    margin-top: 0;
   }
 }

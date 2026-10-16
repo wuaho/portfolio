@@ -37,7 +37,7 @@ test("section navigation shows one icon tile per window", async ({ page }) => {
   const workIconBox = await getBox(
     nav.locator('img[src="assets/icons/work.svg"]'),
   );
-  expect(workIconBox.width).toBeGreaterThanOrEqual(56);
+  expect(workIconBox.width).toBeGreaterThanOrEqual(80);
 });
 
 test("section navigation icons scale from the bottom on hover", async ({

@@ -49,6 +49,16 @@ body.window-open {
 }
 
 @media (min-width: 52rem) {
+  /* Center the home window; the water band's top edge is the viewport midline. */
+  .site-wrap {
+    padding-block: 2rem;
+    align-content: center;
+  }
+
+  body::after {
+    height: 50dvh;
+  }
+
   .site-wrap {
     width: min(100% - 5rem, 1060px);
   }
