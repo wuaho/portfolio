@@ -1,0 +1,110 @@
+src/styles/main.css
+  s_c6a81b0e85466c::t_b0c0f1fd611d50 1-22
+src/scripts/features/sound.js
+  s_c6a81b0e85466c::t_3c48567917dec3 1-75
+src/scripts/config.js
+  s_c6a81b0e85466c::t_40ec16ee826e36 1-17
+playwright.config.js
+  s_c6a81b0e85466c::t_029f52f185a89e 4
+  s_c6a81b0e85466c::t_642a24dc5452b0 8
+package.json
+  s_c6a81b0e85466c::t_f3be92069edd0d 20-24
+  s_c6a81b0e85466c::t_5ced93e812beec 6-8,10-13,15-17
+src/styles/components/hero.css
+  s_c6a81b0e85466c::t_37c5823c5e0b01 1-76
+src/styles/components/window.css
+  s_c6a81b0e85466c::t_4a4940ddeda31f 1-168
+src/styles/components/sound-toggle.css
+  s_c6a81b0e85466c::t_e8772987ac1d77 1-47
+src/styles/motion.css
+  s_c6a81b0e85466c::t_ae4d650da3e601 1-29
+src/scripts/lib/storage.js
+  s_c6a81b0e85466c::t_94f86634cb4455 1-18
+src/scripts/features/windows.js
+  s_c6a81b0e85466c::t_0fed636f80a6fe 28-30,46-47,67-68,71,73
+  s_c6a81b0e85466c::t_a6c8113a4d3485 1-27,31-45,48-66,69-70,72,74-160
+src/styles/tokens.css
+  s_c6a81b0e85466c::t_b267653eb924e9 1-40
+src/styles/components/home-window.css
+  s_c6a81b0e85466c::t_03943dd434f63a 1-72
+tests/e2e/windows.spec.js
+  s_c6a81b0e85466c::t_0f3cabdcd2ef52 1-31,36-106
+  s_c6a81b0e85466c::t_78278c8bb10695 32-35
+tests/e2e/contact.spec.js
+  s_c6a81b0e85466c::t_1019fa33a6f8db 2-19,21-30
+  s_c6a81b0e85466c::t_78278c8bb10695 20
+src/styles/layout.css
+  s_c6a81b0e85466c::t_76d119a471d841 1-36
+tests/e2e/sound.spec.js
+  s_c6a81b0e85466c::t_159c2938ff639b 2-80
+  s_c6a81b0e85466c::t_bcd134ad708e5f 1
+tests/e2e/penguin.spec.js
+  s_c6a81b0e85466c::t_a2c9527994f79a 1-45
+.github/workflows/ci.yml
+  s_c6a81b0e85466c::t_18de2a1aa068a6 1-29
+src/scripts/lib/focus.js
+  s_c6a81b0e85466c::t_af3f1d5f14b11d 1-27
+src/styles/components/section-heading.css
+  s_c6a81b0e85466c::t_fa08654ac8e777 1-36
+index.html
+  s_c6a81b0e85466c::t_3370b7213c2ca6 17,87,99,109,119,125,135,147,189,225,244,299,410,494,499,504
+AGENTS.md
+  s_c6a81b0e85466c::t_e177a0834e4e87 5,10-25,30,56,58,62,67-71,73,82-85
+README.md
+  s_c6a81b0e85466c::t_30d4c94f735c41 3-5,7,10-12,15-16,18,20-28,30,32-52,55,57-70,72-80
+tests/e2e/window-drag.spec.js
+  s_c6a81b0e85466c::t_30497550528f8b 2-99
+  s_c6a81b0e85466c::t_4dc4bc81adf41c 1
+  s_c6a81b0e85466c::t_8b6d81b04322c6 100
+tests/support/helpers.js
+  s_c6a81b0e85466c::t_0e3fd08628eaeb 1-111
+src/scripts/features/penguin.js
+  s_c6a81b0e85466c::t_17232eaf9d81e9 1-21
+tests/e2e/section-nav.spec.js
+  s_c6a81b0e85466c::t_78278c8bb10695 27-29
+  s_c6a81b0e85466c::t_2f4bdc534fc22e 1-26,30-84
+src/styles/base.css
+  s_c6a81b0e85466c::t_4f545940b8ecb0 1-89
+src/styles/components/section-nav.css
+  s_c6a81b0e85466c::t_4da47a8281a530 1-95
+src/styles/components/contact-links.css
+  s_c6a81b0e85466c::t_525621b2feb7df 1-81
+src/styles/components/cards.css
+  s_c6a81b0e85466c::t_2487272465cfee 50,53,57,59-63
+  s_c6a81b0e85466c::t_be26e029175f56 1-49,51-52,54-56,58,64-196
+src/scripts/features/window-drag.js
+  s_c6a81b0e85466c::t_75ae95aca05c49 1-96
+src/styles/components/penguin.css
+  s_c6a81b0e85466c::t_3ee00ec651c3d4 1-81
+tests/e2e/home.spec.js
+  s_c6a81b0e85466c::t_8fb8e5f6b417b5 1-68
+  s_c6a81b0e85466c::t_029f52f185a89e 69-87
+src/scripts/main.js
+  s_c6a81b0e85466c::t_4b1e6d97e8b6bb 1-15
+.editorconfig
+  s_c6a81b0e85466c::t_64f9d3ea749c64 1-9
+.nvmrc
+  s_c6a81b0e85466c::t_9860be7ed24845 1
+.prettierignore
+  s_c6a81b0e85466c::t_4811d1c3eff510 1-5
+eslint.config.js
+  s_c6a81b0e85466c::t_8e434085417192 1-25
+package-lock.json
+  s_c6a81b0e85466c::t_3499d7d0b2f6f6 11-238,257-989,1018-1174
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0eebec31a41e23a123445585949ea6ebaf3873db",
+  "prompts": {},
+  "sessions": {
+    "s_c6a81b0e85466c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bdde5caf-e092-4047-b8df-30726d31de79",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
