@@ -1,0 +1,196 @@
+/* Intro card (About window). */
+.intro-card {
+  border: 1px solid var(--ink);
+  border-radius: 1.25rem;
+  padding: clamp(1.35rem, 5vw, 2.75rem);
+  background: var(--paper-white);
+  box-shadow: var(--shadow);
+}
+
+.intro-card p {
+  max-width: 50rem;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 3.3vw, 1.55rem);
+  line-height: 1.55;
+}
+
+.intro-card p::first-letter {
+  color: var(--coral);
+  font-size: 2em;
+  font-style: italic;
+}
+
+/* Card grids. */
+.section-grid,
+.more-grid {
+  display: grid;
+  gap: 1.15rem;
+}
+
+/* Paper card: the taped note used by experience, projects, and extras. */
+.paper-card {
+  --tilt: 0deg;
+
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--ink);
+  border-radius: 1rem;
+  padding: 1.35rem;
+  background: var(--paper-white);
+  box-shadow: var(--shadow);
+  transform: rotate(var(--tilt));
+  transition:
+    transform var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+.paper-card:hover {
+  box-shadow: var(--shadow-raised);
+  transform: translateY(-3px) rotate(-0.35deg);
+}
+
+.paper-card.tilt-right {
+  --tilt: 0.7deg;
+}
+
+.paper-card.tilt-left {
+  --tilt: -0.6deg;
+}
+
+.paper-card.tilt-right:hover,
+.paper-card.tilt-left:hover {
+  transform: translateY(-3px) rotate(var(--tilt));
+}
+
+/* Strip of tape on the top edge. */
+.paper-card::after {
+  position: absolute;
+  top: -0.45rem;
+  right: 1.35rem;
+  width: 2.2rem;
+  height: 0.75rem;
+  border-right: 1px solid rgba(41, 39, 35, 0.18);
+  border-left: 1px solid rgba(41, 39, 35, 0.18);
+  background: rgba(242, 199, 92, 0.7);
+  content: "";
+  transform: rotate(3deg);
+}
+
+.card-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--coral);
+}
+
+.paper-card h3 {
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.paper-card h3 a:hover,
+.paper-card h3 a:focus-visible {
+  color: var(--blue-dark);
+  outline: none;
+}
+
+.paper-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.paper-card .card-meta {
+  margin-bottom: 0.8rem;
+  color: var(--blue-dark);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.card-link {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--blue-dark);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.card-link::after {
+  margin-left: 0.45rem;
+  content: "↗";
+  transition: transform var(--duration-fast) ease;
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  color: var(--coral);
+  outline: none;
+}
+
+.card-link:hover::after,
+.card-link:focus-visible::after {
+  transform: translate(2px, -2px);
+}
+
+/* Card variants. */
+.experience-card {
+  border-color: var(--blue-dark);
+  background: var(--lavender);
+}
+
+.project-card {
+  border-color: var(--mint-dark);
+  background: var(--mint);
+}
+
+.more-card h3 {
+  font-size: 1.45rem;
+}
+
+/* Definition list used inside "more" cards. */
+.detail-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.detail-list div {
+  border-top: 1px dashed var(--line);
+  padding-top: 0.8rem;
+}
+
+.detail-list dt {
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.detail-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (min-width: 35rem) {
+  .more-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .more-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 52rem) {
+  .more-card:last-child {
+    grid-column: auto;
+  }
+}

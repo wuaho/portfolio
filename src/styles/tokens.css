@@ -1,0 +1,40 @@
+:root {
+  /* Palette */
+  --paper: #f8f3e9;
+  --paper-deep: #eee5d5;
+  --paper-white: #fffdf8;
+  --ink: #292723;
+  --ink-soft: #373532;
+  --muted: #746d62;
+  --blue: #6378dd;
+  --blue-dark: #465ac0;
+  --coral: #ec7864;
+  --yellow: #f2c75c;
+  --mint: #9ac5a1;
+  --mint-dark: #587d62;
+  --lavender: #d8cff5;
+  --peach: #ffe3ba;
+  --line: rgba(41, 39, 35, 0.16);
+
+  /* Elevation */
+  --shadow: 0 8px 0 rgba(41, 39, 35, 0.09);
+  --shadow-raised: 0 11px 0 rgba(41, 39, 35, 0.09);
+
+  /* Typography */
+  --sans: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+  --display: "Montserrat", "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --serif: Georgia, "Times New Roman", serif;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+
+  /* Motion */
+  --duration-fast: 180ms;
+  --duration-window: 220ms;
+  --duration-reveal: 500ms;
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Stacking */
+  --z-skip-link: 20;
+  --z-chrome: 25;
+  --z-backdrop: 30;
+  --z-window: 40;
+}

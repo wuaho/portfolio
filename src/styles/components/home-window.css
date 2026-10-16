@@ -1,0 +1,72 @@
+/* The landing OS-style card that holds the hero and section navigation. */
+.home-window {
+  position: relative;
+  width: min(100%, 820px);
+  margin: clamp(2.5rem, 8vw, 5rem) auto 0;
+  border: 1px solid rgba(41, 39, 35, 0.7);
+  border-radius: 1.2rem;
+  background: var(--paper-white);
+  box-shadow:
+    0 0.5rem 0 rgba(41, 39, 35, 0.08),
+    0 0.75rem 1.5rem rgba(41, 39, 35, 0.1);
+  overflow: hidden;
+}
+
+.home-window-titlebar {
+  display: flex;
+  min-height: 2.7rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--ink-soft);
+  color: var(--paper);
+}
+
+.home-window-title {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+}
+
+.home-window-controls {
+  display: inline-flex;
+  gap: 0.3rem;
+}
+
+.home-window-controls i {
+  display: block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border: 1px solid rgba(248, 243, 233, 0.55);
+  border-radius: 50%;
+}
+
+.home-window-controls i:first-child {
+  background: var(--coral);
+}
+
+.home-window-controls i:nth-child(2) {
+  background: var(--yellow);
+}
+
+.home-window-controls i:last-child {
+  background: var(--mint);
+}
+
+.home-window-body {
+  padding: 0 1rem 1.25rem;
+}
+
+@media (min-width: 35rem) {
+  .home-window-body {
+    padding: 0 2rem 2rem;
+  }
+}
+
+@media (min-width: 52rem) {
+  .home-window {
+    margin-top: clamp(5rem, 14vh, 9rem);
+  }
+}

@@ -1,0 +1,81 @@
+/*
+ * Bottom-right penguin companion. It ignores pointer events so it never
+ * blocks clicks; penguin.js toggles .is-hovered from the cursor position.
+ */
+.penguin-companion {
+  position: fixed;
+  z-index: var(--z-chrome);
+  right: 1rem;
+  bottom: 1rem;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  cursor: pointer;
+  filter: drop-shadow(0 0.35rem 0 rgba(41, 39, 35, 0.16));
+  outline: none;
+  pointer-events: none;
+  touch-action: manipulation;
+  transition:
+    transform var(--duration-fast) ease,
+    filter var(--duration-fast) ease;
+}
+
+.penguin-companion:hover,
+.penguin-companion:focus-visible,
+.penguin-companion.is-hovered {
+  filter: drop-shadow(0 0.5rem 0 rgba(41, 39, 35, 0.16));
+  transform: translateY(-0.25rem) rotate(-3deg);
+}
+
+.penguin-companion:focus-visible {
+  box-shadow:
+    0 0 0 3px var(--paper),
+    0 0 0 5px var(--blue);
+}
+
+.penguin-sprite {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+/* Show only the first frame of the two-frame idle spritesheet. */
+.penguin-idle {
+  overflow: hidden;
+}
+
+.penguin-idle img {
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: 100%;
+}
+
+.penguin-spin {
+  display: none;
+}
+
+.penguin-companion:hover .penguin-idle,
+.penguin-companion:focus .penguin-idle,
+.penguin-companion.is-hovered .penguin-idle {
+  display: none;
+}
+
+.penguin-companion:hover .penguin-spin,
+.penguin-companion:focus .penguin-spin,
+.penguin-companion.is-hovered .penguin-spin {
+  display: block;
+}
+
+@media (min-width: 52rem) {
+  .penguin-companion {
+    right: 1.5rem;
+    bottom: 1.5rem;
+    width: 22rem;
+    height: 22rem;
+  }
+}
