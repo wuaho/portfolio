@@ -1,6 +1,11 @@
 .site-wrap {
+  display: grid;
   width: min(100% - 2rem, 1060px);
+  min-height: 100dvh;
   margin-inline: auto;
+  padding-bottom: 6rem;
+  align-content: start;
+  justify-items: center;
 }
 
 .topbar {
