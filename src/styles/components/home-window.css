@@ -75,6 +75,8 @@
 
 @media (min-width: 52rem) {
   .home-window {
-    margin-top: clamp(5rem, 14vh, 9rem);
+    width: min(100%, 39rem);
+    /* The window floats about a quarter of the way down the viewport. */
+    margin-top: clamp(5rem, 24dvh, 14rem);
   }
 }

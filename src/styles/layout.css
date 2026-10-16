@@ -30,7 +30,7 @@ body::after {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 26dvh;
+  height: 28dvh;
   background: linear-gradient(var(--water), var(--water-light));
   border-radius: 50% 50% 0 0 / 1.2rem 1.2rem 0 0;
   content: "";
