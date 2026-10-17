@@ -1,0 +1,21 @@
+src/styles/components/about.css
+  s_9dbfe6cb62e133::t_2b5d2543fc88e9 14
+index.html
+  s_9dbfe6cb62e133::t_2b5d2543fc88e9 170,172,175-176,179-180,182,185-187
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e1f8aba930c84e9eead7fdb7a4d41bd90f6bac59",
+  "prompts": {},
+  "sessions": {
+    "s_9dbfe6cb62e133": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a42763c5-f334-4ac8-8ca8-255d0b1ee5ef",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
