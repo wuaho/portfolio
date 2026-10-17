@@ -38,9 +38,7 @@ test("landing content is wrapped in the home operating system window", async ({
   await expect(name).toHaveText("i'm juanjo");
   await expect(name).toHaveCSS("font-weight", "500");
   await expect(name).toHaveCSS("color", "rgb(236, 120, 100)");
-  await expect(subline).toHaveText(
-    "software engineer, I like pastry and Kirby",
-  );
+  await expect(subline).toHaveText("software engineer");
   await expect(homeWindow.locator(".section-nav")).toBeVisible();
   await expect(page.locator(".topbar [data-sound-toggle]")).toBeVisible();
 

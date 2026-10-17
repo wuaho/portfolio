@@ -51,15 +51,11 @@
 
   .hero-subline {
     margin-top: 1.35rem;
-    color: var(--blue-dark);
-    font-family: var(--mono);
-    font-size: 0.76rem;
+    color: var(--muted);
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-style: italic;
     white-space: normal;
-  }
-
-  .hero-subline::before {
-    color: var(--coral);
-    content: "// ";
   }
 }
 
@@ -70,6 +66,6 @@
   }
 
   .hero-subline {
-    font-size: 0.8rem;
+    font-size: 1.25rem;
   }
 }
