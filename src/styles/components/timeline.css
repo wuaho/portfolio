@@ -90,7 +90,7 @@
   outline-offset: 3px;
 }
 
-/* Wide windows: the date sits at the right, on the same line as the employer. */
+/* Wide windows: the date sits at the right, on the same line as the position. */
 @media (min-width: 35rem) {
   .timeline-content {
     display: grid;
@@ -102,13 +102,17 @@
     grid-column: 1 / -1;
   }
 
-  .timeline-content > h3,
-  .timeline-content > .timeline-date {
+  .timeline-content > h3 {
     grid-row: 1;
+  }
+
+  .timeline-content > .timeline-role,
+  .timeline-content > .timeline-date {
+    grid-row: 2;
     align-self: baseline;
   }
 
-  .timeline-content > h3 {
+  .timeline-content > .timeline-role {
     grid-column: 1;
   }
 
@@ -116,6 +120,10 @@
     grid-column: 2;
     margin: 0;
     white-space: nowrap;
+  }
+
+  .timeline-content > .bullet-list {
+    grid-row: 3;
   }
 }
 
