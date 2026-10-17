@@ -1,0 +1,21 @@
+.prettierignore
+  s_c3b295da231248::t_8324c5b420fb80 1
+eslint.config.js
+  s_c3b295da231248::t_8324c5b420fb80 6-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "45c5a29d24e1ea2e0d778168411972428b4383af",
+  "prompts": {},
+  "sessions": {
+    "s_c3b295da231248": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9c99aea4-abfa-4993-ab05-684db04feed9",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
