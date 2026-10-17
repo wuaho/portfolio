@@ -1,0 +1,22 @@
+tests/e2e/multi-window.spec.js
+  s_64c79231129cd5::t_01881a2d37e985 36
+  s_64c79231129cd5::t_f3470da34a5d1d 107-157
+src/scripts/features/windows.js
+  s_64c79231129cd5::t_f3470da34a5d1d 140-144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "c7eec9409e568b93f447156cb5240419d315e4d1",
+  "prompts": {},
+  "sessions": {
+    "s_64c79231129cd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44bbe61c-4262-45eb-b1a4-65d98d67ba2f",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
