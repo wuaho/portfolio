@@ -94,3 +94,7 @@
 .experience-certifications {
   margin-top: 3rem;
 }
+
+.experience-certifications .window-subheading {
+  margin-bottom: 1.5rem;
+}
