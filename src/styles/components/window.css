@@ -154,11 +154,12 @@
 
   /* Windows pinned by placement or dragging use left/top, not centering. */
   .window-panel.is-placed {
-    transform: translateY(1rem) rotate(-0.2deg);
+    transform: translate(var(--from-x, 0), var(--from-y, 1rem)) scale(0.96)
+      rotate(-0.2deg);
   }
 
   .window-panel.is-placed.is-open {
-    transform: translateY(0) rotate(-0.2deg);
+    transform: translate(0, 0) scale(1) rotate(-0.2deg);
   }
 
   /* Desktop windows are not modal: no dimmed or blurred page behind them. */

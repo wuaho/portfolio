@@ -49,10 +49,21 @@ export function initWindows({ onOpen = () => {}, onClose = () => {} } = {}) {
     panel.style.inset = "auto";
     panel.style.left = `${x}px`;
     panel.style.top = `${y}px`;
+    // Opening animation starts from the center of the screen.
+    panel.style.setProperty(
+      "--from-x",
+      `${(window.innerWidth - panel.offsetWidth) / 2 - x}px`,
+    );
+    panel.style.setProperty(
+      "--from-y",
+      `${(window.innerHeight - panel.offsetHeight) / 2 - y}px`,
+    );
   }
 
   function clearPlacement(panel) {
     panel.classList.remove("is-placed");
+    panel.style.removeProperty("--from-x");
+    panel.style.removeProperty("--from-y");
     resetWindowPosition(panel);
   }
 
