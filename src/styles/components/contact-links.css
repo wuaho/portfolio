@@ -1,32 +1,39 @@
-/* Bare icons, styled like the home section navigation. */
+/* Contact window: dark title bar and hand-drawn icons with a soft offset shadow. */
+
+/* The heading stays for the dialog's accessible name but is not shown. */
+[data-window="contact"] .section-heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+[data-window="contact"] .window-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 1.5rem 0.75rem;
   width: 100%;
   max-width: 42rem;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-/* Mobile: center the icons in the full-screen modal. */
-[data-window="contact"] .window-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .contact-link {
   display: flex;
   flex: 0 1 calc((100% - 0.75rem) / 2);
-  min-height: 9rem;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  border-radius: 1rem;
-  color: var(--ink);
+  gap: 0.75rem;
+  color: var(--ink-soft);
   text-decoration: none;
   transition: color var(--duration-fast) ease;
 }
@@ -39,30 +46,41 @@
 
 .contact-link-icon {
   display: grid;
-  width: 5rem;
-  height: 5rem;
+  width: 5.5rem;
+  height: 5.5rem;
   place-items: center;
   transition: transform 0.25s var(--ease-spring);
 }
 
 .contact-link-icon img {
-  width: 4.4rem;
-  height: 4.4rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: contain;
-  /* Tints the black source SVGs to the ink color. */
+  /* Tints the black source SVGs to the ink color, then adds the offset shadow. */
   filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
-    brightness(91%);
+    brightness(91%) drop-shadow(0.2rem 0.3rem 0 rgba(41, 39, 35, 0.18));
 }
 
 .contact-link:hover .contact-link-icon,
 .contact-link:focus-visible .contact-link-icon {
-  transform: scale(1.12) rotate(-3deg);
+  transform: scale(1.1) rotate(-3deg);
 }
 
 .contact-link-label {
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
+}
+
+.contact-note {
+  width: min(100%, 24rem);
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
 }
 
 @media (min-width: 52rem) {
@@ -70,14 +88,39 @@
     flex-basis: calc((100% - 2.25rem) / 4);
   }
 
-  /* A compact window sized to its content instead of the default tall one. */
+  /* A compact window sized to its content, with a dark title bar. */
   [data-window="contact"] {
     inset: 18vh auto auto 50%;
-    width: min(calc(100% - 4rem), 46rem);
+    width: min(calc(100% - 4rem), 40rem);
     height: auto;
+    background: var(--paper-white);
+  }
+
+  [data-window="contact"] .window-chrome {
+    background: var(--ink-soft);
+    color: var(--paper);
+  }
+
+  [data-window="contact"] .window-dots {
+    display: none;
+  }
+
+  [data-window="contact"] .window-chrome {
+    grid-template-columns: minmax(0, 1fr) 2.2rem;
+  }
+
+  [data-window="contact"] .window-title {
+    font-size: 1rem;
+    letter-spacing: 0.04em;
+    text-align: left;
+    text-transform: none;
+  }
+
+  [data-window="contact"] .window-close {
+    color: var(--paper);
   }
 
   [data-window="contact"] .window-body {
-    padding: 2rem 2.5rem 2.5rem;
+    padding: 2.5rem 2.5rem 2.5rem;
   }
 }

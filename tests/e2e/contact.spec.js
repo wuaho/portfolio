@@ -15,7 +15,7 @@ test("contact window contains the LinkedIn, GitHub, X, and blog links", async ({
   ]) {
     await expect(contactWindow.locator(`a[href="${href}"]`)).toBeVisible();
   }
-  await expect(contactWindow.getByText("Blog", { exact: true })).toBeVisible();
+  await expect(contactWindow.getByText("blog", { exact: true })).toBeVisible();
 });
 
 test("external links open in a new tab without an opener", async ({ page }) => {
