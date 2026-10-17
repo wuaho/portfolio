@@ -23,20 +23,6 @@
   gap: 0.85rem;
 }
 
-/* Decorative water band pinned to the bottom of the viewport. */
-body::after {
-  position: fixed;
-  z-index: -1;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 28dvh;
-  background: linear-gradient(var(--water), var(--water-light));
-  border-radius: 50% 50% 0 0 / 1.2rem 1.2rem 0 0;
-  content: "";
-  pointer-events: none;
-}
-
 /* Lock page scroll while a section window is open. */
 body.window-open {
   overflow: hidden;
@@ -49,14 +35,10 @@ body.window-open {
 }
 
 @media (min-width: 52rem) {
-  /* Center the home window; the water band's top edge is the viewport midline. */
+  /* Center the home window; the sea's top edge is the viewport midline. */
   .site-wrap {
     padding-block: 2rem;
     align-content: center;
-  }
-
-  body::after {
-    height: 50dvh;
   }
 
   .site-wrap {

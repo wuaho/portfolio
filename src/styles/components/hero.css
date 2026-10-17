@@ -4,24 +4,22 @@
   text-align: center;
 }
 
+/* Two small, quiet sparkles frame the greeting. */
 .hero-art {
   position: absolute;
-  top: 1.5rem;
-  right: -4.5rem;
-  width: 4.25rem;
-  height: 4.25rem;
+  top: 1rem;
+  right: 0.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
   color: var(--coral);
-  transform: rotate(12deg);
 }
 
 .hero-art.left {
   top: auto;
   right: auto;
-  bottom: 1.8rem;
-  left: -2.7rem;
-  width: 4.5rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
   color: var(--blue);
-  transform: rotate(-11deg);
 }
 
 .hero-title {
@@ -31,7 +29,8 @@
   font-family: var(--display);
   font-size: clamp(2.8rem, 12vw, 5.8rem);
   font-weight: 400;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
 }
 
 .hero-title-greeting {
@@ -62,15 +61,17 @@
   }
 
   .hero-art {
-    top: 0.25rem;
-    right: -2.5rem;
-    width: 6rem;
-    height: 6rem;
+    top: 1.5rem;
+    right: 0;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 
   .hero-art.left {
-    bottom: 2.5rem;
-    left: 1rem;
-    width: 5.5rem;
+    top: auto;
+    bottom: 3rem;
+    left: 2rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }

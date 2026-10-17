@@ -19,6 +19,21 @@
   --water: #9fd0ff;
   --water-light: #cfe6ff;
 
+  /* Antarctica: sky, ice and sea */
+  --sky-top: #e6f1f8;
+  --sky-bottom: #f4f9fc;
+  --ice: #eaf6ff;
+  --ice-mid: #bfe3f8;
+  --ice-deep: #7fbbe6;
+  --ice-edge: #4c86b8;
+  --glacier: #e3f0f9;
+  --glacier-far: #cfe3f2;
+  --foam: #ffffff;
+  --sea-1: #d6eafa;
+  --sea-2: #a9d4f6;
+  --sea-3: #a9d4f6;
+  --sea-4: #5ea3e0;
+
   /* Elevation */
   --shadow: 0 8px 0 rgba(41, 39, 35, 0.09);
   --shadow-raised: 0 11px 0 rgba(41, 39, 35, 0.09);
