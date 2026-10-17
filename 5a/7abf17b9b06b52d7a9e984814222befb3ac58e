@@ -1,0 +1,19 @@
+index.html
+  s_ddf16c4c0ae9b9::t_3cc77a96c75f78 191
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5a7abf17b9b06b52d7a9e984814222befb3ac58e",
+  "prompts": {},
+  "sessions": {
+    "s_ddf16c4c0ae9b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8f807ab5-5e59-4ae7-a71c-cdc7996bccc1",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
