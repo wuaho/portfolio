@@ -1,0 +1,36 @@
+src/scripts/features/windows.js
+  s_64c79231129cd5::t_99e8929e7e7520 7,10-15,20,31-33,37,39-40,46-59,61-65,69-107,112-114,116-118,126-135,147-151,156-157,162-167,172-173,175-177,179-182,185-187,190-191,197-205,210-217,223-234,250,252-268,271-273,276-291,294,301
+  s_64c79231129cd5::t_39b5fb219e0b08 115,119-125
+index.html
+  s_64c79231129cd5::t_39b5fb219e0b08 89-93
+src/styles/components/window.css
+  s_64c79231129cd5::t_99e8929e7e7520 2-4,155-167
+  s_64c79231129cd5::t_39b5fb219e0b08 142,144-146
+  s_64c79231129cd5::t_d4c864ef7ddcc7 168
+tests/e2e/windows.spec.js
+  s_64c79231129cd5::t_62d8e3c0ad34f8 2,78-81,84-87,97-100
+  s_64c79231129cd5::t_39b5fb219e0b08 53-55,59,62
+src/scripts/lib/placement.js
+  s_64c79231129cd5::t_99e8929e7e7520 1-55
+tests/e2e/multi-window.spec.js
+  s_64c79231129cd5::t_2ae2e236bc83e9 45-48,52-54
+  s_64c79231129cd5::t_62d8e3c0ad34f8 1-44,49-51,55-106
+AGENTS.md
+  s_64c79231129cd5::t_8d63ba2cd2b452 16-17,60-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "24fc084f53afa92ae6f1182288612b6bf5260aa2",
+  "prompts": {},
+  "sessions": {
+    "s_64c79231129cd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44bbe61c-4262-45eb-b1a4-65d98d67ba2f",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
