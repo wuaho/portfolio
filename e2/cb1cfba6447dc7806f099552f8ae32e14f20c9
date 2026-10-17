@@ -1,0 +1,24 @@
+src/styles/components/about.css
+  s_337f3897043e89::t_4bb99d46e2e4e8 1-8,12,18,24,30
+index.html
+  s_337f3897043e89::t_4bb99d46e2e4e8 187-189
+src/styles/components/window.css
+  s_337f3897043e89::t_754851c50de375 160-161
+  s_337f3897043e89::t_4bb99d46e2e4e8 158
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "e2cb1cfba6447dc7806f099552f8ae32e14f20c9",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
