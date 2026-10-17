@@ -57,12 +57,15 @@
   margin: 1.25rem 0 0;
 }
 
-.about-outro a {
-  color: var(--blue-dark);
+.about-outro a,
+.about-role a {
+  color: var(--coral);
   text-decoration: underline;
 }
 
 .about-outro a:hover,
-.about-outro a:focus-visible {
-  color: var(--coral);
+.about-outro a:focus-visible,
+.about-role a:hover,
+.about-role a:focus-visible {
+  color: var(--ink);
 }
