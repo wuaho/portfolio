@@ -1,0 +1,19 @@
+src/styles/components/antarctica.css
+  s_1c3c645a646c8f::t_543300e0487214 5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "10000f7ae832c6fa64434734f588102904ace0b1",
+  "prompts": {},
+  "sessions": {
+    "s_1c3c645a646c8f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a6b2bba9-bffb-407a-8f61-36633d305d70",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
