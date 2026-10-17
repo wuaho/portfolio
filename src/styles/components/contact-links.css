@@ -30,7 +30,7 @@
 
 .contact-link:hover,
 .contact-link:focus-visible {
-  color: var(--blue-dark);
+  color: var(--coral);
   outline: none;
 }
 

@@ -102,7 +102,7 @@
 
 .project-info .card-link:hover,
 .project-info .card-link:focus-visible {
-  color: var(--blue-dark);
+  color: var(--ink);
 }
 
 .project-info {

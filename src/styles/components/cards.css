@@ -110,7 +110,7 @@
 
 .paper-card h3 a:hover,
 .paper-card h3 a:focus-visible {
-  color: var(--blue-dark);
+  color: var(--coral);
   outline: none;
 }
 
@@ -122,7 +122,7 @@
 
 .paper-card .card-meta {
   margin-bottom: 0.8rem;
-  color: var(--blue-dark);
+  color: var(--coral);
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 700;
@@ -131,7 +131,7 @@
 .card-link {
   display: inline-flex;
   margin-top: 1rem;
-  color: var(--blue-dark);
+  color: var(--coral);
   font-family: var(--mono);
   font-size: 0.72rem;
   font-weight: 700;
@@ -145,7 +145,7 @@
 
 .card-link:hover,
 .card-link:focus-visible {
-  color: var(--coral);
+  color: var(--ink);
   outline: none;
 }
 
