@@ -37,30 +37,38 @@
   font-size: 1.02rem;
 }
 
-/* Definition list used inside "more" cards. */
+/* Definition list: badge plus text rows. */
 .detail-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.4rem;
   margin: 0;
 }
 
-.detail-list div {
-  border-top: 1px dashed var(--line);
-  padding-top: 0.8rem;
+.more-row {
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.more-badge {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
 .detail-list dt {
   margin-bottom: 0.2rem;
   color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 3.6vw, 1.5rem);
+  letter-spacing: -0.03em;
 }
 
 .detail-list dd {
   margin: 0;
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
 }
 
 /* Responsive YouTube preview. */
