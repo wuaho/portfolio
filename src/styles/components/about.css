@@ -1,27 +1,33 @@
-/* About window: photo, name, and short bullet intro. */
+/*
+ * About window: photo, name, and short bullet intro. The header is the first
+ * thing in the body (no top padding) and sticks in place, so it never moves.
+ */
+.window-panel[data-window="about"] .window-body {
+  padding-top: 0;
+}
+
 .about-header {
   position: sticky;
   z-index: 1;
-  /* Cancels the window body's top padding so nothing shows above it. */
-  top: -1.5rem;
+  top: 0;
   display: flex;
   align-items: center;
   gap: 1.1rem;
   margin-bottom: 1.5rem;
   border-bottom: 1px dashed var(--line);
-  padding-block: 1rem 1.5rem;
+  padding-block: 2.5rem 1.5rem;
   background: var(--paper-white);
 }
 
 @media (min-width: 35rem) {
   .about-header {
-    top: -2rem;
+    padding-top: 3rem;
   }
 }
 
 @media (min-width: 52rem) {
   .about-header {
-    top: -2.5rem;
+    padding-top: 3.5rem;
   }
 }
 

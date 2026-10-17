@@ -155,10 +155,10 @@
     background: var(--paper-white);
   }
 
-  /* About ends at the "work together" line; the languages scroll into view. */
+  /* About is taller than the others so its text has room to breathe. */
   .window-panel[data-window="about"] {
-    height: 32rem;
-    max-height: 32rem;
+    height: min(36rem, calc(100vh - 2rem));
+    max-height: min(36rem, calc(100vh - 2rem));
   }
 
   .window-panel.is-open {
