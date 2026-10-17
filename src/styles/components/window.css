@@ -1,6 +1,7 @@
 /*
- * Section windows. Mobile: full-screen modal. Desktop (52rem+): floating,
- * draggable window whose position is set inline by window-drag.js.
+ * Section windows. Mobile: full-screen modal. Desktop (52rem+): several
+ * floating, draggable windows can be open at once, positioned inline by
+ * windows.js (placement) and window-drag.js (dragging).
  */
 .window-backdrop {
   position: fixed;
@@ -138,15 +139,31 @@
 @media (min-width: 52rem) {
   .window-panel {
     background: var(--paper);
-    inset: 8vh auto auto 50%;
+    inset: 1rem auto auto 50%;
     width: min(calc(100% - 4rem), 860px);
-    height: min(78vh, 720px);
+    /* Leaves the home navigation (centered below) visible and clickable. */
+    height: min(calc(50vh + 5rem), 720px);
+    max-height: min(calc(50vh + 5rem), 720px);
     border-radius: 1.15rem;
     transform: translate(-50%, 1rem) rotate(-0.2deg);
   }
 
   .window-panel.is-open {
     transform: translate(-50%, 0) rotate(-0.2deg);
+  }
+
+  /* Windows pinned by placement or dragging use left/top, not centering. */
+  .window-panel.is-placed {
+    transform: translateY(1rem) rotate(-0.2deg);
+  }
+
+  .window-panel.is-placed.is-open {
+    transform: translateY(0) rotate(-0.2deg);
+  }
+
+  /* Desktop windows are not modal: no dimmed or blurred page behind them. */
+  .window-backdrop {
+    display: none;
   }
 
   .window-chrome {
