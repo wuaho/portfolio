@@ -1,0 +1,21 @@
+index.html
+  s_337f3897043e89::t_251d820f54a5b5 17
+AGENTS.md
+  s_337f3897043e89::t_f3b22bcf9b7194 20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "28f27d90fa4bc84953f0ee81e692d1f01bbde6a5",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
