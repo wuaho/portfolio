@@ -58,11 +58,6 @@
   object-fit: contain;
 }
 
-/* The Cambridge crest has an opaque white background. */
-.more-badge-blend {
-  mix-blend-mode: multiply;
-}
-
 .detail-list dt {
   margin-bottom: 0.2rem;
   color: var(--ink);
