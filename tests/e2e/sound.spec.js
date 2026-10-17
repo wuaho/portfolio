@@ -78,26 +78,3 @@ test("deep links and history navigation stay silent", async ({ page }) => {
 
   expect(await getFrequencies(page)).toEqual([]);
 });
-
-test("hovering the penguin plays a short sparkle, once per visit", async ({
-  page,
-}) => {
-  const hit = page.locator("[data-penguin-hit]");
-  await hit.hover({ force: true });
-
-  const frequencies = await getFrequencies(page);
-  expect(frequencies).toEqual(expect.arrayContaining([1567.98, 2093, 2637.02]));
-
-  // Moving around inside the penguin does not retrigger it.
-  const count = frequencies.length;
-  await page.mouse.move(0, 0);
-  await hit.hover({ force: true });
-  expect((await getFrequencies(page)).length).toBe(count);
-});
-
-test("the penguin hover sparkle respects the mute toggle", async ({ page }) => {
-  await page.locator("[data-sound-toggle]").click();
-  await page.locator("[data-penguin-hit]").hover({ force: true });
-
-  expect(await getFrequencies(page)).toEqual([]);
-});

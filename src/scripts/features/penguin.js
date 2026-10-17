@@ -1,11 +1,8 @@
 // The penguin's hit area (data-penguin-hit) is the only part that takes
 // pointer events, so the rest of its large box never blocks clicks beneath it.
 // Clicking (or Enter/Space) makes it roll while the music plays; clicking
-// again stops both. `playMusic(onEnd)` returns a stop function or null;
-// `onHover` fires (at most every HOVER_COOLDOWN_MS) when a mouse enters it.
-const HOVER_COOLDOWN_MS = 600;
-
-export function initPenguin(penguin, { playMusic, onHover } = {}) {
+// again stops both. `playMusic(onEnd)` returns a stop function or null.
+export function initPenguin(penguin, { playMusic } = {}) {
   if (!penguin) return;
 
   const hit = penguin.querySelector("[data-penguin-hit]") ?? penguin;
@@ -37,16 +34,6 @@ export function initPenguin(penguin, { playMusic, onHover } = {}) {
     if (penguin.classList.contains("is-rolling")) stop();
     else start();
   }
-
-  let lastHover = -Infinity;
-  hit.addEventListener("pointerenter", (event) => {
-    if (event.pointerType !== "mouse") return;
-    if (penguin.classList.contains("is-rolling")) return;
-    const now = performance.now();
-    if (now - lastHover < HOVER_COOLDOWN_MS) return;
-    lastHover = now;
-    onHover?.();
-  });
 
   hit.addEventListener("click", toggle);
   penguin.addEventListener("keydown", (event) => {

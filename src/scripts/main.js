@@ -14,5 +14,4 @@ initWindows({
 
 initPenguin(document.querySelector("[data-penguin]"), {
   playMusic: sound.playMusic,
-  onHover: () => sound.play("hover"),
 });
