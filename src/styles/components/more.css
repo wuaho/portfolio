@@ -18,21 +18,8 @@
   letter-spacing: -0.04em;
 }
 
-.more-text,
-.more-subtitle {
+.more-text {
   margin: 0 0 0.8rem;
-  color: var(--muted);
-  font-size: 1.02rem;
-}
-
-.more-subtitle {
-  color: var(--ink-soft);
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.more-section .bullet-list {
   color: var(--muted);
   font-size: 1.02rem;
 }
