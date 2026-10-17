@@ -1,0 +1,30 @@
+assets/icons/github.svg
+  s_c3b295da231248::t_1725ca7975d3e9 1
+index.html
+  s_c3b295da231248::t_1725ca7975d3e9 532
+tests/e2e/contact.spec.js
+  s_c3b295da231248::t_1725ca7975d3e9 18
+  s_c3b295da231248::t_5a27809ecec6a3 19-20
+assets/icons/linkedin.svg
+  s_c3b295da231248::t_1725ca7975d3e9 1
+assets/icons/x.svg
+  s_c3b295da231248::t_1725ca7975d3e9 1
+assets/icons/blog.svg
+  s_c3b295da231248::t_1725ca7975d3e9 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "3bd7ebc3d1392e8987e93d5f594157a5aea80565",
+  "prompts": {},
+  "sessions": {
+    "s_c3b295da231248": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9c99aea4-abfa-4993-ab05-684db04feed9",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
