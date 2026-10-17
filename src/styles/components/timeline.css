@@ -77,14 +77,11 @@
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 0.9rem;
-  transition:
-    transform var(--duration-fast) var(--ease-spring),
-    box-shadow var(--duration-fast) ease;
+  transition: transform var(--duration-fast) var(--ease-spring);
 }
 
 .timeline-logo-link:hover,
 .timeline-logo-link:focus-visible {
-  box-shadow: 0 6px 0 rgba(41, 39, 35, 0.12);
   transform: scale(1.18);
 }
 
