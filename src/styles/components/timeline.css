@@ -25,11 +25,13 @@
 }
 
 .timeline-logo {
-  position: relative;
+  display: block;
   width: 3rem;
   height: 3rem;
   border: 2px solid var(--paper-white);
   border-radius: 0.8rem;
+  background: var(--paper-white);
+  object-fit: contain;
   box-shadow: 0 0 0 1px var(--line);
 }
 
@@ -69,4 +71,23 @@
 .timeline-content .bullet-list {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.timeline-logo-link {
+  position: relative;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.8rem;
+  transition: transform var(--duration-fast) ease;
+}
+
+.timeline-logo-link:hover,
+.timeline-logo-link:focus-visible {
+  transform: translateY(-2px);
+}
+
+.timeline-logo-link:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
 }
