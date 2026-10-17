@@ -11,6 +11,7 @@
 .about-photo {
   flex: none;
   width: clamp(5.5rem, 24vw, 9rem);
+  height: auto;
   aspect-ratio: 1;
   border: 1px solid var(--ink);
   border-radius: 50%;
