@@ -76,10 +76,9 @@
 
 .section-nav-label {
   font-family: var(--mono);
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   transition: transform var(--duration-fast) ease;
 }
 
