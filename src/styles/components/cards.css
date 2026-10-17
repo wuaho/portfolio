@@ -1,6 +1,6 @@
 /* Intro card (About window). */
 .intro-card .bullet-list {
-  gap: 0.8rem;
+  gap: 0.55rem;
   max-width: 50rem;
   font-family: var(--display);
   font-size: clamp(0.95rem, 2.6vw, 1.1rem);

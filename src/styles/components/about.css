@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px dashed var(--line);
   padding-block: 2.5rem 1.5rem;
   background: var(--paper-white);
@@ -27,7 +27,7 @@
 
 @media (min-width: 52rem) {
   .about-header {
-    padding-top: 4rem;
+    padding-top: 3.25rem;
   }
 }
 
@@ -115,7 +115,8 @@
 }
 
 .about-outro a,
-.about-role a {
+.about-role a,
+.intro-card .bullet-list a {
   color: var(--coral);
   text-decoration: underline;
 }
@@ -123,6 +124,8 @@
 .about-outro a:hover,
 .about-outro a:focus-visible,
 .about-role a:hover,
-.about-role a:focus-visible {
+.about-role a:focus-visible,
+.intro-card .bullet-list a:hover,
+.intro-card .bullet-list a:focus-visible {
   color: var(--ink);
 }
