@@ -1,0 +1,39 @@
+src/scripts/features/penguin.js
+  s_337f3897043e89::t_c5991e2e77d34e 10,20,30
+  s_337f3897043e89::t_e13ffdeea3c8c4 1-5,8-9,11-19,21-29,31-35,38-42
+src/styles/components/penguin.css
+  s_337f3897043e89::t_c5991e2e77d34e 14-16,40,51-62,131,135
+index.html
+  s_337f3897043e89::t_c5991e2e77d34e 672-674,676
+AGENTS.md
+  s_337f3897043e89::t_838ea99a0124e9 16-17,58
+tests/e2e/penguin.spec.js
+  s_337f3897043e89::t_71b08aa517b459 24,27,32,84
+  s_337f3897043e89::t_84d2be554c97af 4,22-23,25,28,33,37-83,85-87
+  s_337f3897043e89::t_4278f56f29dfb6 88
+src/scripts/features/sound.js
+  s_337f3897043e89::t_c5991e2e77d34e 67-71
+  s_337f3897043e89::t_e13ffdeea3c8c4 2,15,57-66,72-97,116
+src/scripts/lib/funk.js
+  s_337f3897043e89::t_2042660e052b70 1-6,8-9,46-140,149-152,161-167
+  s_337f3897043e89::t_838ea99a0124e9 7
+  s_337f3897043e89::t_c5991e2e77d34e 10-45,141-148,153-160
+src/scripts/main.js
+  s_337f3897043e89::t_e13ffdeea3c8c4 15-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "99b9fdd2e9e3cca56200790aeeec9acff6d8d2c6",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
