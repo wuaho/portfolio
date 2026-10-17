@@ -1,0 +1,32 @@
+tests/e2e/contact.spec.js
+  s_c3b295da231248::t_111a0db56d820d 4,13
+assets/icons/linkedin.svg
+  s_c3b295da231248::t_cb71118e105a29 1
+src/styles/components/contact-links.css
+  s_c3b295da231248::t_111a0db56d820d 1,3-6,9,13-16,18-19,21,23,35-36,41-42,44,47-53,56-58,61,63-64,69,82-83
+  s_c3b295da231248::t_f7f3f6db460ace 84-85
+assets/icons/blog.svg
+  s_c3b295da231248::t_cb71118e105a29 1
+assets/icons/x.svg
+  s_c3b295da231248::t_cb71118e105a29 1
+assets/icons/github.svg
+  s_c3b295da231248::t_cb71118e105a29 1
+index.html
+  s_c3b295da231248::t_cb71118e105a29 496-497,499,507-519,521,529-530,532
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "47fbec244965ec804b4553dbedefc18c4b6edc82",
+  "prompts": {},
+  "sessions": {
+    "s_c3b295da231248": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9c99aea4-abfa-4993-ab05-684db04feed9",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
