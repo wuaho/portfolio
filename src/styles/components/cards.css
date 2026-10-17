@@ -1,8 +1,9 @@
 /* Intro card (About window). */
 .intro-card .bullet-list {
   max-width: 50rem;
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-weight: 300;
   line-height: 1.5;
 }
 
