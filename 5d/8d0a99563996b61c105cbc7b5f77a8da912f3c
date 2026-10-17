@@ -1,0 +1,24 @@
+src/styles/components/about.css
+  s_337f3897043e89::t_2f7126e0ff0aa3 16,30
+  s_337f3897043e89::t_d8fbe24c1145c7 118-119,127-129
+src/styles/components/cards.css
+  s_337f3897043e89::t_2f7126e0ff0aa3 3
+index.html
+  s_337f3897043e89::t_d8fbe24c1145c7 196-204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5d8d0a99563996b61c105cbc7b5f77a8da912f3c",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
