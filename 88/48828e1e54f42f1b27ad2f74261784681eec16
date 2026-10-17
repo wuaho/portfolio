@@ -1,0 +1,21 @@
+package.json
+  s_9dbfe6cb62e133::t_dae8825b5d0325 10
+AGENTS.md
+  s_9dbfe6cb62e133::t_b0fb3d796536af 34
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8848828e1e54f42f1b27ad2f74261784681eec16",
+  "prompts": {},
+  "sessions": {
+    "s_9dbfe6cb62e133": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a42763c5-f334-4ac8-8ca8-255d0b1ee5ef",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
