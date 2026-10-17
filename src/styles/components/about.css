@@ -38,6 +38,7 @@
 
 .about-role {
   margin: 0;
+  padding-left: 0.2rem;
   color: var(--muted);
   font-size: clamp(0.88rem, 2.6vw, 1.05rem);
 }
