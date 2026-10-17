@@ -1,0 +1,32 @@
+AGENTS.md
+  s_17c44387f44e75::t_f26e5e9de57bd6 77
+index.html
+  s_17c44387f44e75::t_663dbbd38c5ae7 434
+  s_17c44387f44e75::t_a6fc70744b9cb2 406,419,435,454,467,480
+  s_17c44387f44e75::t_2f54b09455d9d2 453,466,479
+src/styles/components/more.css
+  s_17c44387f44e75::t_e2852361187af6 57,59-63
+  s_17c44387f44e75::t_2f54b09455d9d2 49,56,58,64-71
+assets/badges/south-korea.svg
+  s_17c44387f44e75::t_29a213dd01a452 1
+assets/badges/spain.svg
+  s_17c44387f44e75::t_29a213dd01a452 1-705
+assets/badges/uk.svg
+  s_17c44387f44e75::t_29a213dd01a452 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "0f667c642bef6555d711a83f884c2efcdd805729",
+  "prompts": {},
+  "sessions": {
+    "s_17c44387f44e75": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c473311f-f35e-4191-aced-cde29ccff908",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
