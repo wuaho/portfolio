@@ -1,0 +1,102 @@
+/* Projects window: one list inside the window, no separate cards. */
+.project-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 1.2rem 0;
+  border-top: 1px dashed var(--line);
+}
+
+.project-item:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.project-item:last-child {
+  padding-bottom: 0;
+}
+
+.project-logo {
+  display: grid;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  overflow: hidden;
+}
+
+.project-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Show only the first frame of the two-frame penguin idle spritesheet. */
+.project-logo-pixel {
+  background: url("../../../assets/penguin/spritesheets/idle.png") left / 200%
+    100% no-repeat;
+  image-rendering: pixelated;
+}
+
+.project-logo-wip {
+  border: 2px dashed var(--muted);
+  border-radius: 50%;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 2rem;
+}
+
+.project-info h3 {
+  margin-bottom: 0.45rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.project-info h3 a:hover,
+.project-info h3 a:focus-visible {
+  color: var(--blue-dark);
+  outline: none;
+}
+
+.project-info .bullet-list {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.project-status {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--coral);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  color: var(--coral);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 35rem) {
+  .project-item {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 1.4rem;
+  }
+
+  .project-logo {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}

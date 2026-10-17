@@ -159,11 +159,6 @@
   background: var(--lavender);
 }
 
-.project-card {
-  border-color: var(--mint-dark);
-  background: var(--mint);
-}
-
 .more-card h3 {
   font-size: 1.45rem;
 }
