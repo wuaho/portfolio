@@ -148,6 +148,13 @@
     transform: translate(-50%, 1rem) rotate(-0.2deg);
   }
 
+  /* About, Experience, and Projects share the lighter paper tone. */
+  .window-panel[data-window="about"],
+  .window-panel[data-window="experience"],
+  .window-panel[data-window="projects"] {
+    background: var(--paper-white);
+  }
+
   .window-panel.is-open {
     transform: translate(-50%, 0) rotate(-0.2deg);
   }
