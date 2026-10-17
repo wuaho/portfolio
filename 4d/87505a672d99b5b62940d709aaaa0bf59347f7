@@ -1,0 +1,22 @@
+src/styles/components/penguin.css
+  s_337f3897043e89::t_6f555489f9a051 72-113,142-144,146
+  s_337f3897043e89::t_2a1f61845e55d5 145
+src/styles/tokens.css
+  s_337f3897043e89::t_6f555489f9a051 23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4d87505a672d99b5b62940d709aaaa0bf59347f7",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
