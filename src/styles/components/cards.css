@@ -1,12 +1,4 @@
 /* Intro card (About window). */
-.intro-card {
-  border: 1px solid var(--ink);
-  border-radius: 1.25rem;
-  padding: clamp(1.35rem, 5vw, 2.75rem);
-  background: var(--paper-white);
-  box-shadow: var(--shadow);
-}
-
 .intro-card .bullet-list {
   max-width: 50rem;
   font-family: var(--serif);
