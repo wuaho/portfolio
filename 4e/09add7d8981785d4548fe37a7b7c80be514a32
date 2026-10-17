@@ -1,0 +1,19 @@
+index.html
+  s_682c6fecce092b::t_4c9f0ab982d0b8 153-156
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4e09add7d8981785d4548fe37a7b7c80be514a32",
+  "prompts": {},
+  "sessions": {
+    "s_682c6fecce092b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3c77bbc0-9097-450f-ae58-e0903da79857",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
