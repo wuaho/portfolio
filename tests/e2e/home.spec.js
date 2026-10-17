@@ -100,3 +100,19 @@ test("page loads without console errors or failed requests", async ({
 
   expect(problems).toEqual([]);
 });
+
+test("link preview metadata is set", async ({ page }) => {
+  await page.goto("/");
+
+  await expect(page).toHaveTitle("juanjo requena");
+  const meta = (property) =>
+    page.locator(`meta[property="${property}"]`).getAttribute("content");
+  expect(await meta("og:title")).toBe("juanjo requena");
+  expect(await meta("og:description")).toBe("my little corner of the internet");
+  expect(await meta("og:image")).toMatch(
+    /^https:\/\/.+\/assets\/og-image\.png$/,
+  );
+
+  const image = await page.request.get("/assets/og-image.png");
+  expect(image.ok()).toBe(true);
+});
