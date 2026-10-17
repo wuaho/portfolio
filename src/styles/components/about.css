@@ -1,10 +1,4 @@
 /* About window: photo, name, and short bullet intro. */
-@media (min-width: 52rem) {
-  [data-window="about"] {
-    height: auto;
-  }
-}
-
 .about-header {
   display: flex;
   align-items: center;
@@ -53,7 +47,17 @@
 }
 
 .about-languages {
-  margin-top: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.about-subheading {
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .about-accent {
