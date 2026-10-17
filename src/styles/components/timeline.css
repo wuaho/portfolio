@@ -1,0 +1,91 @@
+/* Experience timeline: newest first, logo nodes on a vertical line. */
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline::before {
+  position: absolute;
+  top: 1.75rem;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  border-left: 2px dashed var(--line);
+  content: "";
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 3.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+}
+
+.timeline-logo {
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.9rem;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--line);
+}
+
+.timeline-content {
+  min-width: 0;
+}
+
+.timeline-date {
+  margin: 0 0 0.25rem;
+  color: var(--coral);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.timeline-content h3 {
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4.5vw, 1.95rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.timeline-content h3 a:hover,
+.timeline-content h3 a:focus-visible {
+  color: var(--coral);
+  outline: none;
+}
+
+.timeline-role {
+  margin: 0 0 0.8rem;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+}
+
+.timeline-content .bullet-list {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.timeline-logo-link {
+  position: relative;
+  display: block;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.9rem;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+.timeline-logo-link:hover,
+.timeline-logo-link:focus-visible {
+  transform: scale(1.18);
+}
+
+.timeline-logo-link:focus-visible {
+  outline: 2px solid var(--coral);
+  outline-offset: 3px;
+}

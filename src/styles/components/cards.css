@@ -154,11 +154,6 @@
 }
 
 /* Card variants. */
-.experience-card {
-  border-color: var(--blue-dark);
-  background: var(--lavender);
-}
-
 .more-card h3 {
   font-size: 1.45rem;
 }

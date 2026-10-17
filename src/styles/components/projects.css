@@ -9,7 +9,7 @@
 
 .project-item {
   display: grid;
-  grid-template-columns: 4rem minmax(0, 1fr);
+  grid-template-columns: 5rem minmax(0, 1fr);
   gap: 1rem;
   align-items: start;
   padding: 1.2rem 0;
@@ -27,8 +27,8 @@
 
 .project-logo {
   display: grid;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   place-items: center;
   overflow: hidden;
 }
@@ -42,8 +42,7 @@
 
 /* Show only the first frame of the two-frame penguin idle spritesheet. */
 .project-logo-pixel {
-  background: url("../../../assets/penguin/spritesheets/idle.png") left / 200%
-    100% no-repeat;
+  background: url("../../../assets/penguin/spritesheets/idle.png") 20.4% 33.6% / 700% 350% no-repeat;
   image-rendering: pixelated;
 }
 
@@ -59,44 +58,36 @@
   margin-bottom: 0.45rem;
   color: var(--ink);
   font-family: var(--serif);
-  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  font-size: clamp(1.5rem, 4.5vw, 1.95rem);
   font-weight: 400;
   letter-spacing: -0.04em;
 }
 
 .project-info h3 a:hover,
 .project-info h3 a:focus-visible {
-  color: var(--blue-dark);
+  color: var(--coral);
   outline: none;
 }
 
 .project-info .bullet-list {
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 1.02rem;
 }
 
-.project-status {
-  display: inline-block;
-  margin-bottom: 0.6rem;
-  border: 1px solid var(--coral);
-  border-radius: 999px;
-  padding: 0.1rem 0.6rem;
-  color: var(--coral);
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+.project-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 @media (min-width: 35rem) {
   .project-item {
-    grid-template-columns: 5.5rem minmax(0, 1fr);
+    grid-template-columns: 7.5rem minmax(0, 1fr);
     gap: 1.4rem;
   }
 
   .project-logo {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 7.5rem;
+    height: 7.5rem;
   }
 }
