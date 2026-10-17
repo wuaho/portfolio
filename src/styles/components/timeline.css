@@ -90,6 +90,35 @@
   outline-offset: 3px;
 }
 
+/* Wide windows: the date sits at the right, on the same line as the employer. */
+@media (min-width: 35rem) {
+  .timeline-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 1rem;
+  }
+
+  .timeline-content > * {
+    grid-column: 1 / -1;
+  }
+
+  .timeline-content > h3,
+  .timeline-content > .timeline-date {
+    grid-row: 1;
+    align-self: baseline;
+  }
+
+  .timeline-content > h3 {
+    grid-column: 1;
+  }
+
+  .timeline-content > .timeline-date {
+    grid-column: 2;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+
 /* Certifications follow the timeline in the Experience window. */
 .experience-certifications {
   margin-top: 3rem;
