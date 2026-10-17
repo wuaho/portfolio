@@ -27,7 +27,8 @@
 
   /* Typography */
   --display: "Montserrat", "Avenir Next", Avenir, "Segoe UI", sans-serif;
-  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --mono:
+    "Roboto Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   /* Motion */
   --duration-fast: 180ms;
