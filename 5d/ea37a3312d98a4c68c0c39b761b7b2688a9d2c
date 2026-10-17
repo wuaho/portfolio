@@ -1,0 +1,19 @@
+src/styles/components/penguin.css
+  s_337f3897043e89::t_9f8f211b1b2f66 31,61,63-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "5dea37a3312d98a4c68c0c39b761b7b2688a9d2c",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
