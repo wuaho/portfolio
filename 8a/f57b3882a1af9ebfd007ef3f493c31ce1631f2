@@ -1,0 +1,33 @@
+assets/badges/cambridge.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+assets/badges/aws.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+assets/badges/korean.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+assets/badges/spanish.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+src/styles/components/more.css
+  s_17c44387f44e75::t_63c6a3098fc8e7 40,43,47-57,63-65,71
+assets/badges/topik.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+assets/badges/english.svg
+  s_17c44387f44e75::t_63c6a3098fc8e7 1
+index.html
+  s_17c44387f44e75::t_63c6a3098fc8e7 403-414,416-430,432-443,451-462,464-475,477-488
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "8af57b3882a1af9ebfd007ef3f493c31ce1631f2",
+  "prompts": {},
+  "sessions": {
+    "s_17c44387f44e75": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c473311f-f35e-4191-aced-cde29ccff908",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
