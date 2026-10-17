@@ -17,6 +17,7 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`, `placement.js`, `funk.js`).
 - `assets/icons/`: Local SVG navigation icons.
 - `assets/profile/`: Profile photo for the About window.
+- `assets/favicon.png`: Browser tab icon, the idle penguin cropped and scaled 4x (64x64).
 - `assets/penguin/gifs/`, `assets/penguin/spritesheets/`: User-provided penguin animation assets, kebab-case file names.
 - `tests/e2e/`: Playwright end-to-end specs, one file per feature.
 - `tests/support/helpers.js`: Shared test helpers (viewports, stable bounding boxes, drag, fake Web Audio).
