@@ -83,12 +83,6 @@
   font-size: 1.02rem;
 }
 
-.project-text {
-  margin: 0;
-  color: var(--muted);
-  font-size: 1.02rem;
-}
-
 @media (min-width: 35rem) {
   .project-item {
     --logo-col: 8.8rem;
@@ -109,4 +103,17 @@
 .project-info .card-link:hover,
 .project-info .card-link:focus-visible {
   color: var(--blue-dark);
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-info .card-link {
+  align-self: flex-end;
+}
+
+.project-info .card-link::after {
+  content: none;
 }
