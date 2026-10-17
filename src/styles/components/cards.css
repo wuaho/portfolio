@@ -154,11 +154,6 @@
 }
 
 /* Card variants. */
-.experience-card {
-  border-color: var(--blue-dark);
-  background: var(--lavender);
-}
-
 .project-card {
   border-color: var(--mint-dark);
   background: var(--mint);
