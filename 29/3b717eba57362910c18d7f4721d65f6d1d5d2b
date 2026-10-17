@@ -1,0 +1,33 @@
+src/styles/tokens.css
+  s_4e2250151237d4::t_0fbbb88561a36c 32
+src/styles/components/about.css
+  s_337f3897043e89::t_3be00722b9ac42 53-79
+  s_4e2250151237d4::t_6321080f1204bc 83,85
+index.html
+  s_4e2250151237d4::t_5e289fa82e5785 14
+  s_337f3897043e89::t_3be00722b9ac42 215-230
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "293b717eba57362910c18d7f4721d65f6d1d5d2b",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    },
+    "s_4e2250151237d4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a8db0599-0998-4f2a-8983-7fb8a6b3c8e7",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
