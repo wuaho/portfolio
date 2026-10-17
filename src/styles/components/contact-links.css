@@ -1,4 +1,4 @@
-/* Icon tiles, styled like the home section navigation. */
+/* Bare icons, styled like the home section navigation. */
 .contact-links {
   display: flex;
   flex-wrap: wrap;
@@ -17,23 +17,16 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  border: 1px solid var(--line);
   border-radius: 1rem;
-  background: var(--paper-white);
   color: var(--ink);
   text-decoration: none;
-  transition:
-    transform var(--duration-fast) ease,
-    box-shadow var(--duration-fast) ease,
-    color var(--duration-fast) ease;
+  transition: color var(--duration-fast) ease;
 }
 
 .contact-link:hover,
 .contact-link:focus-visible {
   color: var(--blue-dark);
   outline: none;
-  transform: translateY(-0.2rem) rotate(-1deg);
-  box-shadow: 0.35rem 0.35rem 0 rgba(41, 39, 35, 0.1);
 }
 
 .contact-link-icon {
@@ -67,23 +60,5 @@
 @media (min-width: 52rem) {
   .contact-link {
     flex-basis: calc((100% - 2.25rem) / 4);
-    border-color: var(--ink);
-    box-shadow: var(--shadow);
-  }
-
-  .contact-link-linkedin {
-    background: var(--lavender);
-  }
-
-  .contact-link-github {
-    background: var(--mint);
-  }
-
-  .contact-link-x {
-    background: var(--yellow);
-  }
-
-  .contact-link-blog {
-    background: var(--peach);
   }
 }
