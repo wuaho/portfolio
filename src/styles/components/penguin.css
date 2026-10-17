@@ -128,16 +128,27 @@
   }
 }
 
+/*
+ * Both sprites stay laid out and decoded; only visibility flips. Hiding the
+ * gif with display:none made it decode on the first click, so the penguin
+ * vanished for a moment.
+ */
+.penguin-idle,
 .penguin-spin {
-  display: none;
+  position: absolute;
+  inset: 0;
+}
+
+.penguin-spin {
+  visibility: hidden;
 }
 
 .penguin-companion.is-rolling .penguin-idle {
-  display: none;
+  visibility: hidden;
 }
 
 .penguin-companion.is-rolling .penguin-spin {
-  display: block;
+  visibility: visible;
 }
 
 @media (min-width: 52rem) {
