@@ -1,36 +1,22 @@
+/*
+ * Mobile-first: the greeting and the description each stay on one line
+ * (the title scales with the viewport width), then the tablet and desktop
+ * styles take over.
+ */
 .hero {
-  position: relative;
-  padding: 5.5rem 0 3.5rem;
+  padding: 4.5rem 0 2.5rem;
   text-align: center;
 }
 
-/* Two small, quiet sparkles frame the greeting. */
-.hero-art {
-  position: absolute;
-  top: 1rem;
-  right: 0.5rem;
-  width: 2.25rem;
-  height: 2.25rem;
-  color: var(--coral);
-}
-
-.hero-art.left {
-  top: auto;
-  right: auto;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  color: var(--blue);
-}
-
 .hero-title {
-  max-width: 13ch;
-  margin: 0 auto 1.25rem;
+  max-width: none;
+  margin: 0 auto 1rem;
   color: var(--ink);
   font-family: var(--display);
-  font-size: clamp(2.8rem, 12vw, 5.8rem);
+  font-size: 14.5vw;
   font-weight: 400;
   letter-spacing: -0.06em;
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .hero-title-greeting {
@@ -43,15 +29,38 @@
 }
 
 .hero-subline {
-  margin: 1.35rem auto 0;
-  color: var(--blue-dark);
-  font-family: var(--mono);
-  font-size: 0.76rem;
+  margin: 0 auto;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: min(1rem, 3.7vw);
+  white-space: nowrap;
 }
 
-.hero-subline::before {
-  color: var(--coral);
-  content: "// ";
+@media (min-width: 35rem) {
+  .hero {
+    padding: 5.5rem 0 3.5rem;
+  }
+
+  .hero-title {
+    max-width: 13ch;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.8rem, 12vw, 5.8rem);
+    text-wrap: balance;
+    white-space: normal;
+  }
+
+  .hero-subline {
+    margin-top: 1.35rem;
+    color: var(--blue-dark);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    white-space: normal;
+  }
+
+  .hero-subline::before {
+    color: var(--coral);
+    content: "// ";
+  }
 }
 
 @media (min-width: 52rem) {
@@ -60,18 +69,7 @@
     padding-bottom: 4.5rem;
   }
 
-  .hero-art {
-    top: 1.5rem;
-    right: 0;
-    width: 3.25rem;
-    height: 3.25rem;
-  }
-
-  .hero-art.left {
-    top: auto;
-    bottom: 3rem;
-    left: 2rem;
-    width: 2.75rem;
-    height: 2.75rem;
+  .hero-subline {
+    font-size: 0.8rem;
   }
 }

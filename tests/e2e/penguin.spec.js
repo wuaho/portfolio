@@ -43,3 +43,31 @@ test("penguin assets load", async ({ page }) => {
       .toBeGreaterThan(0);
   }
 });
+
+test("penguin stands on an ice block in the bottom-right corner", async ({
+  page,
+}) => {
+  await page.goto("/");
+
+  for (const viewport of [VIEWPORTS.desktop, VIEWPORTS.mobile]) {
+    await page.setViewportSize(viewport);
+
+    const penguinBox = await getBox(page.locator("[data-penguin]"));
+    const floeBox = await getBox(page.locator(".ice-floe"));
+    const penguinCenterX = penguinBox.x + penguinBox.width / 2;
+    const penguinFeetY = penguinBox.y + penguinBox.height / 2;
+
+    // The block is centered under the penguin, and the feet land near its top.
+    expect(
+      Math.abs(floeBox.x + floeBox.width / 2 - penguinCenterX),
+    ).toBeLessThan(4);
+    expect(Math.abs(floeBox.y - penguinFeetY)).toBeLessThan(
+      floeBox.height * 0.3,
+    );
+
+    // The penguin hugs the bottom-right corner of the viewport.
+    expect(penguinCenterX).toBeGreaterThan(viewport.width - 140);
+    expect(penguinFeetY).toBeGreaterThan(viewport.height - 140);
+    expect(penguinFeetY).toBeLessThan(viewport.height);
+  }
+});

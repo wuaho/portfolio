@@ -1,12 +1,11 @@
 /*
- * Antarctic backdrop: a pale glacier horizon, two calm waves, and the
- * ice floe the penguin stands on. Everything is decorative (aria-hidden), non-interactive, and sits behind the page content.
- * The sea's top edge is the horizon: 28dvh on phones, the viewport midline
- * on desktop (it meets the middle of the home window).
+ * Antarctic backdrop: a pale sea band along the bottom of the viewport and
+ * the ice block the penguin stands on. Everything is decorative
+ * (aria-hidden), non-interactive, and sits behind the page content.
+ * The sea is 30dvh tall on phones and 22dvh on desktop.
  */
 .antarctic-scene {
-  --sea-height: 28dvh;
-  --wave-tile: 1200px;
+  --sea-height: 30dvh;
 
   position: fixed;
   z-index: -1;
@@ -15,74 +14,14 @@
   pointer-events: none;
 }
 
-/* Glacier horizon: a single pale ice shelf resting on the sea. */
-.glacier {
-  position: absolute;
-  right: 0;
-  bottom: calc(var(--sea-height) - 0.4rem);
-  left: 0;
-  height: 5rem;
-  background-repeat: repeat-x;
-  background-position: bottom left;
-  background-size: auto 100%;
-}
-
-.glacier-shelf {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 120'%3E%3Cpath fill='%23e3f0f9' d='M0 120V92l130-30 90 30 110-52 90 46 140-40 110 36 150-34 100 30 130-48 120 44 140-26 120 28 70-14v50Z'/%3E%3C/svg%3E");
-  background-position: 340px bottom;
-}
-
 .sea {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
   height: var(--sea-height);
-}
-
-.wave {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-/* Each wave is a solid body with a rolling crest strip drawn above it. */
-.wave::before {
-  position: absolute;
-  right: 0;
-  left: 0;
-  height: 3.75rem;
-  background-repeat: repeat-x;
-  background-size: var(--wave-tile) 100%;
-  content: "";
-  animation: wave-roll var(--wave-speed) linear infinite;
-}
-
-.wave-back {
-  --wave-speed: 46s;
-
-  top: 0;
-  background: var(--sea-1);
-}
-
-.wave-back::before {
-  top: calc(-3.75rem + 1px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23d6eafa' d='M0 38C150 14 450 14 600 38S1050 62 1200 38V60H0Z'/%3E%3C/svg%3E");
-  animation-direction: reverse;
-}
-
-.wave-front {
-  --wave-speed: 28s;
-
-  top: 1.6rem;
-  background: var(--sea-3);
-}
-
-.wave-front::before {
-  top: calc(-3.75rem + 1px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath fill='%23a9d4f6' d='M0 30C100 8 300 8 400 30S700 52 800 30 1100 8 1200 30V60H0Z'/%3E%3Cpath fill='none' stroke='%23fff' stroke-opacity='.8' stroke-width='2' stroke-linecap='round' d='M0 30C100 8 300 8 400 30S700 52 800 30 1100 8 1200 30'/%3E%3C/svg%3E");
-  animation-direction: reverse;
+  border-radius: 50% 50% 0 0 / 0.9rem 0.9rem 0 0;
+  background: linear-gradient(var(--water), var(--water-light));
 }
 
 /*
@@ -90,7 +29,7 @@
  * box (see --perch-* in penguin.css) so the feet land on the top face.
  */
 .ice-floe {
-  --floe-width: calc(var(--perch-size) * 0.64);
+  --floe-width: calc(var(--perch-size) * 0.5);
   --floe-height: calc(var(--floe-width) * 0.625);
 
   position: fixed;
@@ -112,16 +51,15 @@
   width: 100%;
   height: 100%;
   overflow: visible;
+  filter: drop-shadow(0 0.35rem 0 rgba(41, 39, 35, 0.12));
 }
 
-@keyframes wave-roll {
-  from {
-    background-position-x: 0;
-  }
+.ice-front {
+  fill: var(--ice-front);
+}
 
-  to {
-    background-position-x: var(--wave-tile);
-  }
+.ice-top {
+  fill: var(--ice-top);
 }
 
 @keyframes floe-bob {
@@ -137,16 +75,11 @@
 
 @media (min-width: 52rem) {
   .antarctic-scene {
-    --sea-height: 50dvh;
-  }
-
-  .glacier {
-    height: 8rem;
+    --sea-height: 22dvh;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .wave::before,
   .ice-floe {
     animation: none;
   }

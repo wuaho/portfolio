@@ -13,7 +13,7 @@
   display: flex;
   /* Three tiles per row on phones; the last two center underneath. */
   flex: 0 1 calc((100% - 1rem) / 3);
-  min-height: 6.4rem;
+  min-height: 5.6rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -40,17 +40,16 @@
 .section-nav-icon {
   display: grid;
   border-radius: 1rem;
-  background: var(--tile);
-  width: 5.4rem;
-  height: 5.4rem;
+  width: 4.5rem;
+  height: 4.5rem;
   place-items: center;
   transform-origin: bottom center;
   transition: transform 0.25s var(--ease-spring);
 }
 
 .section-nav-icon img {
-  width: 5.2rem;
-  height: 5.2rem;
+  width: 4.3rem;
+  height: 4.3rem;
   object-fit: contain;
   /* Tints the black source SVGs to the ink color. */
   filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
@@ -96,7 +95,13 @@
   }
 
   .section-nav-icon {
-    background: transparent;
+    width: 5.4rem;
+    height: 5.4rem;
+  }
+
+  .section-nav-icon img {
+    width: 5.2rem;
+    height: 5.2rem;
   }
 }
 

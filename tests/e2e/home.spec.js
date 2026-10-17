@@ -59,12 +59,29 @@ test("landing content is wrapped in the home operating system window", async ({
     ),
   ).toBeLessThanOrEqual(2);
   expect(homeWindowBox.y).toBeGreaterThanOrEqual(100);
+});
 
-  const desktopTitleBox = await getBox(title);
-  const topStarBox = await getBox(homeWindow.locator(".hero-art:not(.left)"));
-  expect(topStarBox.y + topStarBox.height).toBeLessThanOrEqual(
-    desktopTitleBox.y,
-  );
+test("mobile greeting and description each fit on one line", async ({
+  page,
+}) => {
+  await page.setViewportSize(VIEWPORTS.mobile);
+  await page.goto("/");
+
+  for (const selector of ["#hero-title", ".hero-subline"]) {
+    const metrics = await page.locator(selector).evaluate((element) => {
+      const style = getComputedStyle(element);
+      return {
+        height: element.getBoundingClientRect().height,
+        lineHeight: parseFloat(style.lineHeight),
+        overflows: element.scrollWidth > element.clientWidth,
+      };
+    });
+    expect(metrics.height).toBeLessThanOrEqual(metrics.lineHeight * 1.2);
+    expect(metrics.overflows).toBe(false);
+  }
+
+  const iconTile = page.locator(".section-nav-icon").first();
+  await expect(iconTile).toHaveCSS("background-color", "rgba(0, 0, 0, 0)");
 });
 
 test("page loads without console errors or failed requests", async ({

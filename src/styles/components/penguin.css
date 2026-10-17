@@ -1,11 +1,13 @@
 /*
  * The penguin's feet sit on the vertical middle of its box; the ice floe
- * (antarctica.css) derives its position from these values.
+ * (antarctica.css) derives its position from these values. The box overhangs
+ * the viewport (negative offsets) so the visible penguin hugs the
+ * bottom-right corner.
  */
 :root {
   --perch-size: 16rem;
-  --perch-right: 1rem;
-  --perch-bottom: 1rem;
+  --perch-right: -3rem;
+  --perch-bottom: -3rem;
 }
 
 /*
@@ -86,8 +88,8 @@
 @media (min-width: 52rem) {
   :root {
     --perch-size: 22rem;
-    --perch-right: 1.5rem;
-    --perch-bottom: 1.5rem;
+    --perch-right: -4rem;
+    --perch-bottom: -4.5rem;
   }
 }
 

@@ -10,7 +10,7 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `src/styles/main.css`: Stylesheet entry point. Imports the other files in cascade order and documents the breakpoints.
 - `src/styles/tokens.css`: Design tokens (colors, fonts, durations, z-index scale). Add new colors and timings here instead of hardcoding them.
 - `src/styles/base.css`, `layout.css`, `motion.css`: Element defaults, page layout, reveal animation, and reduced-motion overrides.
-- `src/styles/components/`: One file per UI component, each with its own mobile-first media queries.
+- `src/styles/components/`: One file per UI component, each with its own mobile-first media queries. `antarctica.css` holds the sea band and the ice block under the penguin.
 - `src/scripts/main.js`: Script entry point. Initializes features and connects them.
 - `src/scripts/config.js`: Shared constants (desktop breakpoint, timings, storage keys).
 - `src/scripts/features/`: `windows.js` (open/close, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues and the mute toggle), `penguin.js` (hover tracking).
@@ -53,6 +53,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 
 - The navigation links use `data-window-target` and open the matching section identified by `data-window`. The current windows are `about`, `experience`, `projects`, `more`, and `contact`.
 - The landing hero and section navigation live inside the `.home-window` OS-style card. The sound toggle stays outside it as a fixed viewport control.
+- The sea band (`.antarctic-scene`) and the ice block (`.ice-floe`) are decorative. The block's position is derived from the penguin's `--perch-*` variables in `penguin.css`, so move the penguin and the block together by changing those variables.
 - The bottom-right penguin companion uses the first frame of `assets/penguin/spritesheets/idle.png` by default and swaps to `assets/penguin/gifs/spin-attack.gif` on hover/focus.
 - Every section window is a dialog with a `.window-chrome` title bar and `.window-close` button.
 - Desktop windows use the `52rem` breakpoint (`DESKTOP_QUERY` in `config.js`). Their title bar is draggable, and the window is clamped inside the viewport.
