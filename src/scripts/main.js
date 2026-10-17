@@ -1,6 +1,7 @@
 // Application entry point: wires the independent features together.
 import { initPenguin } from "./features/penguin.js";
 import { initSound } from "./features/sound.js";
+import { initVideoFacades } from "./features/video-facade.js";
 import { initWindows } from "./features/windows.js";
 
 const sound = initSound({
@@ -15,3 +16,5 @@ initWindows({
 initPenguin(document.querySelector("[data-penguin]"), {
   playMusic: sound.playMusic,
 });
+
+initVideoFacades();

@@ -13,10 +13,11 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `src/styles/components/`: One file per UI component, each with its own mobile-first media queries. `antarctica.css` holds the sea band and the ice block under the penguin.
 - `src/scripts/main.js`: Script entry point. Initializes features and connects them.
 - `src/scripts/config.js`: Shared constants (desktop breakpoint, timings, storage keys).
-- `src/scripts/features/`: `windows.js` (open/close, multi-window stacking and placement, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues, the funk music player, and the mute toggle), `penguin.js` (click to roll and play music).
+- `src/scripts/features/`: `windows.js` (open/close, multi-window stacking and placement, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues, the funk music player, and the mute toggle), `penguin.js` (click to roll and play music), `video-facade.js` (thumbnail buttons that become YouTube players on click).
 - `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`, `placement.js`, `funk.js`).
 - `assets/icons/`: Local SVG navigation icons.
 - `assets/profile/`: Profile photo for the About window.
+- `assets/videos/`: Local thumbnails for the More window's videos (YouTube is only loaded after pressing play; see `data-video-src`).
 - `assets/favicon.png`: Browser tab icon, the idle penguin cropped and scaled 4x (64x64).
 - `assets/og-image.png`: 1200x630 link preview image (Open Graph). Its absolute URL and the canonical URL in `index.html` assume `https://juanjorequena.com`.
 - `assets/penguin/gifs/`, `assets/penguin/spritesheets/`: User-provided penguin animation assets, kebab-case file names.
