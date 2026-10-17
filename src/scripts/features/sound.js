@@ -2,10 +2,19 @@ import { STORAGE_KEYS } from "../config.js";
 import { FUNK_DURATION_S, scheduleFunk } from "../lib/funk.js";
 import { readStorage, writeStorage } from "../lib/storage.js";
 
-// Ascending C major arpeggio for open; reversed for close.
+// Ascending C major arpeggio for open; reversed for close; a high, glassy
+// three-note sparkle for the penguin hover.
 const CUES = {
-  open: [523.25, 659.25, 783.99],
-  close: [783.99, 659.25, 523.25],
+  open: { notes: [523.25, 659.25, 783.99] },
+  close: { notes: [783.99, 659.25, 523.25] },
+  hover: {
+    notes: [1567.98, 2093, 2637.02],
+    spacing: 0.045,
+    duration: 0.24,
+    peak: 0.05,
+    // A quiet inharmonic partial makes the tone sound like ice or glass.
+    partial: 2.76,
+  },
 };
 const NOTE_SPACING_S = 0.055;
 const NOTE_DURATION_S = 0.12;
@@ -25,32 +34,45 @@ export function initSound({ toggle }) {
     return audioContext;
   }
 
-  function playTone(context, frequency, start) {
+  function playTone(context, frequency, start, duration, peak) {
     const oscillator = context.createOscillator();
     const gain = context.createGain();
 
     oscillator.type = "sine";
     oscillator.frequency.setValueAtTime(frequency, start);
     gain.gain.setValueAtTime(0.0001, start);
-    gain.gain.exponentialRampToValueAtTime(PEAK_GAIN, start + 0.012);
-    gain.gain.exponentialRampToValueAtTime(0.0001, start + NOTE_DURATION_S);
+    gain.gain.exponentialRampToValueAtTime(peak, start + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
     oscillator.connect(gain);
     gain.connect(context.destination);
     oscillator.start(start);
-    oscillator.stop(start + NOTE_DURATION_S + 0.02);
+    oscillator.stop(start + duration + 0.02);
   }
 
   function play(cueName) {
     if (!enabled) return;
 
-    const notes = CUES[cueName];
+    const cue = CUES[cueName];
     const context = getAudioContext();
-    if (!notes || !context) return;
+    if (!cue || !context) return;
     if (context.state === "suspended") context.resume();
 
+    const spacing = cue.spacing ?? NOTE_SPACING_S;
+    const duration = cue.duration ?? NOTE_DURATION_S;
+    const peak = cue.peak ?? PEAK_GAIN;
     const start = context.currentTime + 0.01;
-    notes.forEach((frequency, index) => {
-      playTone(context, frequency, start + index * NOTE_SPACING_S);
+    cue.notes.forEach((frequency, index) => {
+      const time = start + index * spacing;
+      playTone(context, frequency, time, duration, peak);
+      if (cue.partial) {
+        playTone(
+          context,
+          frequency * cue.partial,
+          time,
+          duration * 0.6,
+          peak * 0.35,
+        );
+      }
     });
   }
 
