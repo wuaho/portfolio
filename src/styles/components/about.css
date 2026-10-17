@@ -52,6 +52,14 @@
   line-height: 1.5;
 }
 
+.about-languages {
+  margin-top: 1.25rem;
+}
+
+.about-accent {
+  color: var(--coral);
+}
+
 .about-outro {
   margin: 1.25rem 0 0;
 }

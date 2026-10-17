@@ -63,14 +63,6 @@
   mix-blend-mode: multiply;
 }
 
-.more-badge-flag {
-  height: auto;
-  aspect-ratio: 3 / 2;
-  align-self: center;
-  border-radius: 0.35rem;
-  box-shadow: 0 0 0 1px var(--line);
-}
-
 .detail-list dt {
   margin-bottom: 0.2rem;
   color: var(--ink);
