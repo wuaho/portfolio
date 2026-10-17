@@ -80,4 +80,12 @@
     /* Vertically centered by .site-wrap. */
     margin-top: 0;
   }
+
+  /* Closer to square: taller body with the content centered. */
+  .home-window-body {
+    display: flex;
+    min-height: min(36rem, 68dvh);
+    flex-direction: column;
+    justify-content: center;
+  }
 }

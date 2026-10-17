@@ -2,7 +2,7 @@
  * Antarctic backdrop: a pale sea band along the bottom of the viewport and
  * the ice block the penguin stands on. Everything is decorative
  * (aria-hidden), non-interactive, and sits behind the page content.
- * The sea is 30dvh tall on every viewport.
+ * The sea is 30dvh tall on mobile and 35dvh on desktop.
  */
 .antarctic-scene {
   --sea-height: 30dvh;
@@ -22,6 +22,12 @@
   height: var(--sea-height);
   border-radius: 50% 50% 0 0 / 0.9rem 0.9rem 0 0;
   background: linear-gradient(var(--water), var(--water-light));
+}
+
+@media (min-width: 52rem) {
+  .antarctic-scene {
+    --sea-height: 35dvh;
+  }
 }
 
 /*
