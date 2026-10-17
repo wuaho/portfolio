@@ -1,0 +1,34 @@
+src/styles/components/projects.css
+  s_31b2e487a0fc23::t_c062ba6f3197b4 45
+  s_31b2e487a0fc23::t_055f492e2be2e7 12,30-31,61,68,74,77-80,85,90-91
+src/styles/components/timeline.css
+  s_31b2e487a0fc23::t_0a76f26010778f 1-91
+src/scripts/features/windows.js
+  s_31b2e487a0fc23::t_0a76f26010778f 140-144
+index.html
+  s_31b2e487a0fc23::t_0a76f26010778f 231-257,259,263,265-321
+  s_31b2e487a0fc23::t_055f492e2be2e7 359,363,366,392-396,413
+src/styles/components/window.css
+  s_31b2e487a0fc23::t_0a76f26010778f 151-157
+src/styles/main.css
+  s_31b2e487a0fc23::t_0a76f26010778f 22
+tests/e2e/multi-window.spec.js
+  s_31b2e487a0fc23::t_0a76f26010778f 36,107-156
+  s_31b2e487a0fc23::t_657022b7d9de59 157
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "df764f189043093e4c4cb498faafab3b835327d5",
+  "prompts": {},
+  "sessions": {
+    "s_31b2e487a0fc23": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "cade8c28-32a7-477a-820d-73edd1dfce57",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
