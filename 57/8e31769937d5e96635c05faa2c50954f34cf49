@@ -1,0 +1,24 @@
+src/styles/components/home-window.css
+  s_ddf16c4c0ae9b9::t_56aada2fa1412c 22
+src/styles/components/antarctica.css
+  s_ddf16c4c0ae9b9::t_d46868aba063f0 41
+  s_ddf16c4c0ae9b9::t_652d366bc5830d 27-34,40,42-53
+  s_ddf16c4c0ae9b9::t_893017e5b6098d 35-39
+  s_ddf16c4c0ae9b9::t_b60cdd532ae135 110-111
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "578e31769937d5e96635c05faa2c50954f34cf49",
+  "prompts": {},
+  "sessions": {
+    "s_ddf16c4c0ae9b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8f807ab5-5e59-4ae7-a71c-cdc7996bccc1",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
