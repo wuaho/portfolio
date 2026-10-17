@@ -77,6 +77,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 - Preserve the full portfolio content unless the user explicitly asks to remove it.
 - Keep external links using `target="_blank"` and `rel="noopener noreferrer"` (enforced by `tests/e2e/contact.spec.js`).
 - Prefer semantic HTML, visible keyboard focus, accessible names, and reduced-motion support.
+- Never put a YouTube (or other third-party) `<iframe>` directly in `index.html`: it loads slowly and weighs a lot. Add a video as a `.video-frame` containing a `button.video-facade` with `data-video-src` (embed URL), `data-video-title`, a local thumbnail in `assets/videos/` (kebab-case, about 880px wide JPEG, compressed), and a `.video-play` span, as in the More window. `features/video-facade.js` swaps in the player on click. Get a YouTube thumbnail from `https://i.ytimg.com/vi/<id>/maxresdefault.jpg` (for a playlist, use the first video's id from the oEmbed `thumbnail_url`).
 - The only profile image is `assets/profile/juanjo.jpg` (resized photo, shown in the About window).
 - Use ASCII for new code and comments unless content requires another character.
 
