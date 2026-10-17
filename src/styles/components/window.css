@@ -156,14 +156,15 @@
   }
 
   /*
-   * About is taller than the others so its text has room to breathe. It
-   * sits centered in the space above the home navigation (which starts
-   * about 50vh + 7rem down), so the navigation stays clickable.
+   * About is taller than the others: tall enough to show the "work together"
+   * line without scrolling. It is centered in the space above the home
+   * navigation (which starts about 50vh + 7rem down) when there is room, and
+   * may overlap the top of the navigation cards on short screens.
    */
   .window-panel[data-window="about"] {
-    top: max(1rem, calc(25vh - 11.5rem));
-    height: min(30rem, calc(50vh + 5rem));
-    max-height: min(30rem, calc(50vh + 5rem));
+    top: max(1rem, calc(25vh - 13.5rem));
+    height: min(34rem, calc(100vh - 2rem));
+    max-height: min(34rem, calc(100vh - 2rem));
   }
 
   .window-panel.is-open {
