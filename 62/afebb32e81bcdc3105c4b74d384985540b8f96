@@ -1,0 +1,33 @@
+index.html
+  s_ef85e49208f76a::t_f95db5688c1756 10,23-30,74-75,80,552-577
+src/styles/base.css
+  s_ef85e49208f76a::t_0bf7b8287e9dc1 15
+src/styles/components/antarctica.css
+  s_ef85e49208f76a::t_5a87b2910f5a4e 1-153
+src/styles/components/hero.css
+  s_ef85e49208f76a::t_13557dce42caf4 7,10-13,20-21,32-33,64-67,71-75
+src/styles/components/penguin.css
+  s_ef85e49208f76a::t_c26fcf651af65d 1-10,18-21,31-32,87-94,96
+src/styles/layout.css
+  s_ef85e49208f76a::t_cd562c9eda58e0 38
+src/styles/main.css
+  s_ef85e49208f76a::t_ca4a97eea5bb5f 13
+src/styles/tokens.css
+  s_ef85e49208f76a::t_4e1469679f6123 22-36
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "62afebb32e81bcdc3105c4b74d384985540b8f96",
+  "prompts": {},
+  "sessions": {
+    "s_ef85e49208f76a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_ef85e49208f76a",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
