@@ -74,7 +74,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 - Preserve the full portfolio content unless the user explicitly asks to remove it.
 - Keep external links using `target="_blank"` and `rel="noopener noreferrer"` (enforced by `tests/e2e/contact.spec.js`).
 - Prefer semantic HTML, visible keyboard focus, accessible names, and reduced-motion support.
-- The only profile image is `assets/profile/juanjo.jpg` (resized photo, shown in the About window). Do not add other image dependencies.
+- The only profile image is `assets/profile/juanjo.jpg` (resized photo, shown in the About window).
 - Use ASCII for new code and comments unless content requires another character.
 
 ## Verification And Commits

@@ -46,15 +46,29 @@
 
 .more-row {
   display: grid;
-  grid-template-columns: 3.5rem minmax(0, 1fr);
+  grid-template-columns: 5rem minmax(0, 1fr);
   align-items: center;
   gap: 1.25rem;
 }
 
 .more-badge {
   display: block;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 5rem;
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+/* The Cambridge crest has an opaque white background. */
+.more-badge-blend {
+  mix-blend-mode: multiply;
+}
+
+.more-badge-flag {
+  height: auto;
+  aspect-ratio: 3 / 2;
+  align-self: center;
+  border-radius: 0.35rem;
+  box-shadow: 0 0 0 1px var(--line);
 }
 
 .detail-list dt {
