@@ -16,6 +16,7 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `src/scripts/features/`: `windows.js` (open/close, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues and the mute toggle), `penguin.js` (hover tracking).
 - `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`).
 - `assets/icons/`: Local SVG navigation icons.
+- `assets/profile/`: Profile photo for the About window.
 - `assets/penguin/gifs/`, `assets/penguin/spritesheets/`: User-provided penguin animation assets, kebab-case file names.
 - `tests/e2e/`: Playwright end-to-end specs, one file per feature.
 - `tests/support/helpers.js`: Shared test helpers (viewports, stable bounding boxes, drag, fake Web Audio).
@@ -30,7 +31,7 @@ The previous Gatsby/React implementation was intentionally removed. Do not reint
 npm start
 ```
 
-Open `http://127.0.0.1:4173` in a browser.
+Open `http://127.0.0.1:4173` in a browser. To run a second server from another worktree, set `PORT`, for example `PORT=4174 npm start`. The E2E tests always use 4173.
 
 ## Running Tests
 
@@ -73,7 +74,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 - Preserve the full portfolio content unless the user explicitly asks to remove it.
 - Keep external links using `target="_blank"` and `rel="noopener noreferrer"` (enforced by `tests/e2e/contact.spec.js`).
 - Prefer semantic HTML, visible keyboard focus, accessible names, and reduced-motion support.
-- Do not add image dependencies for the profile; the current design intentionally has no profile image.
+- The only profile image is `assets/profile/juanjo.jpg` (resized photo, shown in the About window). Do not add other image dependencies.
 - Use ASCII for new code and comments unless content requires another character.
 
 ## Verification And Commits
