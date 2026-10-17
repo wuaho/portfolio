@@ -101,3 +101,12 @@
     --logo-size: 8.8rem;
   }
 }
+
+.project-info .card-link {
+  color: var(--coral);
+}
+
+.project-info .card-link:hover,
+.project-info .card-link:focus-visible {
+  color: var(--blue-dark);
+}
