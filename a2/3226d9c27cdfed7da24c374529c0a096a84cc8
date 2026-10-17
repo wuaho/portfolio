@@ -1,0 +1,23 @@
+src/styles/tokens.css
+  s_682c6fecce092b::t_5457a87f0c9713 6
+src/styles/components/about.css
+  s_682c6fecce092b::t_395c0e581bdc90 2-7
+src/styles/components/window.css
+  s_682c6fecce092b::t_b8637dafadd349 28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a23226d9c27cdfed7da24c374529c0a096a84cc8",
+  "prompts": {},
+  "sessions": {
+    "s_682c6fecce092b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3c77bbc0-9097-450f-ae58-e0903da79857",
+        "model": "claude-haiku-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
