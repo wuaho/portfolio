@@ -1,0 +1,21 @@
+src/styles/components/window.css
+  s_64c79231129cd5::t_050b73e4171ea2 157-158,162
+src/scripts/features/windows.js
+  s_64c79231129cd5::t_050b73e4171ea2 52-60,65-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "acccc720b6307098b85969f6990daa01d19684e1",
+  "prompts": {},
+  "sessions": {
+    "s_64c79231129cd5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "44bbe61c-4262-45eb-b1a4-65d98d67ba2f",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
