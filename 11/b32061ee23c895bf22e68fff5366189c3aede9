@@ -1,0 +1,19 @@
+tests/e2e/antarctica.spec.js
+  s_1c3c645a646c8f::t_518508aebcf99e 1-25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "11b32061ee23c895bf22e68fff5366189c3aede9",
+  "prompts": {},
+  "sessions": {
+    "s_1c3c645a646c8f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a6b2bba9-bffb-407a-8f61-36633d305d70",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
