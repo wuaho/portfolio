@@ -1,36 +1,17 @@
+/* Window headings are hidden visually but stay as each dialog's accessible name. */
 .section-heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.6rem;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
-.section-heading h2 {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: clamp(2rem, 8vw, 4.1rem);
-  font-weight: 400;
-  letter-spacing: -0.07em;
-}
-
-.section-label,
 .card-label {
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.section-label {
-  flex: 0 0 auto;
-  padding-bottom: 0.35rem;
-  color: var(--blue-dark);
-}
-
-.section-label::before {
-  margin-right: 0.3rem;
-  color: var(--coral);
-  content: "✳";
 }

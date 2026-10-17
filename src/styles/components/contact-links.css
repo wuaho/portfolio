@@ -1,15 +1,5 @@
 /* Contact window: dark title bar and brand icons. */
 
-/* The heading stays for the dialog's accessible name but is not shown. */
-[data-window="contact"] .section-heading {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 [data-window="contact"] .window-body {
   display: flex;
   flex-direction: column;
