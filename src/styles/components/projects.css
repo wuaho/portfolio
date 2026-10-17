@@ -8,12 +8,18 @@
 }
 
 .project-item {
+  --logo-size: 5rem;
+
   display: grid;
-  grid-template-columns: 5rem minmax(0, 1fr);
+  grid-template-columns: var(--logo-size) minmax(0, 1fr);
   gap: 1rem;
   align-items: start;
   padding: 1.2rem 0;
   border-top: 1px dashed var(--line);
+}
+
+.project-item.is-featured {
+  --logo-size: 6.5rem;
 }
 
 .project-item:first-child {
@@ -27,8 +33,8 @@
 
 .project-logo {
   display: grid;
-  width: 5rem;
-  height: 5rem;
+  width: var(--logo-size);
+  height: var(--logo-size);
   place-items: center;
   overflow: hidden;
 }
@@ -83,12 +89,12 @@
 
 @media (min-width: 35rem) {
   .project-item {
-    grid-template-columns: 7.5rem minmax(0, 1fr);
+    --logo-size: 7.5rem;
+    grid-template-columns: var(--logo-size) minmax(0, 1fr);
     gap: 1.4rem;
   }
 
-  .project-logo {
-    width: 7.5rem;
-    height: 7.5rem;
+  .project-item.is-featured {
+    --logo-size: 11rem;
   }
 }
