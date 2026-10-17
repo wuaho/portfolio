@@ -11,8 +11,9 @@
 }
 
 /*
- * Bottom-right penguin companion. It ignores pointer events so it never
- * blocks clicks; penguin.js toggles .is-hovered from the cursor position.
+ * Bottom-right penguin companion. The box ignores pointer events so it never
+ * blocks clicks; only .penguin-hit (over the penguin itself) is clickable.
+ * penguin.js toggles .is-rolling on click.
  */
 .penguin-companion {
   position: fixed;
@@ -36,7 +37,7 @@
 
 .penguin-companion:hover,
 .penguin-companion:focus-visible,
-.penguin-companion.is-hovered {
+.penguin-companion.is-rolling {
   filter: drop-shadow(0 0.5rem 0 rgba(41, 39, 35, 0.16));
   transform: translateY(-0.25rem) rotate(-3deg);
 }
@@ -45,6 +46,18 @@
   box-shadow:
     0 0 0 3px var(--paper),
     0 0 0 5px var(--blue);
+}
+
+/* The penguin occupies roughly x 24-52, y 17-40 of the 64px sprite grid. */
+.penguin-hit {
+  position: absolute;
+  z-index: 3;
+  top: 24%;
+  left: 34%;
+  width: 46%;
+  height: 46%;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .penguin-sprite {
@@ -115,15 +128,11 @@
   display: none;
 }
 
-.penguin-companion:hover .penguin-idle,
-.penguin-companion:focus .penguin-idle,
-.penguin-companion.is-hovered .penguin-idle {
+.penguin-companion.is-rolling .penguin-idle {
   display: none;
 }
 
-.penguin-companion:hover .penguin-spin,
-.penguin-companion:focus .penguin-spin,
-.penguin-companion.is-hovered .penguin-spin {
+.penguin-companion.is-rolling .penguin-spin {
   display: block;
 }
 

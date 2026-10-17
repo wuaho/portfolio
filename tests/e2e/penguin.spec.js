@@ -1,7 +1,7 @@
 const { test, expect } = require("@playwright/test");
 const { VIEWPORTS, getBox } = require("../support/helpers");
 
-test("penguin switches from idle to spin animation on hover", async ({
+test("clicking the penguin makes it roll, and clicking again stops it", async ({
   page,
 }) => {
   await page.goto("/");
@@ -19,16 +19,71 @@ test("penguin switches from idle to spin animation on hover", async ({
   expect(penguinBox.width).toBeGreaterThanOrEqual(352);
   expect(penguinBox.height).toBeGreaterThanOrEqual(352);
 
-  await page.mouse.move(
-    penguinBox.x + penguinBox.width / 2,
-    penguinBox.y + penguinBox.height / 2,
-  );
+  // Hovering alone does nothing.
+  const hit = penguin.locator("[data-penguin-hit]");
+  await hit.hover({ force: true });
+  await expect(idleSprite).toBeVisible();
 
+  await hit.click({ force: true });
+  await expect(penguin).toHaveAttribute("aria-pressed", "true");
   await expect(idleSprite).toBeHidden();
   await expect(spinSprite).toBeVisible();
 
-  await page.mouse.move(10, 10);
+  await hit.click({ force: true });
+  await expect(penguin).toHaveAttribute("aria-pressed", "false");
   await expect(idleSprite).toBeVisible();
+});
+
+test("the penguin's empty box does not block clicks underneath", async ({
+  page,
+}) => {
+  await page.setViewportSize(VIEWPORTS.desktop);
+  await page.goto("/");
+
+  const penguin = page.locator("[data-penguin]");
+  const box = await getBox(penguin);
+
+  // The top-left corner of the box is empty space, not the penguin.
+  await page.mouse.click(box.x + 8, box.y + 8);
+  await expect(penguin).toHaveAttribute("aria-pressed", "false");
+  const topElement = await page.evaluate(
+    ([x, y]) => document.elementFromPoint(x, y)?.closest("[data-penguin]"),
+    [box.x + 8, box.y + 8],
+  );
+  expect(topElement).toBeNull();
+});
+
+test("the penguin can be started from the keyboard", async ({ page }) => {
+  await page.goto("/");
+
+  const penguin = page.locator("[data-penguin]");
+  await penguin.focus();
+  await page.keyboard.press("Enter");
+  await expect(penguin).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("Space");
+  await expect(penguin).toHaveAttribute("aria-pressed", "false");
+});
+
+test("the penguin rolls without music while sound is muted", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    window.__audioContexts = 0;
+    const Original = window.AudioContext;
+    window.AudioContext = class extends Original {
+      constructor() {
+        super();
+        window.__audioContexts += 1;
+      }
+    };
+    localStorage.setItem("juanjo-sound", "off");
+  });
+  await page.goto("/");
+
+  const penguin = page.locator("[data-penguin]");
+  await penguin.locator("[data-penguin-hit]").click({ force: true });
+  await expect(penguin).toHaveAttribute("aria-pressed", "true");
+  expect(await page.evaluate(() => window.__audioContexts)).toBe(0);
 });
 
 test("penguin assets load", async ({ page }) => {

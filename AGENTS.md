@@ -13,8 +13,8 @@ This is Juanjo Requena's personal portfolio. It is a dependency-light static web
 - `src/styles/components/`: One file per UI component, each with its own mobile-first media queries. `antarctica.css` holds the sea band and the ice block under the penguin.
 - `src/scripts/main.js`: Script entry point. Initializes features and connects them.
 - `src/scripts/config.js`: Shared constants (desktop breakpoint, timings, storage keys).
-- `src/scripts/features/`: `windows.js` (open/close, multi-window stacking and placement, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues and the mute toggle), `penguin.js` (hover tracking).
-- `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`, `placement.js`).
+- `src/scripts/features/`: `windows.js` (open/close, multi-window stacking and placement, URL hash sync, focus, Escape/backdrop), `window-drag.js` (desktop dragging), `sound.js` (Web Audio cues, the funk music player, and the mute toggle), `penguin.js` (click to roll and play music).
+- `src/scripts/lib/`: Small framework-free helpers (`storage.js`, `focus.js`, `placement.js`, `funk.js`).
 - `assets/icons/`: Local SVG navigation icons.
 - `assets/profile/`: Profile photo for the About window.
 - `assets/penguin/gifs/`, `assets/penguin/spritesheets/`: User-provided penguin animation assets, kebab-case file names.
@@ -55,7 +55,7 @@ The Playwright config starts the static server automatically. Run the relevant E
 - The navigation links use `data-window-target` and open the matching section identified by `data-window`. The current windows are `about`, `experience`, `projects`, `more`, and `contact`.
 - The landing hero and section navigation live inside the `.home-window` OS-style card. The sound toggle stays outside it as a fixed viewport control.
 - The sea band (`.antarctic-scene`) and the ice block (`.ice-floe`) are decorative. The block's position is derived from the penguin's `--perch-*` variables in `penguin.css`, so move the penguin and the block together by changing those variables.
-- The bottom-right penguin companion uses the first frame of `assets/penguin/spritesheets/idle.png` by default and swaps to `assets/penguin/gifs/spin-attack.gif` on hover/focus.
+- The bottom-right penguin companion uses the first frame of `assets/penguin/spritesheets/idle.png` (with a CSS blink) and swaps to `assets/penguin/gifs/spin-attack.gif` while rolling. Clicking its hit area (`data-penguin-hit`), or Enter/Space, starts the roll and a short synthesized funk groove (`lib/funk.js`, played by `sound.js`); clicking again stops it. Muted sound means it rolls briefly without music.
 - Every section window is a dialog with a `.window-chrome` title bar and `.window-close` button.
 - Desktop windows use the `52rem` breakpoint (`DESKTOP_QUERY` in `config.js`). Several can be open at once, non-modal, with no backdrop or scroll lock. Each new one is placed by `lib/placement.js` where it overlaps the others (and the `data-window-keep-clear` nav) least; clicking a window raises it. Their title bar is draggable, and the window is clamped inside the viewport. The URL hash is the top-most window.
 - Mobile windows are full-screen modals, one at a time, over the backdrop. They must not be draggable.

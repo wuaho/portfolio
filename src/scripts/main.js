@@ -12,4 +12,6 @@ initWindows({
   onClose: () => sound.play("close"),
 });
 
-initPenguin(document.querySelector("[data-penguin]"));
+initPenguin(document.querySelector("[data-penguin]"), {
+  playMusic: sound.playMusic,
+});

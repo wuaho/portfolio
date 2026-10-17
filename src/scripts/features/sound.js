@@ -1,4 +1,5 @@
 import { STORAGE_KEYS } from "../config.js";
+import { FUNK_DURATION_S, scheduleFunk } from "../lib/funk.js";
 import { readStorage, writeStorage } from "../lib/storage.js";
 
 // Ascending C major arpeggio for open; reversed for close.
@@ -11,7 +12,7 @@ const NOTE_DURATION_S = 0.12;
 const PEAK_GAIN = 0.084;
 
 // Synthesized interface sounds plus the mute toggle that controls them.
-// Returns { play(cueName) }; play is a no-op while muted.
+// Returns { play(cueName), playMusic(onEnd) }; both are no-ops while muted.
 export function initSound({ toggle }) {
   let enabled = readStorage(STORAGE_KEYS.sound) !== "off";
   let audioContext = null;
@@ -53,6 +54,47 @@ export function initSound({ toggle }) {
     });
   }
 
+  // Plays the funk groove once. Returns a stop function, or null while muted
+  // (or without Web Audio). `onEnd` runs when it finishes or is stopped.
+  function playMusic(onEnd) {
+    if (!enabled) return null;
+
+    const context = getAudioContext();
+    if (!context) return null;
+    if (context.state === "suspended") context.resume();
+
+    const start = context.currentTime + 0.02;
+    const { sources, master } = scheduleFunk(
+      context,
+      context.destination,
+      start,
+    );
+    let finished = false;
+    let timer = 0;
+
+    function finish(stopSources) {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(timer);
+      if (stopSources) {
+        const now = context.currentTime;
+        master.gain.setValueAtTime(master.gain.value, now);
+        master.gain.linearRampToValueAtTime(0, now + 0.05);
+        sources.forEach((source) => {
+          try {
+            source.stop(now + 0.06);
+          } catch {
+            // Already stopped.
+          }
+        });
+      }
+      onEnd?.();
+    }
+
+    timer = window.setTimeout(() => finish(false), FUNK_DURATION_S * 1000);
+    return () => finish(true);
+  }
+
   function render() {
     if (!toggle) return;
     toggle.setAttribute("aria-pressed", String(enabled));
@@ -71,5 +113,5 @@ export function initSound({ toggle }) {
 
   render();
 
-  return { play };
+  return { play, playMusic };
 }
