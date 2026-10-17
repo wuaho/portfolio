@@ -19,34 +19,9 @@
 
 .home-window-title {
   font-family: var(--mono);
-  font-size: 0.7rem;
+  font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: lowercase;
-}
-
-.home-window-controls {
-  display: inline-flex;
-  gap: 0.3rem;
-}
-
-.home-window-controls i {
-  display: block;
-  width: 0.55rem;
-  height: 0.55rem;
-  border: 1px solid rgba(248, 243, 233, 0.55);
-  border-radius: 50%;
-}
-
-.home-window-controls i:first-child {
-  background: var(--coral);
-}
-
-.home-window-controls i:nth-child(2) {
-  background: var(--yellow);
-}
-
-.home-window-controls i:last-child {
-  background: var(--mint);
 }
 
 .home-window-body {
