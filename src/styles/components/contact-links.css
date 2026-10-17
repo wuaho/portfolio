@@ -1,4 +1,4 @@
-/* Contact window: dark title bar and brand icons. */
+/* Contact window: brand icons. */
 
 [data-window="contact"] .window-body {
   display: flex;
@@ -78,36 +78,12 @@
     flex-basis: calc((100% - 2.25rem) / 4);
   }
 
-  /* A compact window sized to its content, with a dark title bar. */
+  /* A compact window sized to its content. */
   [data-window="contact"] {
     inset: 18vh auto auto 50%;
     width: min(calc(100% - 4rem), 40rem);
     height: auto;
     background: var(--paper-white);
-  }
-
-  [data-window="contact"] .window-chrome {
-    background: var(--ink-soft);
-    color: var(--paper);
-  }
-
-  [data-window="contact"] .window-dots {
-    display: none;
-  }
-
-  [data-window="contact"] .window-chrome {
-    grid-template-columns: minmax(0, 1fr) 2.2rem;
-  }
-
-  [data-window="contact"] .window-title {
-    font-size: 1rem;
-    letter-spacing: 0.04em;
-    text-align: left;
-    text-transform: none;
-  }
-
-  [data-window="contact"] .window-close {
-    color: var(--paper);
   }
 
   [data-window="contact"] .window-body {

@@ -59,29 +59,6 @@
   color: var(--paper);
 }
 
-/* The traffic-light dots only appear on the desktop window. */
-.window-dots {
-  display: none;
-  gap: 0.32rem;
-}
-
-.window-dots i {
-  display: block;
-  width: 0.65rem;
-  height: 0.65rem;
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-  background: var(--coral);
-}
-
-.window-dots i:nth-child(2) {
-  background: var(--yellow);
-}
-
-.window-dots i:nth-child(3) {
-  background: var(--mint);
-}
-
 .window-title {
   overflow: hidden;
   color: inherit;
@@ -173,12 +150,10 @@
   }
 
   .window-chrome {
-    grid-template-columns: 4.2rem minmax(0, 1fr) 2.2rem;
+    grid-template-columns: minmax(0, 1fr) 2.2rem;
     min-height: 3.5rem;
     border-bottom: 1px solid var(--ink);
-    padding-inline: 1rem;
-    background: var(--paper-white);
-    color: var(--muted);
+    padding-inline: 1.25rem 1rem;
     cursor: grab;
     touch-action: none;
     user-select: none;
@@ -189,21 +164,9 @@
     cursor: grabbing;
   }
 
-  .window-dots {
-    display: flex;
-  }
-
-  .window-title {
-    font-size: 0.7rem;
-    letter-spacing: 0.06em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
   .window-close {
     width: 2rem;
     height: 2rem;
-    color: var(--muted);
     font-size: 1.45rem;
   }
 
