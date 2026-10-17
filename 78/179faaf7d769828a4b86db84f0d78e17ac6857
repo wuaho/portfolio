@@ -1,0 +1,23 @@
+src/styles/components/antarctica.css
+  s_ddf16c4c0ae9b9::t_53e8e148d2a642 26-31,34,36-42,44,46-66
+  s_ddf16c4c0ae9b9::t_cfc26ea5eec35b 125-127
+index.html
+  s_ddf16c4c0ae9b9::t_bc6c5181329596 34
+  s_ddf16c4c0ae9b9::t_6d53b51dce1bf7 25-33,35-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "78179faaf7d769828a4b86db84f0d78e17ac6857",
+  "prompts": {},
+  "sessions": {
+    "s_ddf16c4c0ae9b9": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8f807ab5-5e59-4ae7-a71c-cdc7996bccc1",
+        "model": "unknown"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
