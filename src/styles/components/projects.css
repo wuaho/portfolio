@@ -42,7 +42,8 @@
 
 /* Show only the first frame of the two-frame penguin idle spritesheet. */
 .project-logo-pixel {
-  background: url("../../../assets/penguin/spritesheets/idle.png") 20.4% 33.6% / 700% 350% no-repeat;
+  background: url("../../../assets/penguin/spritesheets/idle.png") 20.4% 33.6% /
+    700% 350% no-repeat;
   image-rendering: pixelated;
 }
 
