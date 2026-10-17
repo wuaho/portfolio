@@ -8,10 +8,11 @@
 }
 
 .project-item {
+  --logo-col: 5.2rem;
   --logo-size: 5rem;
 
   display: grid;
-  grid-template-columns: var(--logo-size) minmax(0, 1fr);
+  grid-template-columns: var(--logo-col) minmax(0, 1fr);
   gap: 1rem;
   align-items: start;
   padding: 1.2rem 0;
@@ -19,7 +20,7 @@
 }
 
 .project-item.is-featured {
-  --logo-size: 6.5rem;
+  --logo-size: 5.2rem;
 }
 
 .project-item:first-child {
@@ -35,6 +36,7 @@
   display: grid;
   width: var(--logo-size);
   height: var(--logo-size);
+  justify-self: center;
   place-items: center;
   overflow: hidden;
 }
@@ -89,12 +91,13 @@
 
 @media (min-width: 35rem) {
   .project-item {
+    --logo-col: 8.8rem;
     --logo-size: 7.5rem;
-    grid-template-columns: var(--logo-size) minmax(0, 1fr);
+    grid-template-columns: var(--logo-col) minmax(0, 1fr);
     gap: 1.4rem;
   }
 
   .project-item.is-featured {
-    --logo-size: 11rem;
+    --logo-size: 8.8rem;
   }
 }
