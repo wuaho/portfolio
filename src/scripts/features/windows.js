@@ -137,6 +137,11 @@ export function initWindows({ onOpen = () => {}, onClose = () => {} } = {}) {
         { width: window.innerWidth, height: window.innerHeight },
       );
       placePanel(panel, spot.x, spot.y);
+      // Measuring committed the default style; skip the transition from it so
+      // the opening animation starts at the screen center.
+      panel.style.transition = "none";
+      void panel.offsetWidth;
+      panel.style.transition = "";
     }
 
     openPanels.push(panel);

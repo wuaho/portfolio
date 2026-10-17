@@ -33,6 +33,7 @@ test.describe("desktop multi-window", () => {
     const about = await openWindow(page, "about");
     const aboutBox = await getStableBoundingBox(about);
     const contact = await openWindow(page, "contact");
+    await page.waitForTimeout(400);
     const contactBox = await getStableBoundingBox(contact);
 
     const overlapX =
@@ -102,5 +103,56 @@ test.describe("desktop multi-window", () => {
     await page.locator('[data-window-target="about"]').click();
 
     await expect(page).toHaveURL(/#about$/);
+  });
+
+  test("placed windows animate out from the center of the screen", async ({
+    page,
+  }) => {
+    await openWindow(page, "about");
+    const contact = page.locator('[data-window="contact"]');
+
+    // Record the window's center on every frame once it becomes visible.
+    await page.evaluate(() => {
+      const panel = document.querySelector('[data-window="contact"]');
+      window.__centers = [];
+      const record = () => {
+        if (!panel.hidden) {
+          const box = panel.getBoundingClientRect();
+          window.__centers.push({
+            x: box.x + box.width / 2,
+            y: box.y + box.height / 2,
+          });
+        }
+        window.requestAnimationFrame(record);
+      };
+      record();
+    });
+
+    await page.locator('[data-window-target="contact"]').click();
+    await expect(contact).toBeVisible();
+    const finalBox = await getStableBoundingBox(contact);
+    const final = {
+      x: finalBox.x + finalBox.width / 2,
+      y: finalBox.y + finalBox.height / 2,
+    };
+
+    const centers = await page.evaluate(() => window.__centers);
+    const first = centers[0];
+    const screen = {
+      x: VIEWPORTS.desktop.width / 2,
+      y: VIEWPORTS.desktop.height / 2,
+    };
+    const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+
+    // Starts at the screen center, then travels to the final spot.
+    expect(distance(first, screen)).toBeLessThan(40);
+    expect(distance(final, screen)).toBeGreaterThan(150);
+    expect(distance(first, final)).toBeGreaterThan(150);
+    // The path is a smooth glide, not a jump: some frame lies in between.
+    expect(
+      centers.some(
+        (point) => distance(point, screen) > 40 && distance(point, final) > 40,
+      ),
+    ).toBe(true);
   });
 });
