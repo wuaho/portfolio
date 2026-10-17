@@ -31,7 +31,7 @@ The previous Gatsby/React implementation was intentionally removed. Do not reint
 npm start
 ```
 
-Open `http://127.0.0.1:4173` in a browser.
+Open `http://127.0.0.1:4173` in a browser. To run a second server from another worktree, set `PORT`, for example `PORT=4174 npm start`. The E2E tests always use 4173.
 
 ## Running Tests
 
