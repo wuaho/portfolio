@@ -12,9 +12,9 @@
 .more-section h3 {
   margin-bottom: 0.6rem;
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(1.5rem, 4.5vw, 1.95rem);
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.04em;
 }
 
@@ -66,8 +66,9 @@
 .detail-list dt {
   margin-bottom: 0.2rem;
   color: var(--ink);
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(1.2rem, 3.6vw, 1.5rem);
+  font-weight: 500;
   letter-spacing: -0.03em;
 }
 

@@ -26,9 +26,7 @@
   --shadow-raised: 0 11px 0 rgba(41, 39, 35, 0.09);
 
   /* Typography */
-  --sans: "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
   --display: "Montserrat", "Avenir Next", Avenir, "Segoe UI", sans-serif;
-  --serif: Georgia, "Times New Roman", serif;
   --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   /* Motion */

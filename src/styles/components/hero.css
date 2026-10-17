@@ -31,7 +31,7 @@
 .hero-subline {
   margin: 0 auto;
   color: var(--muted);
-  font-family: var(--sans);
+  font-family: var(--display);
   font-size: min(1rem, 3.7vw);
   white-space: nowrap;
 }
