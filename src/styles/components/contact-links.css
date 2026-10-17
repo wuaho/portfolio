@@ -4,15 +4,23 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.75rem;
+  width: 100%;
   max-width: 42rem;
   margin: 0 auto;
   padding: 1rem 0;
 }
 
+/* Mobile: center the icons in the full-screen modal. */
+[data-window="contact"] .window-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .contact-link {
   display: flex;
   flex: 0 1 calc((100% - 0.75rem) / 2);
-  min-height: 7rem;
+  min-height: 9rem;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -31,15 +39,15 @@
 
 .contact-link-icon {
   display: grid;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 5rem;
+  height: 5rem;
   place-items: center;
   transition: transform 0.25s var(--ease-spring);
 }
 
 .contact-link-icon img {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 4.4rem;
+  height: 4.4rem;
   object-fit: contain;
   /* Tints the black source SVGs to the ink color. */
   filter: invert(18%) sepia(8%) saturate(535%) hue-rotate(349deg)
@@ -53,12 +61,23 @@
 
 .contact-link-label {
   font-family: var(--mono);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 700;
 }
 
 @media (min-width: 52rem) {
   .contact-link {
     flex-basis: calc((100% - 2.25rem) / 4);
+  }
+
+  /* A compact window sized to its content instead of the default tall one. */
+  [data-window="contact"] {
+    inset: 18vh auto auto 50%;
+    width: min(calc(100% - 4rem), 46rem);
+    height: auto;
+  }
+
+  [data-window="contact"] .window-body {
+    padding: 2rem 2.5rem 2.5rem;
   }
 }
