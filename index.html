@@ -22,16 +22,22 @@
 
     <div class="antarctic-scene" aria-hidden="true">
       <div class="sea">
-        <svg
-          class="sea-wave"
-          viewBox="0 0 1440 64"
-          preserveAspectRatio="none"
-          focusable="false"
-        >
-          <path
-            d="M0 34C220 12 380 52 620 30S1000 8 1200 28S1380 46 1440 26V64H0Z"
-          />
-        </svg>
+        <div class="sea-wave">
+          <svg
+            viewBox="0 0 2880 64"
+            preserveAspectRatio="none"
+            focusable="false"
+          >
+            <defs>
+              <path
+                id="sea-wave-crest"
+                d="M0 34C220 12 380 52 620 30S1000 8 1200 28S1380 46 1440 34V64H0Z"
+              />
+            </defs>
+            <use href="#sea-wave-crest" />
+            <use href="#sea-wave-crest" x="1440" />
+          </svg>
+        </div>
       </div>
     </div>
 
