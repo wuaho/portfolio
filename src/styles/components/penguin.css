@@ -87,7 +87,7 @@
   );
   content: "";
   opacity: 0;
-  animation: penguin-blink 5s infinite;
+  animation: penguin-blink 3s infinite;
 }
 
 .penguin-idle::before {
@@ -100,13 +100,13 @@
 
 @keyframes penguin-blink {
   0%,
-  93%,
+  92%,
   100% {
     opacity: 0;
   }
 
-  94%,
-  97% {
+  93%,
+  98% {
     opacity: 1;
   }
 }
