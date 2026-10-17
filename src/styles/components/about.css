@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   border-bottom: 1px dashed var(--line);
   padding-block: 2.5rem 1.5rem;
   background: var(--paper-white);
@@ -27,7 +27,7 @@
 
 @media (min-width: 52rem) {
   .about-header {
-    padding-top: 3.5rem;
+    padding-top: 4rem;
   }
 }
 
@@ -46,7 +46,7 @@
   margin: 0 0 0.35rem;
   color: var(--coral);
   font-family: var(--display);
-  font-size: clamp(1.7rem, 6vw, 2.8rem);
+  font-size: clamp(1.5rem, 5.5vw, 2.3rem);
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 1.05;
@@ -57,7 +57,7 @@
   padding-left: 0.2rem;
   color: var(--muted);
   font-family: var(--display);
-  font-size: clamp(0.88rem, 2.6vw, 1.05rem);
+  font-size: clamp(0.82rem, 2.4vw, 0.95rem);
   font-weight: 300;
 }
 
@@ -66,7 +66,7 @@
   max-width: 50rem;
   margin: 0 0 1rem;
   font-family: var(--display);
-  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-size: clamp(0.95rem, 2.6vw, 1.1rem);
   font-weight: 300;
   line-height: 1.5;
 }
@@ -87,7 +87,7 @@
 .about-degree-title {
   margin: 0 0 0.35rem;
   font-family: var(--display);
-  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  font-size: clamp(0.95rem, 2.6vw, 1.1rem);
   font-weight: 300;
   line-height: 1.35;
 }
@@ -96,7 +96,7 @@
   margin: 0;
   color: var(--muted);
   font-family: var(--display);
-  font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+  font-size: clamp(0.72rem, 2.2vw, 0.85rem);
   font-weight: 300;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -110,7 +110,7 @@
   margin: 0 0 0.5rem;
   color: var(--ink);
   font-family: var(--mono);
-  font-size: clamp(1rem, 3vw, 1.2rem);
+  font-size: clamp(0.9rem, 2.6vw, 1.05rem);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
