@@ -1,0 +1,21 @@
+src/styles/components/timeline.css
+  s_6c9d6ae0397f10::t_e7a453130c9ec2 28,33-34,75-93
+index.html
+  s_6c9d6ae0397f10::t_e7a453130c9ec2 233-247,258-272,275,293-307
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a699023e05af54d49ca5096afd892cf05ead0a37",
+  "prompts": {},
+  "sessions": {
+    "s_6c9d6ae0397f10": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e45c2f13-9bcf-42ac-b8f6-6fea6a586c52",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
