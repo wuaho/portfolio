@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   { id: "experience", label: "work", icon: "work.svg" },
   { id: "projects", label: "projects", icon: "projects.svg" },
   { id: "more", label: "more", icon: "extra.svg" },
-  { id: "contact", label: "contact", icon: "contact.svg" },
+  { id: "contact", label: "links", icon: "contact.svg" },
 ];
 
 test("section navigation shows one icon tile per window", async ({ page }) => {
