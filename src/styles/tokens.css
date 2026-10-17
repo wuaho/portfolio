@@ -20,6 +20,8 @@
   --water-light: #cfe6ff;
   --ice-top: #ffffff;
   --ice-front: #eaf4fc;
+  --penguin-head: #555555;
+  --penguin-outline: #171818;
 
   /* Elevation */
   --shadow: 0 8px 0 rgba(41, 39, 35, 0.09);

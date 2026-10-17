@@ -69,6 +69,48 @@
   height: 100%;
 }
 
+/*
+ * Blink: two small "closed eye" patches over the eye pixels of the first idle
+ * frame. The sprite is a 64x64 pixel grid, so positions are n/64 of the box.
+ * The eyes are at x=29 and x=33, y=19..20.
+ */
+.penguin-idle::before,
+.penguin-idle::after {
+  position: absolute;
+  top: calc(19 / 64 * 100%);
+  width: calc(1 / 64 * 100%);
+  height: calc(2 / 64 * 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--penguin-head) 50%,
+    var(--penguin-outline) 50%
+  );
+  content: "";
+  opacity: 0;
+  animation: penguin-blink 5s infinite;
+}
+
+.penguin-idle::before {
+  left: calc(29 / 64 * 100%);
+}
+
+.penguin-idle::after {
+  left: calc(33 / 64 * 100%);
+}
+
+@keyframes penguin-blink {
+  0%,
+  93%,
+  100% {
+    opacity: 0;
+  }
+
+  94%,
+  97% {
+    opacity: 1;
+  }
+}
+
 .penguin-spin {
   display: none;
 }
@@ -95,6 +137,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .penguin-companion {
+    animation: none;
+  }
+
+  .penguin-idle::before,
+  .penguin-idle::after {
     animation: none;
   }
 }
