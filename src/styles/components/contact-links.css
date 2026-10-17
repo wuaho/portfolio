@@ -47,8 +47,14 @@
   width: 5rem;
   height: 5rem;
   /* The black source SVGs are used as a mask, so the icon takes this color. */
-  background: var(--coral);
+  background: var(--ink-soft);
   mask: var(--glyph) center / contain no-repeat;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.contact-link:hover .contact-link-glyph,
+.contact-link:focus-visible .contact-link-glyph {
+  background: var(--coral);
 }
 
 .contact-link-glyph-linkedin {
