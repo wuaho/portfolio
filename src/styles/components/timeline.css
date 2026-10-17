@@ -89,3 +89,8 @@
   outline: 2px solid var(--coral);
   outline-offset: 3px;
 }
+
+/* Certifications follow the timeline in the Experience window. */
+.experience-certifications {
+  margin-top: 3rem;
+}
