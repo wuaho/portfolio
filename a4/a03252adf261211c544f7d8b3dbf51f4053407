@@ -1,0 +1,29 @@
+src/scripts/main.js
+  s_337f3897043e89::t_b74660ceb14d11 17
+tests/e2e/sound.spec.js
+  s_337f3897043e89::t_0dc472f9e87980 81-103
+src/scripts/features/penguin.js
+  s_337f3897043e89::t_c038db47499145 41
+  s_337f3897043e89::t_b74660ceb14d11 4-8,42-49
+  s_337f3897043e89::t_55e9d2c5a523c4 50
+src/scripts/features/sound.js
+  s_337f3897043e89::t_b74660ceb14d11 5-6,8-17,37,44-45,49,55,57,60-62,64-75
+AGENTS.md
+  s_337f3897043e89::t_499c118fb20d1b 60
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "a4a03252adf261211c544f7d8b3dbf51f4053407",
+  "prompts": {},
+  "sessions": {
+    "s_337f3897043e89": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64877525-3d8e-40d4-8d00-5a7f1b4ecac0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
