@@ -1,0 +1,81 @@
+/* More window: flat sections on the window background, no cards. */
+.more-sections {
+  display: grid;
+  gap: 2.4rem;
+}
+
+.more-section {
+  min-width: 0;
+  max-width: 44rem;
+}
+
+.more-section h3 {
+  margin-bottom: 0.6rem;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4.5vw, 1.95rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.more-text,
+.more-subtitle {
+  margin: 0 0 0.8rem;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.more-subtitle {
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.more-section .bullet-list {
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+/* Definition list used inside "more" cards. */
+.detail-list {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.detail-list div {
+  border-top: 1px dashed var(--line);
+  padding-top: 0.8rem;
+}
+
+.detail-list dt {
+  margin-bottom: 0.2rem;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.detail-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* Responsive YouTube preview. */
+.video-frame {
+  aspect-ratio: 16 / 9;
+  margin-top: 1rem;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  box-shadow: 0 0 0 1px var(--line);
+  background: var(--ink);
+}
+
+.video-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
