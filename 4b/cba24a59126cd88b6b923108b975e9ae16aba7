@@ -1,0 +1,23 @@
+index.html
+  s_6a554e40faea12::t_75f90c20e6a4fa 687
+assets/icons/blog.svg
+  s_6a554e40faea12::t_75f90c20e6a4fa 1
+tests/e2e/contact.spec.js
+  s_6a554e40faea12::t_75f90c20e6a4fa 18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "4bcba24a59126cd88b6b923108b975e9ae16aba7",
+  "prompts": {},
+  "sessions": {
+    "s_6a554e40faea12": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7a06e1e4-aa9e-47b4-8cc5-4534dc6583ae",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "wuaho <juanjoserequenalama@gmail.com>"
+    }
+  }
+}
